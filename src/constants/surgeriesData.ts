@@ -1,0 +1,1111 @@
+import { SurgeryData, FAQItem } from '../types/surgery';
+
+export const technologyFaqs: Record<'en' | 'np', FAQItem[]> = {
+  en: [
+    {
+      question: 'What is the VisuMax 800?',
+      answer: 'It is the latest femtosecond laser from ZEISS, allowing for a 10-second laser application for maximum patient comfort and precision.'
+    },
+    {
+      question: 'What is the MEL 90?',
+      answer: 'It is a high-speed excimer laser used for precise corneal reshaping, offering excellent visual outcomes and faster treatment times.'
+    },
+    {
+      question: 'What is the MS-39?',
+      answer: 'The MS-39 is the most advanced anterior segment OCT that provides high-resolution cross-sectional images and detailed mapping of the cornea and epithelial thickness.'
+    },
+    {
+      question: 'What is the Pentacam?',
+      answer: 'The Pentacam is the gold standard for corneal topography and tomography, providing a 3D model of the anterior eye segment for precise surgical planning.'
+    },
+    {
+      question: 'What is the ATLAS system?',
+      answer: 'The ATLAS system is a sophisticated corneal topography system that provides detailed maps of the eye\'s surface, helping to identify subtle irregularities.'
+    },
+    {
+      question: 'Why is pupillometry important?',
+      answer: 'Our automated pupillometer measures your pupil size in various lighting conditions to ensure the laser treatment is perfectly centered and optimized for your night vision.'
+    },
+    {
+      question: 'Why do I need dry eye screening?',
+      answer: 'We perform comprehensive dry eye evaluations before surgery to ensure your tear film is healthy, which is crucial for optimal healing and visual comfort.'
+    },
+    {
+      question: 'What makes your Operating Room special?',
+      answer: 'Our OR is a sterile, climate-controlled environment with advanced air filtration systems, designed to ensure the highest levels of safety and infection control.'
+    },
+    {
+      question: 'What is an LVC Nomogram?',
+      answer: 'It is a customized treatment planning software that uses your unique eye data to personalize the laser settings for the most accurate visual results.'
+    }
+  ],
+  np: [
+    {
+      question: 'VisuMax 800 के हो?',
+      answer: 'यो ZEISS बाट पछिल्लो फेम्टोसेकेन्ड लेजर हो, जसले बिरामीको अधिकतम आराम र सटीकताको लागि १० सेकेन्डको लेजर प्रयोग गर्न अनुमति दिन्छ।'
+    },
+    {
+      question: 'MEL 90 के हो?',
+      answer: 'यो एक उच्च-गति एक्साइमर लेजर हो जुन सटीक कोर्नियल रिसेपिङको लागि प्रयोग गरिन्छ, जसले उत्कृष्ट दृश्य परिणामहरू र छिटो उपचार समय प्रदान गर्दछ।'
+    },
+    {
+      question: 'MS-39 के हो?',
+      answer: 'MS-39 सबैभन्दा उन्नत एन्टेरियर सेगमेन्ट OCT हो जसले कोर्निया र एपिथेलियल मोटाईको उच्च-रिजोल्युसन क्रस-सेक्शनल छविहरू र विस्तृत म्यापिङ प्रदान गर्दछ।'
+    },
+    {
+      question: 'Pentacam के हो?',
+      answer: 'Pentacam कोर्नियल टोपोग्राफी र टोमोग्राफीको लागि स्वर्ण मानक हो, जसले सटीक शल्यक्रिया योजनाको लागि आँखाको अगाडिको खण्डको 3D मोडेल प्रदान गर्दछ।'
+    },
+    {
+      question: 'ATLAS प्रणाली के हो?',
+      answer: 'ATLAS प्रणाली एक परिष्कृत कोर्नियल टोपोग्राफी प्रणाली हो जसले आँखाको सतहको विस्तृत नक्सा प्रदान गर्दछ, जसले सूक्ष्म अनियमितताहरू पहिचान गर्न मद्दत गर्दछ।'
+    },
+    {
+      question: 'प्युपिलोमेट्री किन महत्त्वपूर्ण छ?',
+      answer: 'हाम्रो स्वचालित प्युपिलोमिटरले विभिन्न प्रकाश अवस्थाहरूमा तपाईंको नानीको आकार मापन गर्दछ ताकि लेजर उपचार पूर्ण रूपमा केन्द्रित र तपाईंको रात्रिकालीन दृष्टिको लागि अनुकूलित होस्।'
+    },
+    {
+      question: 'मलाई सुख्खा आँखा स्क्रिनिङ किन चाहिन्छ?',
+      answer: 'हामी शल्यक्रिया अघि व्यापक सुख्खा आँखा मूल्याङ्कन गर्छौं ताकि तपाईंको आँसुको तह स्वस्थ छ भन्ने सुनिश्चित गर्न सकियोस्, जुन इष्टतम निको हुने र दृश्य आरामको लागि महत्त्वपूर्ण छ।'
+    },
+    {
+      question: 'तपाईंको अपरेटिङ रूममा के विशेष छ?',
+      answer: 'हाम्रो OR उच्च स्तरको सुरक्षा र संक्रमण नियन्त्रण सुनिश्चित गर्न डिजाइन गरिएको उन्नत हावा फिल्टरेशन प्रणालीको साथ एक बाँझ, जलवायु-नियन्त्रित वातावरण हो।'
+    },
+    {
+      question: 'LVC Nomogram के हो?',
+      answer: 'यो एक अनुकूलित उपचार योजना सफ्टवेयर हो जसले सबैभन्दा सटीक दृश्य परिणामहरूको लागि लेजर सेटिङहरू निजीकृत गर्न तपाईंको अद्वितीय आँखा डेटा प्रयोग गर्दछ।'
+    }
+  ]
+};
+
+export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }> = {
+  'smile-pro': {
+    en: {
+      id: 'smile-pro',
+      slug: 'smile-pro',
+      title: 'SMILE PRO: The Future of Flapless Vision',
+      subtitle: 'Experience the next generation of laser vision correction with the fastest, most precise flapless procedure available today.',
+      videoUrl: 'https://www.youtube.com/embed/1oJFShANMTc',
+      videoCaption: 'Watch how SMILE Pro provides a seamless, flapless vision correction experience.',
+      benefits: {
+        title: 'Key Benefits',
+        description: 'Flapless, minimally invasive procedure with a tiny 2-4mm incision. Faster recovery and less risk of dry eyes compared to traditional methods.'
+      },
+      idealCandidate: {
+        title: 'Ideal Candidate',
+        description: 'Perfect for active individuals, athletes, and those with a busy lifestyle who want a quick return to their daily activities.'
+      },
+      advantage: {
+        title: 'Why choose us?',
+        description: 'Performed with the revolutionary VisuMax 800, ensuring maximum precision, safety, and patient comfort in just 10 seconds.'
+      },
+      technology: [
+        {
+          name: 'VisuMax 800',
+          description: 'The latest femtosecond laser from ZEISS, allowing for a 10-second laser application for maximum patient comfort.',
+          icon: 'Zap'
+        }
+      ],
+      timeline: [
+        { time: '2 Hours', description: 'Initial rest period to allow the eye to settle.' },
+        { time: '24 Hours', description: 'Most patients can return to driving and work.' },
+        { time: '1 Week', description: 'Safe to resume active sports and swimming.' },
+        { time: '1 Month', description: 'Full visual stability and complete healing.' }
+      ],
+      comparison: {
+        title: 'How it differs',
+        description: 'Unlike LASIK, SMILE Pro is flapless, meaning no risk of flap complications and significantly less impact on corneal nerves.',
+        table: {
+          headers: ['Feature', 'SMILE Pro', 'LASIK', 'PRK'],
+          rows: [
+            {
+              label: 'Procedure',
+              values: ['Minimally invasive, flapless (2-4mm incision)', 'Laser-created flap (20mm incision)', 'Surface treatment, no flap or incision']
+            },
+            {
+              label: 'Recovery',
+              values: ['Fastest (return to work in 24h)', 'Fast (return to work in 24-48h)', 'Moderate (3-5 days for initial healing)']
+            },
+            {
+              label: 'Ideal Candidates',
+              values: ['Active lifestyles, athletes, dry eye concerns', 'Wide range of prescriptions', 'Thin corneas, high-impact sports']
+            }
+          ]
+        }
+      },
+      investment: {
+        title: 'Value & Investment',
+        description: 'A lifetime of clear vision is an investment in your quality of life. Contact us for a personalized consultation and pricing.'
+      },
+      clinicalDetails: [
+        {
+          title: 'Centration Control (VISUMAX 800)',
+          description: 'Advanced eye-tracking and centration control ensure the laser is perfectly aligned with your visual axis, even with minor eye movements.'
+        },
+        {
+          title: 'ORA Compensation',
+          description: 'Ocular Residual Astigmatism (ORA) compensation optimizes the treatment profile for superior visual quality beyond standard prescriptions.'
+        },
+        {
+          title: 'Lenticule Optimization',
+          description: 'Precise lenticule thickness and edge design minimize corneal nerve disruption, significantly reducing post-operative dry eye symptoms.'
+        }
+      ],
+      targetProfessions: ['Military', 'Police', 'Pilots', 'Surgeons', 'Athletes', 'Trekkers'],
+      cost: {
+        title: 'Latest Official Cost',
+        eligibilityScan: 3500,
+        surgeryCost: 92000,
+      },
+      faqs: [],
+      seo: {
+        title: 'SMILE PRO Kathmandu | Flapless Laser Eye Surgery Nepal',
+        description: 'Get SMILE PRO laser eye surgery in Kathmandu with Dr. Kaushal Pokhrel. The future of flapless vision correction.',
+        keywords: ['SMILE PRO Kathmandu', 'Laser Eye Surgery Nepal', 'Flapless Vision Correction']
+      }
+    },
+    np: {
+      id: 'smile-pro',
+      slug: 'smile-pro',
+      title: 'SMILE PRO: फ्ल्यापलेस दृष्टिको भविष्य',
+      subtitle: 'आज उपलब्ध सबैभन्दा छिटो र सटीक फ्ल्यापलेस प्रक्रियाको साथ लेजर भिजन सुधारको अर्को पुस्ताको अनुभव लिनुहोस्।',
+      videoUrl: 'https://www.youtube.com/embed/1oJFShANMTc',
+      videoCaption: 'SMILE Pro ले कसरी सहज र फ्ल्यापलेस दृष्टि सुधारको अनुभव प्रदान गर्दछ हेर्नुहोस्।',
+      benefits: {
+        title: 'मुख्य फाइदाहरू',
+        description: 'सानो २-४ मिमी चीराको साथ फ्ल्यापलेस, न्यूनतम आक्रामक प्रक्रिया। परम्परागत विधिहरूको तुलनामा छिटो रिकभरी र सुख्खा आँखाको कम जोखिम।'
+      },
+      idealCandidate: {
+        title: 'आदर्श उम्मेद्वार',
+        description: 'सक्रिय व्यक्तिहरू, एथलीटहरू, र व्यस्त जीवनशैली भएकाहरूका लागि उपयुक्त जो आफ्नो दैनिक गतिविधिहरूमा छिटो फर्कन चाहन्छन्।'
+      },
+      advantage: {
+        title: 'हामीलाई किन रोज्ने?',
+        description: 'क्रान्तिकारी VisuMax 800 को साथ गरिन्छ, जसले मात्र १० सेकेन्डमा अधिकतम सटीकता, सुरक्षा, र बिरामीको आराम सुनिश्चित गर्दछ।'
+      },
+      technology: [
+        {
+          name: 'VisuMax 800',
+          description: 'ZEISS बाट पछिल्लो फेम्टोसेकेन्ड लेजर, जसले बिरामीको अधिकतम आरामको लागि १० सेकेन्डको लेजर प्रयोग गर्न अनुमति दिन्छ।',
+          icon: 'Zap'
+        }
+      ],
+      timeline: [
+        { time: '२ घण्टा', description: 'आँखालाई स्थिर हुन दिन प्रारम्भिक आराम अवधि।' },
+        { time: '२४ घण्टा', description: 'अधिकांश बिरामीहरू ड्राइभिङ र काममा फर्कन सक्छन्।' },
+        { time: '१ हप्ता', description: 'सक्रिय खेलकुद र पौडी खेल्न सुरक्षित।' },
+        { time: '१ महिना', description: 'पूर्ण दृश्य स्थिरता र पूर्ण निको हुने समय।' }
+      ],
+      comparison: {
+        title: 'यो कसरी फरक छ',
+        description: 'LASIK को विपरीत, SMILE Pro फ्ल्यापलेस छ, जसको अर्थ फ्ल्याप जटिलताहरूको कुनै जोखिम हुँदैन र कोर्नियल नसाहरूमा उल्लेखनीय रूपमा कम प्रभाव पर्छ।',
+        table: {
+          headers: ['विशेषता', 'SMILE Pro', 'LASIK', 'PRK'],
+          rows: [
+            {
+              label: 'प्रक्रिया',
+              values: ['न्यूनतम आक्रामक, फ्ल्यापलेस (२-४ मिमी चीरा)', 'लेजर-निर्मित फ्ल्याप (२० मिमी चीरा)', 'सतह उपचार, कुनै फ्ल्याप वा चीरा छैन']
+            },
+            {
+              label: 'रिकभरी',
+              values: ['सबैभन्दा छिटो (२४ घण्टामा काममा फर्कन सकिने)', 'छिटो (२४-४८ घण्टामा काममा फर्कन सकिने)', 'मध्यम (प्रारम्भिक निको हुन ३-५ दिन)']
+            },
+            {
+              label: 'आदर्श उम्मेद्वार',
+              values: ['सक्रिय जीवनशैली, एथलीटहरू, सुख्खा आँखाको समस्या', 'प्रिस्क्रिप्शनको विस्तृत दायरा', 'पातलो कोर्निया, उच्च-प्रभाव खेलकुद']
+            }
+          ]
+        }
+      },
+      investment: {
+        title: 'मूल्य र लगानी',
+        description: 'स्पष्ट दृष्टिको जीवनभरको अनुभव तपाईंको जीवनको गुणस्तरमा एक लगानी हो। व्यक्तिगत परामर्श र मूल्य निर्धारणको लागि हामीलाई सम्पर्क गर्नुहोस्।'
+      },
+      targetProfessions: ['सेना', 'प्रहरी', 'पाइलट', 'सर्जन', 'एथलीट', 'ट्रेकर'],
+      cost: {
+        title: 'पछिल्लो आधिकारिक लागत',
+        eligibilityScan: 3500,
+        surgeryCost: 92000,
+      },
+      faqs: [],
+      seo: {
+        title: 'SMILE PRO काठमाडौं | फ्ल्यापलेस लेजर आँखाको शल्यक्रिया नेपाल',
+        description: 'डा. कौशल पोखरेलसँग काठमाडौंमा SMILE PRO लेजर आँखाको शल्यक्रिया गराउनुहोस्। फ्ल्यापलेस दृष्टि सुधारको भविष्य।',
+        keywords: ['SMILE PRO काठमाडौं', 'लेजर आँखाको शल्यक्रिया नेपाल', 'फ्ल्यापलेस दृष्टि सुधार']
+      }
+    }
+  },
+  'femto-lasik': {
+    en: {
+      id: 'femto-lasik',
+      slug: 'femto-lasik',
+      title: 'Femto-LASIK: The Gold Standard',
+      subtitle: 'The world\'s most popular laser vision correction, now completely blade-free for enhanced safety and precision.',
+      videoUrl: 'https://www.youtube.com/embed/t80CNT5KK90',
+      videoCaption: 'Learn about the precision and safety of the blade-free Femto-LASIK procedure.',
+      benefits: {
+        title: 'Key Benefits',
+        description: 'Blade-free flap creation, highly predictable results, and rapid visual recovery within hours.'
+      },
+      idealCandidate: {
+        title: 'Ideal Candidate',
+        description: 'Suitable for a wide range of prescriptions, including nearsightedness, farsightedness, and astigmatism.'
+      },
+      advantage: {
+        title: 'Why choose us?',
+        description: 'Utilizing the combined power of MEL 90 and VisuMax 800 for a truly customized and safe experience.'
+      },
+      technology: [
+        {
+          name: 'MEL 90 + VisuMax 800',
+          description: 'The synergy of two world-class lasers for precise flap creation and corneal reshaping.',
+          icon: 'Zap'
+        }
+      ],
+      timeline: [
+        { time: '4 Hours', description: 'Rest with eyes closed to promote initial healing.' },
+        { time: '24 Hours', description: 'Significant visual improvement; return to most activities.' },
+        { time: '1 Week', description: 'Resume light exercise and non-contact sports.' },
+        { time: '1 Month', description: 'Vision stabilizes completely.' }
+      ],
+      comparison: {
+        title: 'How it differs',
+        description: 'Femto-LASIK uses a laser to create the corneal flap, offering higher safety compared to traditional microkeratome (blade) LASIK.',
+        table: {
+          headers: ['Feature', 'Femto-LASIK', 'Traditional LASIK', 'PRK'],
+          rows: [
+            {
+              label: 'Procedure',
+              values: ['Laser-created flap (blade-free)', 'Microkeratome-created flap (blade)', 'Surface treatment, no flap']
+            },
+            {
+              label: 'Recovery',
+              values: ['Fast (24-48 hours)', 'Fast (24-48 hours)', 'Moderate (3-5 days)']
+            },
+            {
+              label: 'Ideal Candidates',
+              values: ['Wide range of prescriptions', 'Standard prescriptions', 'Thin corneas']
+            }
+          ]
+        }
+      },
+      investment: {
+        title: 'Value & Investment',
+        description: 'Freedom from glasses and contacts is a life-changing decision. We offer transparent pricing and flexible options.'
+      },
+      clinicalDetails: [
+        {
+          title: 'Iris Registration',
+          description: 'Automated iris recognition compensates for cyclotorsion (eye rotation when lying down), ensuring astigmatism is corrected at the exact intended axis.'
+        },
+        {
+          title: 'Wavefront-Guided Ablation',
+          description: 'Customized treatment based on your unique "optical fingerprint" to reduce higher-order aberrations like halos and glare.'
+        },
+        {
+          title: 'Flap Thickness Control',
+          description: 'Femtosecond laser creates a uniform, predictable flap thickness, preserving more structural integrity than traditional microkeratomes.'
+        }
+      ],
+      targetProfessions: ['Pilots', 'Surgeons', 'Presbyopic People', 'Office Professionals', 'Medical Professionals'],
+      cost: {
+        title: 'Latest Official Cost',
+        eligibilityScan: 3500,
+        surgeryCost: 90000,
+      },
+      faqs: [
+        {
+          question: 'Is Femto-LASIK completely blade-free?',
+          answer: 'Yes, Femto-LASIK uses a femtosecond laser to create the corneal flap, eliminating the need for a mechanical blade (microkeratome) and enhancing safety.'
+        },
+        {
+          question: 'Can I get Femto-LASIK if I have astigmatism?',
+          answer: 'Absolutely. Femto-LASIK is highly effective at correcting astigmatism along with nearsightedness and farsightedness.'
+        }
+      ],
+      seo: {
+        title: 'Femto-LASIK Kathmandu | Blade-free LASIK Nepal',
+        description: 'Advanced Femto-LASIK surgery in Kathmandu by Dr. Kaushal Pokhrel. Safe, precise, and blade-free vision correction.',
+        keywords: ['Femto-LASIK Kathmandu', 'LASIK Kathmandu', 'Blade-free LASIK Nepal', 'LASIK Nepal', 'Laser Eye Surgery']
+      }
+    },
+    np: {
+      id: 'femto-lasik',
+      slug: 'femto-lasik',
+      title: 'Femto-LASIK: स्वर्ण मानक',
+      subtitle: 'विश्वको सबैभन्दा लोकप्रिय लेजर दृष्टि सुधार, अब परिष्कृत सुरक्षा र सटीकताको लागि पूर्ण रूपमा ब्लेड-रहित।',
+      videoUrl: 'https://www.youtube.com/embed/t80CNT5KK90',
+      videoCaption: 'ब्लेड-रहित Femto-LASIK प्रक्रियाको सटीकता र सुरक्षाको बारेमा जान्नुहोस्।',
+      benefits: {
+        title: 'मुख्य फाइदाहरू',
+        description: 'ब्लेड-रहित फ्ल्याप निर्माण, अत्यधिक अनुमानित परिणामहरू, र केही घण्टा भित्र द्रुत दृश्य रिकभरी।'
+      },
+      idealCandidate: {
+        title: 'आदर्श उम्मेद्वार',
+        description: 'नजिकको दृष्टि, टाढाको दृष्टि, र एस्टिग्माटिज्म सहित प्रिस्क्रिप्शनहरूको विस्तृत दायराका लागि उपयुक्त।'
+      },
+      advantage: {
+        title: 'हामीलाई किन रोज्ने?',
+        description: 'साँच्चै अनुकूलित र सुरक्षित अनुभवको लागि MEL 90 र VisuMax 800 को संयुक्त शक्तिको प्रयोग।'
+      },
+      technology: [
+        {
+          name: 'MEL 90 + VisuMax 800',
+          description: 'सटीक फ्ल्याप निर्माण र कोर्नियल रिसेपिङका लागि दुई विश्व-स्तरीय लेजरहरूको समन्वय।',
+          icon: 'Zap'
+        }
+      ],
+      timeline: [
+        { time: '४ घण्टा', description: 'प्रारम्भिक निको हुन मद्दत गर्न आँखा चिम्लेर आराम गर्नुहोस्।' },
+        { time: '२४ घण्टा', description: 'महत्त्वपूर्ण दृश्य सुधार; अधिकांश गतिविधिहरूमा फर्कनुहोस्।' },
+        { time: '१ हप्ता', description: 'हल्का व्यायाम र गैर-सम्पर्क खेलहरू पुनः सुरु गर्नुहोस्।' },
+        { time: '१ महिना', description: 'दृष्टि पूर्ण रूपमा स्थिर हुन्छ।' }
+      ],
+      comparison: {
+        title: 'यो कसरी फरक छ',
+        description: 'Femto-LASIK ले कोर्नियल फ्ल्याप बनाउन लेजरको प्रयोग गर्दछ, जसले परम्परागत माइक्रोकेराटोम (ब्लेड) LASIK को तुलनामा उच्च सुरक्षा प्रदान गर्दछ।',
+        table: {
+          headers: ['विशेषता', 'Femto-LASIK', 'परम्परागत LASIK', 'PRK'],
+          rows: [
+            {
+              label: 'प्रक्रिया',
+              values: ['लेजर-निर्मित फ्ल्याप (ब्लेड-रहित)', 'माइक्रोकेराटोम-निर्मित फ्ल्याप (ब्लेड)', 'सतह उपचार, कुनै फ्ल्याप छैन']
+            },
+            {
+              label: 'रिकभरी',
+              values: ['छिटो (२४-४८ घण्टा)', 'छिटो (२४-४८ घण्टा)', 'मध्यम (३-५ दिन)']
+            },
+            {
+              label: 'आदर्श उम्मेद्वार',
+              values: ['प्रिस्क्रिप्शनको विस्तृत दायरा', 'मानक प्रिस्क्रिप्शन', 'पातलो कोर्निया']
+            }
+          ]
+        }
+      },
+      investment: {
+        title: 'मूल्य र लगानी',
+        description: 'चश्मा र कन्ट्याक्ट लेन्सबाट मुक्ति जीवन परिवर्तन गर्ने निर्णय हो। हामी पारदर्शी मूल्य निर्धारण र लचिलो विकल्पहरू प्रदान गर्दछौं।'
+      },
+      targetProfessions: ['पाइलट', 'सर्जन', 'प्रेसबायोपिक व्यक्तिहरू', 'कार्यालय पेशेवर', 'चिकित्सा पेशेवर'],
+      cost: {
+        title: 'पछिल्लो आधिकारिक लागत',
+        eligibilityScan: 3500,
+        surgeryCost: 90000,
+      },
+      faqs: [
+        {
+          question: 'Femto-LASIK पूर्ण रूपमा ब्लेड-रहित छ?',
+          answer: 'हो, Femto-LASIK ले कोर्नियल फ्ल्याप बनाउन फेम्टोसेकेन्ड लेजरको प्रयोग गर्दछ, जसले मेकानिकल ब्लेडको आवश्यकतालाई हटाउँछ र सुरक्षा बढाउँछ।'
+        },
+        {
+          question: 'यदि मलाई एस्टिग्माटिज्म छ भने के म Femto-LASIK गराउन सक्छु?',
+          answer: 'बिल्कुल। Femto-LASIK अदूरदृष्टि र दूरदृष्टिको साथसाथै एस्टिग्माटिज्म सुधार गर्न अत्यधिक प्रभावकारी छ।'
+        }
+      ],
+      seo: {
+        title: 'Femto-LASIK काठमाडौं | ब्लेड-रहित LASIK नेपाल',
+        description: 'डा. कौशल पोखरेलद्वारा काठमाडौंमा उन्नत फेम्टो-लासिक शल्यक्रिया। सुरक्षित, सटीक र ब्लेड-रहित दृष्टि सुधार।',
+        keywords: ['Femto-LASIK काठमाडौं', 'LASIK काठमाडौं', 'ब्लेड-रहित LASIK नेपाल', 'LASIK नेपाल', 'लेजर आँखाको शल्यक्रिया']
+      }
+    }
+  },
+  'prk': {
+    en: {
+      id: 'prk',
+      slug: 'prk',
+      title: 'PRK: Surface-Based Precision',
+      subtitle: 'The ideal choice for patients with thin corneas or specific lifestyle needs where a flap is not recommended.',
+      videoUrl: 'https://www.youtube.com/embed/1Pjh4ja1lH0',
+      videoCaption: 'Discover how PRK offers a safe alternative for surface-based vision correction.',
+      benefits: {
+        title: 'Key Benefits',
+        description: 'No corneal flap created, preserving maximum corneal structural integrity. Ideal for high-impact activities.'
+      },
+      idealCandidate: {
+        title: 'Ideal Candidate',
+        description: 'Patients with thin corneas, dry eye concerns, or those in professions like the military or contact sports.'
+      },
+      advantage: {
+        title: 'Why choose us?',
+        description: 'Expert application of MEL 90 technology for smooth surface ablation and optimized healing.'
+      },
+      technology: [
+        {
+          name: 'MEL 90',
+          description: 'High-speed excimer laser for precise surface reshaping and excellent visual outcomes.',
+          icon: 'Zap'
+        }
+      ],
+      timeline: [
+        { time: '1-3 Days', description: 'Epithelial healing period; rest in dim light recommended.' },
+        { time: '1 Week', description: 'Vision begins to clear; return to work possible.' },
+        { time: '1 Month', description: 'Significant visual clarity achieved.' },
+        { time: '3 Months', description: 'Full maturation of vision and complete healing.' }
+      ],
+      comparison: {
+        title: 'How it differs',
+        description: 'Unlike LASIK, PRK does not involve a flap. The laser is applied directly to the surface after removing the outer layer (epithelium).',
+        table: {
+          headers: ['Feature', 'PRK', 'LASIK', 'SMILE Pro'],
+          rows: [
+            {
+              label: 'Procedure',
+              values: ['Surface ablation, no flap', 'Corneal flap creation', 'Small incision, flapless']
+            },
+            {
+              label: 'Recovery',
+              values: ['Moderate (3-5 days initial)', 'Fast (24-48 hours)', 'Fastest (24h)']
+            },
+            {
+              label: 'Ideal Candidates',
+              values: ['Thin corneas, high-impact sports', 'General vision correction', 'Active lifestyles']
+            }
+          ]
+        }
+      },
+      investment: {
+        title: 'Value & Investment',
+        description: 'Safety and long-term stability are the hallmarks of PRK. We provide comprehensive pre and post-operative care.'
+      },
+      targetProfessions: ['Military', 'Police', 'Pilots', 'Surgeons', 'Athletes', 'Trekkers'],
+      cost: {
+        title: 'Latest Official Cost',
+        eligibilityScan: 3500,
+        surgeryCost: 70000,
+      },
+      faqs: [
+        {
+          question: 'Why choose PRK over LASIK?',
+          answer: 'PRK is often recommended for patients with thin corneas or those involved in high-impact activities, as it avoids the creation of a corneal flap.'
+        },
+        {
+          question: 'Is the recovery after PRK painful?',
+          answer: 'While PRK has a slightly longer recovery than LASIK, any discomfort is typically managed with specialized contact lenses and eye drops for a few days.'
+        }
+      ],
+      seo: {
+        title: 'PRK Surgery Kathmandu | Surface Laser Eye Surgery Nepal',
+        description: 'PRK laser eye surgery in Kathmandu with Dr. Kaushal Pokhrel. Best option for thin corneas and active lifestyles.',
+        keywords: ['PRK Surgery Kathmandu', 'Surface Laser Nepal', 'No Flap Eye Surgery']
+      }
+    },
+    np: {
+      id: 'prk',
+      slug: 'prk',
+      title: 'PRK: सतह-आधारित सटीकता',
+      subtitle: 'पातलो कोर्निया भएका बिरामीहरू वा विशेष जीवनशैली आवश्यकताहरूका लागि उपयुक्त जहाँ फ्ल्याप सिफारिस गरिँदैन।',
+      videoUrl: 'https://www.youtube.com/embed/1Pjh4ja1lH0',
+      videoCaption: 'PRK ले कसरी सतह-आधारित दृष्टि सुधारको लागि सुरक्षित विकल्प प्रदान गर्दछ पत्ता लगाउनुहोस्।',
+      benefits: {
+        title: 'मुख्य फाइदाहरू',
+        description: 'कुनै कोर्नियल फ्ल्याप बनाइँदैन, जसले अधिकतम कोर्नियल संरचनात्मक अखण्डता कायम राख्छ। उच्च-प्रभाव गतिविधिहरूको लागि आदर्श।'
+      },
+      idealCandidate: {
+        title: 'आदर्श उम्मेद्वार',
+        description: 'पातलो कोर्निया, सुख्खा आँखाको समस्या भएका बिरामीहरू, वा सेना वा सम्पर्क खेलकुद जस्ता पेशामा संलग्न व्यक्तिहरू।'
+      },
+      advantage: {
+        title: 'हामीलाई किन रोज्ने?',
+        description: 'निलो सतह एब्लेसन र अनुकूलित उपचारको लागि MEL 90 प्रविधिको विशेषज्ञ प्रयोग।'
+      },
+      technology: [
+        {
+          name: 'MEL 90',
+          description: 'सटीक सतह रिसेपिङ र उत्कृष्ट दृश्य परिणामहरूको लागि उच्च-गति एक्साइमर लेजर।',
+          icon: 'Zap'
+        }
+      ],
+      timeline: [
+        { time: '१-३ दिन', description: 'एपिथेलियल निको हुने अवधि; मधुरो प्रकाशमा आराम गर्न सिफारिस गरिन्छ।' },
+        { time: '१ हप्ता', description: 'दृष्टि स्पष्ट हुन थाल्छ; काममा फर्कन सम्भव छ।' },
+        { time: '१ महिना', description: 'महत्त्वपूर्ण दृश्य स्पष्टता प्राप्त हुन्छ।' },
+        { time: '३ महिना', description: 'दृष्टिको पूर्ण परिपक्वता र पूर्ण निको हुने समय।' }
+      ],
+      comparison: {
+        title: 'यो कसरी फरक छ',
+        description: 'LASIK को विपरीत, PRK मा फ्ल्याप समावेश हुँदैन। बाहिरी तह (एपिथेलियम) हटाएपछि लेजर सिधै सतहमा प्रयोग गरिन्छ।',
+        table: {
+          headers: ['विशेषता', 'PRK', 'LASIK', 'SMILE Pro'],
+          rows: [
+            {
+              label: 'प्रक्रिया',
+              values: ['सतह एब्लेसन, कुनै फ्ल्याप छैन', 'कोर्नियल फ्ल्याप निर्माण', 'सानो चीरा, फ्ल्यापलेस']
+            },
+            {
+              label: 'रिकभरी',
+              values: ['मध्यम (प्रारम्भिक ३-५ दिन)', 'छिटो (२४-४८ घण्टा)', 'सबैभन्दा छिटो (२४ घण्टा)']
+            },
+            {
+              label: 'आदर्श उम्मेद्वार',
+              values: ['पातलो कोर्निया, उच्च-प्रभाव खेलकुद', 'सामान्य दृष्टि सुधार', 'सक्रिय जीवनशैली']
+            }
+          ]
+        }
+      },
+      investment: {
+        title: 'मूल्य र लगानी',
+        description: 'सुरक्षा र दीर्घकालीन स्थिरता PRK का विशेषताहरू हुन्। हामी व्यापक पूर्व र शल्यक्रिया पछिको हेरचाह प्रदान गर्दछौं।'
+      },
+      targetProfessions: ['सेना', 'प्रहरी', 'पाइलट', 'सर्जन', 'एथलीट', 'ट्रेकर'],
+      cost: {
+        title: 'पछिल्लो आधिकारिक लागत',
+        eligibilityScan: 3500,
+        surgeryCost: 70000,
+      },
+      faqs: [
+        {
+          question: 'LASIK को सट्टा PRK किन रोज्ने?',
+          answer: 'PRK अक्सर पातलो कोर्निया भएका बिरामीहरू वा उच्च-प्रभाव गतिविधिहरूमा संलग्न व्यक्तिहरूको लागि सिफारिस गरिन्छ, किनकि यसले कोर्नियल फ्ल्याप बनाउनबाट बचाउँछ।'
+        },
+        {
+          question: 'PRK पछि रिकभरी पीडादायी हुन्छ?',
+          answer: 'PRK को रिकभरी LASIK भन्दा अलि लामो भए तापनि, कुनै पनि असुविधा सामान्यतया केही दिनको लागि विशेष कन्ट्याक्ट लेन्स र आँखाको थोपाको साथ व्यवस्थापन गरिन्छ।'
+        }
+      ],
+      seo: {
+        title: 'PRK शल्यक्रिया काठमाडौं | सतह लेजर आँखाको शल्यक्रिया नेपाल',
+        description: 'डा. कौशल पोखरेलसँग काठमाडौंमा PRK लेजर आँखाको शल्यक्रिया। पातलो कोर्निया र सक्रिय जीवनशैलीको लागि उत्तम विकल्प।',
+        keywords: ['PRK शल्यक्रिया काठमाडौं', 'सतह लेजर नेपाल', 'नो फ्ल्याप आँखाको शल्यक्रिया']
+      }
+    }
+  },
+  'presbyond': {
+    en: {
+      id: 'presbyond',
+      slug: 'presbyond',
+      title: 'Presbyond: Laser Blended Vision',
+      subtitle: 'The ultimate solution for reading freedom, specifically designed for those aged 40-65 experiencing presbyopia.',
+      videoUrl: 'https://www.youtube.com/embed/FMQSRh0o3po',
+      videoCaption: 'See how Presbyond restores natural reading vision for those over 40.',
+      benefits: {
+        title: 'Key Benefits',
+        description: 'Reduces or eliminates the need for reading glasses. Provides a continuous range of vision from near to far.'
+      },
+      idealCandidate: {
+        title: 'Ideal Candidate',
+        description: 'Individuals aged 40-65 who are tired of reading glasses and want to restore their natural range of vision.'
+      },
+      advantage: {
+        title: 'Why choose us?',
+        description: 'Expert customization using the MEL 90 laser to create a unique "blended zone" for seamless visual transitions.'
+      },
+      targetProfessions: ['Senior Pilots', 'Surgeons', 'Photographers', 'Active Retirees'],
+      technology: [
+        {
+          name: 'MEL 90',
+          description: 'Advanced laser technology optimized for Laser Blended Vision profiles.',
+          icon: 'Zap'
+        }
+      ],
+      timeline: [
+        { time: '24 Hours', description: 'Initial visual improvement; most can read without glasses.' },
+        { time: '1 Week', description: 'Brain begins to adapt to the blended vision.' },
+        { time: '1 Month', description: 'Significant adaptation and comfort achieved.' },
+        { time: '3-6 Months', description: 'Full neuro-adaptation and optimal visual range.' }
+      ],
+      comparison: {
+        title: 'How it differs',
+        description: 'Unlike standard monovision, Presbyond creates a blended zone that allows for better intermediate vision and depth perception.',
+        table: {
+          headers: ['Feature', 'Presbyond', 'Standard Monovision', 'Reading Glasses'],
+          rows: [
+            {
+              label: 'Procedure',
+              values: ['Laser Blended Vision', 'One eye for near, one for far', 'External optical aid']
+            },
+            {
+              label: 'Recovery',
+              values: ['Fast (24-48 hours)', 'Moderate (brain adaptation)', 'Immediate']
+            },
+            {
+              label: 'Ideal Candidates',
+              values: ['Aged 40-65, presbyopia', 'Aged 40+, presbyopia', 'Anyone with presbyopia']
+            }
+          ]
+        }
+      },
+      investment: {
+        title: 'Value & Investment',
+        description: 'Investing in your independence from reading glasses is an investment in your daily convenience and joy.'
+      },
+      cost: {
+        title: 'Latest Official Cost',
+        surgeryCost: 0,
+        notStarted: true,
+      },
+      faqs: [
+        {
+          question: 'Can Presbyond eliminate the need for reading glasses?',
+          answer: 'Yes, Presbyond is specifically designed to restore a natural range of vision, significantly reducing or eliminating the need for reading glasses.'
+        },
+        {
+          question: 'Am I too old for Presbyond?',
+          answer: 'Presbyond is ideal for patients between 40 and 65. A comprehensive evaluation will determine if it is the best solution for your unique eye health.'
+        }
+      ],
+      seo: {
+        title: 'Presbyond Kathmandu | Reading Glasses Removal Nepal',
+        description: 'Presbyond Laser Blended Vision in Kathmandu by Dr. Kaushal Pokhrel. Say goodbye to reading glasses after 40.',
+        keywords: ['Presbyond Kathmandu', 'Reading Glasses Removal', 'Laser Blended Vision']
+      }
+    },
+    np: {
+      id: 'presbyond',
+      slug: 'presbyond',
+      title: 'Presbyond: लेजर ब्लेन्डेड भिजन',
+      subtitle: 'पढ्नका लागि स्वतन्त्रताको अन्तिम समाधान, विशेष गरी ४०-६५ वर्षका प्रेसबायोपिया अनुभव गरिरहेकाहरूका लागि डिजाइन गरिएको।',
+      videoUrl: 'https://www.youtube.com/embed/FMQSRh0o3po',
+      videoCaption: 'Presbyond ले ४० वर्षभन्दा माथिका व्यक्तिहरूको लागि कसरी प्राकृतिक पढ्ने दृष्टि पुनर्स्थापित गर्दछ हेर्नुहोस्।',
+      benefits: {
+        title: 'मुख्य फाइदाहरू',
+        description: 'पढ्ने चश्माको आवश्यकतालाई कम गर्छ वा हटाउँछ। नजिकदेखि टाढासम्म दृष्टिको निरन्तर दायरा प्रदान गर्दछ।'
+      },
+      idealCandidate: {
+        title: 'आदर्श उम्मेद्वार',
+        description: '४०-६५ वर्षका व्यक्तिहरू जो पढ्ने चश्माबाट थाकेका छन् र आफ्नो दृष्टिको प्राकृतिक दायरा पुनर्स्थापित गर्न चाहन्छन्।'
+      },
+      advantage: {
+        title: 'हामीलाई किन रोज्ने?',
+        description: 'सहज दृश्य संक्रमणका लागि अद्वितीय "ब्लेन्डेड जोन" सिर्जना गर्न MEL 90 लेजरको प्रयोग गरी विशेषज्ञ अनुकूलन।'
+      },
+      targetProfessions: ['वरिष्ठ पाइलट', 'सर्जन', 'फोटोग्राफर', 'सक्रिय सेवानिवृत्त'],
+      technology: [
+        {
+          name: 'MEL 90',
+          description: 'लेजर ब्लेन्डेड भिजन प्रोफाइलहरूको लागि अनुकूलित उन्नत लेजर प्रविधि।',
+          icon: 'Zap'
+        }
+      ],
+      timeline: [
+        { time: '२४ घण्टा', description: 'प्रारम्भिक दृश्य सुधार; अधिकांशले चश्मा बिना पढ्न सक्छन्।' },
+        { time: '१ हप्ता', description: 'मस्तिष्कले ब्लेन्डेड भिजनमा अनुकूलन गर्न थाल्छ।' },
+        { time: '१ महिना', description: 'महत्त्वपूर्ण अनुकूलन र आराम प्राप्त हुन्छ।' },
+        { time: '३-६ महिना', description: 'पूर्ण न्यूरो-अनुकूलन र इष्टतम दृश्य दायरा।' }
+      ],
+      comparison: {
+        title: 'यो कसरी फरक छ',
+        description: 'मानक मोनोभिजनको विपरीत, Presbyond ले एक ब्लेन्डेड जोन सिर्जना गर्दछ जसले राम्रो मध्यवर्ती दृष्टि र गहिराइ धारणाको लागि अनुमति दिन्छ।',
+        table: {
+          headers: ['विशेषता', 'Presbyond', 'मानक मोनोभिजन', 'पढ्ने चश्मा'],
+          rows: [
+            {
+              label: 'प्रक्रिया',
+              values: ['लेजर ब्लेन्डेड भिजन', 'एउटा आँखा नजिकको लागि, एउटा टाढाको लागि', 'बाहिरी अप्टिकल सहायता']
+            },
+            {
+              label: 'रिकभरी',
+              values: ['छिटो (२४-४८ घण्टा)', 'मध्यम (मस्तिष्क अनुकूलन)', 'तुरुन्तै']
+            },
+            {
+              label: 'आदर्श उम्मेद्वार',
+              values: ['४०-६५ वर्ष, प्रेसबायोपिया', '४०+ वर्ष, प्रेसबायोपिया', 'प्रेसबायोपिया भएका जो कोही']
+            }
+          ]
+        }
+      },
+      investment: {
+        title: 'मूल्य र लगानी',
+        description: 'पढ्ने चश्माबाट आफ्नो स्वतन्त्रतामा लगानी गर्नु तपाईंको दैनिक सुविधा र आनन्दमा लगानी हो।'
+      },
+      cost: {
+        title: 'पछिल्लो आधिकारिक लागत',
+        surgeryCost: 0,
+        notStarted: true,
+      },
+      faqs: [
+        {
+          question: 'के Presbyond ले पढ्ने चश्माको आवश्यकतालाई हटाउन सक्छ?',
+          answer: 'हो, Presbyond विशेष गरी दृष्टिको प्राकृतिक दायरा पुनर्स्थापित गर्न डिजाइन गरिएको हो, जसले पढ्ने चश्माको आवश्यकतालाई उल्लेखनीय रूपमा कम गर्छ वा हटाउँछ।'
+        },
+        {
+          question: 'के म Presbyond को लागि धेरै वृद्ध छु?',
+          answer: 'Presbyond ४० देखि ६५ वर्ष बीचका बिरामीहरूको लागि उपयुक्त छ। एक व्यापक मूल्याङ्कनले यो तपाईंको आँखाको स्वास्थ्यको लागि उत्तम समाधान हो कि होइन भन्ने निर्धारण गर्नेछ।'
+        }
+      ],
+      seo: {
+        title: 'Presbyond काठमाडौं | पढ्ने चश्मा हटाउने नेपाल',
+        description: 'डा. कौशल पोखरेलद्वारा काठमाडौंमा Presbyond लेजर ब्लेन्डेड भिजन। ४० वर्षपछि पढ्ने चश्मालाई बिदाइ गर्नुहोस्।',
+        keywords: ['Presbyond काठमाडौं', 'पढ्ने चश्मा हटाउने', 'लेजर ब्लेन्डेड भिजन']
+      }
+    }
+  },
+  'icl-ipcl': {
+    en: {
+      id: 'icl-ipcl',
+      slug: 'icl-ipcl',
+      title: 'ICL / IPCL: The Reversible Lens',
+      subtitle: 'A premium solution for high prescriptions and thin corneas, offering exceptional visual quality without removing corneal tissue.',
+      videoUrl: 'https://www.youtube.com/embed/A35Rxqk83VA',
+      videoCaption: 'Explore the benefits of reversible ICL/IPCL lens implantation.',
+      benefits: {
+        title: 'Key Benefits',
+        description: 'Reversible procedure, preserves natural accommodation, and provides high-definition vision even for extreme prescriptions.'
+      },
+      idealCandidate: {
+        title: 'Ideal Candidate',
+        description: 'Patients with high myopia, thin corneas, or those who are not suitable candidates for laser eye surgery.'
+      },
+      advantage: {
+        title: 'Why choose us?',
+        description: 'Expert implantation of premium ICL/IPCL lenses with meticulous attention to sizing and placement for optimal results.'
+      },
+      technology: [
+        {
+          name: 'ICL / IPCL Lenses',
+          description: 'Biocompatible Collamer lenses designed to work in harmony with your eye\'s natural chemistry.',
+          icon: 'Eye'
+        }
+      ],
+      timeline: [
+        { time: '2 Hours', description: 'Post-operative observation to ensure proper lens placement.' },
+        { time: '24 Hours', description: 'Clear vision achieved; return to work and light activities.' },
+        { time: '1 Week', description: 'Safe to resume gym and more active lifestyle.' },
+        { time: '1 Month', description: 'Complete freedom and visual stability.' }
+      ],
+      comparison: {
+        title: 'How it differs',
+        description: 'Unlike laser surgery which reshapes the cornea, ICL/IPCL adds a lens inside the eye, making it a reversible option.',
+        table: {
+          headers: ['Feature', 'ICL / IPCL', 'LASIK', 'PRK'],
+          rows: [
+            {
+              label: 'Procedure',
+              values: ['Implantable lens (reversible)', 'Corneal reshaping (permanent)', 'Surface reshaping (permanent)']
+            },
+            {
+              label: 'Recovery',
+              values: ['Fast (24 hours)', 'Fast (24-48 hours)', 'Moderate (3-5 days)']
+            },
+            {
+              label: 'Ideal Candidates',
+              values: ['High myopia, thin corneas', 'Moderate myopia', 'Thin corneas']
+            }
+          ]
+        }
+      },
+      investment: {
+        title: 'Value & Investment',
+        description: 'Premium lens technology offers a lifetime of high-definition vision. Contact us for detailed investment information.'
+      },
+      clinicalDetails: [
+        {
+          title: 'Vault Management',
+          description: 'Precise measurement of the "vault" (space between ICL and natural lens) ensures long-term safety and prevents cataract formation.'
+        },
+        {
+          title: 'OVD Removal Protocol',
+          description: 'Meticulous removal of Ophthalmic Viscosurgical Devices (OVD) post-implantation prevents temporary pressure spikes and ensures immediate clarity.'
+        },
+        {
+          title: 'OCT-Based Sizing',
+          description: 'Utilizing high-resolution Anterior Segment OCT for precise measurement of the posterior chamber, ensuring a perfect fit for the ICL.'
+        }
+      ],
+      targetProfessions: ['High Prescription Patients', 'Pilots', 'Surgeons', 'Trekkers'],
+      cost: {
+        title: 'Latest Official Cost',
+        surgeryCost: 116000,
+        isPerEye: true,
+      },
+      faqs: [
+        {
+          question: 'Is ICL surgery reversible?',
+          answer: 'One of the greatest benefits of ICL is that it is reversible. The lens can be removed or replaced if your vision changes significantly in the future.'
+        },
+        {
+          question: 'Can I feel the ICL lens in my eye?',
+          answer: 'No, the ICL lens is placed behind the iris and in front of your natural lens, making it invisible and undetectable to you and others.'
+        },
+        {
+          question: 'What are ICL / IPCL Lenses?',
+          answer: 'These are premium, biocompatible lenses implanted inside the eye to correct high prescriptions without removing any corneal tissue.'
+        }
+      ],
+      seo: {
+        title: 'ICL Surgery Kathmandu | Implantable Collamer Lens Nepal',
+        description: 'ICL and IPCL lens surgery in Kathmandu with Dr. Kaushal Pokhrel. Best for high prescriptions and thin corneas.',
+        keywords: ['ICL Surgery Kathmandu', 'Implantable Lens Nepal', 'IPCL Surgery']
+      }
+    },
+    np: {
+      id: 'icl-ipcl',
+      slug: 'icl-ipcl',
+      title: 'ICL / IPCL: उल्ट्याउन सकिने लेन्स',
+      subtitle: 'उच्च प्रिस्क्रिप्शन र पातलो कोर्नियाका लागि प्रिमियम समाधान, कोर्नियल तन्तु नहटाई असाधारण दृश्य गुणस्तर प्रदान गर्दै।',
+      videoUrl: 'https://www.youtube.com/embed/A35Rxqk83VA',
+      videoCaption: 'उल्ट्याउन सकिने ICL/IPCL लेन्स प्रत्यारोपणका फाइदाहरू अन्वेषण गर्नुहोस्।',
+      benefits: {
+        title: 'मुख्य फाइदाहरू',
+        description: 'उल्ट्याउन सकिने प्रक्रिया, प्राकृतिक आवास सुरक्षित गर्दछ, र अत्यधिक प्रिस्क्रिप्शनका लागि पनि उच्च-परिभाषा दृष्टि प्रदान गर्दछ।'
+      },
+      idealCandidate: {
+        title: 'आदर्श उम्मेद्वार',
+        description: 'उच्च मायोपिया, पातलो कोर्निया भएका बिरामीहरू, वा लेजर आँखाको शल्यक्रियाका लागि उपयुक्त नभएकाहरू।'
+      },
+      advantage: {
+        title: 'हामीलाई किन रोज्ने?',
+        description: 'इष्टतम परिणामहरूको लागि साइजिंग र प्लेसमेन्टमा सावधानीपूर्वक ध्यान दिएर प्रिमियम ICL/IPCL लेन्सहरूको विशेषज्ञ प्रत्यारोपण।'
+      },
+      technology: [
+        {
+          name: 'ICL / IPCL लेन्सहरू',
+          description: 'तपाईंको आँखाको प्राकृतिक रसायनसँग सामंजस्यपूर्ण रूपमा काम गर्न डिजाइन गरिएको बायोकम्प्याटिबल कोलामर लेन्सहरू।',
+          icon: 'Eye'
+        }
+      ],
+      timeline: [
+        { time: '२ घण्टा', description: 'उचित लेन्स प्लेसमेन्ट सुनिश्चित गर्न शल्यक्रिया पछिको अवलोकन।' },
+        { time: '२४ घण्टा', description: 'स्पष्ट दृष्टि प्राप्त; काम र हल्का गतिविधिहरूमा फर्कनुहोस्।' },
+        { time: '१ हप्ता', description: 'जिम र अधिक सक्रिय जीवनशैली पुनः सुरु गर्न सुरक्षित।' },
+        { time: '१ महिना', description: 'पूर्ण स्वतन्त्रता र दृश्य स्थिरता।' }
+      ],
+      comparison: {
+        title: 'यो कसरी फरक छ',
+        description: 'कोर्नियालाई पुन: आकार दिने लेजर शल्यक्रियाको विपरीत, ICL/IPCL ले आँखा भित्र लेन्स थप्छ, जसले यसलाई उल्ट्याउन सकिने विकल्प बनाउँछ।',
+        table: {
+          headers: ['विशेषता', 'ICL / IPCL', 'LASIK', 'PRK'],
+          rows: [
+            {
+              label: 'प्रक्रिया',
+              values: ['इम्प्लान्टेबल लेन्स (उल्ट्याउन सकिने)', 'कोर्नियल रिसेपिङ (स्थायी)', 'सतह रिसेपिङ (स्थायी)']
+            },
+            {
+              label: 'रिकभरी',
+              values: ['छिटो (२४ घण्टा)', 'छिटो (२४-४८ घण्टा)', 'मध्यम (३-५ दिन)']
+            },
+            {
+              label: 'आदर्श उम्मेद्वार',
+              values: ['उच्च मायोपिया, पातलो कोर्निया', 'मध्यम मायोपिया', 'पातलो कोर्निया']
+            }
+          ]
+        }
+      },
+      investment: {
+        title: 'मूल्य र लगानी',
+        description: 'प्रिमियम लेन्स प्रविधिले उच्च-परिभाषा दृष्टिको जीवनभरको अनुभव प्रदान गर्दछ। विस्तृत लगानी जानकारीको लागि हामीलाई सम्पर्क गर्नुहोस्।'
+      },
+      clinicalDetails: [
+        {
+          title: 'भोल्ट व्यवस्थापन (Vault Management)',
+          description: 'ICL र प्राकृतिक लेन्स बीचको खाली ठाउँ (vault) को सटीक मापनले दीर्घकालीन सुरक्षा सुनिश्चित गर्दछ र मोतियाबिन्दु हुनबाट बचाउँछ।'
+        },
+        {
+          title: 'OVD हटाउने प्रोटोकल',
+          description: 'प्रत्यारोपण पछि Ophthalmic Viscosurgical Devices (OVD) लाई सावधानीपूर्वक हटाउनाले अस्थायी दबाब बढ्नबाट रोक्छ र तुरुन्तै स्पष्टता सुनिश्चित गर्दछ।'
+        },
+        {
+          title: 'OCT-आधारित साइजिंग',
+          description: 'ICL को लागि उपयुक्त फिट सुनिश्चित गर्न पोस्टरियर चेम्बरको सटीक मापनको लागि उच्च-रिजोल्युसन एन्टेरियर सेगमेन्ट OCT को प्रयोग।'
+        }
+      ],
+      targetProfessions: ['उच्च प्रिस्क्रिप्शन बिरामीहरू', 'पाइलट', 'सर्जन', 'ट्रेकर'],
+      cost: {
+        title: 'पछिल्लो आधिकारिक लागत',
+        surgeryCost: 116000,
+        isPerEye: true,
+      },
+      faqs: [
+        {
+          question: 'के ICL शल्यक्रिया उल्ट्याउन सकिन्छ?',
+          answer: 'ICL को सबैभन्दा ठूलो फाइदा मध्ये एक यो हो कि यो उल्ट्याउन सकिन्छ। यदि भविष्यमा तपाईंको दृष्टिमा उल्लेखनीय परिवर्तन आयो भने लेन्स हटाउन वा प्रतिस्थापन गर्न सकिन्छ।'
+        },
+        {
+          question: 'के म मेरो आँखामा ICL लेन्स महसुस गर्न सक्छु?',
+          answer: 'होइन, ICL लेन्स आइरिसको पछाडि र तपाईंको प्राकृतिक लेन्सको अगाडि राखिन्छ, जसले गर्दा यो तपाईं र अरूका लागि अदृश्य र थाहा नपाउने हुन्छ।'
+        },
+        {
+          question: 'ICL / IPCL लेन्सहरू के हुन्?',
+          answer: 'यी प्रिमियम, बायोकम्प्याटिबल लेन्सहरू हुन् जुन कुनै पनि कोर्नियल तन्तु नहटाई उच्च प्रिस्क्रिप्शनहरू सुधार गर्न आँखा भित्र प्रत्यारोपण गरिन्छ।'
+        }
+      ],
+      seo: {
+        title: 'ICL शल्यक्रिया काठमाडौं | इम्प्लान्टेबल कोलामर लेन्स नेपाल',
+        description: 'डा. कौशल पोखरेलसँग काठमाडौंमा ICL र IPCL लेन्स शल्यक्रिया। उच्च प्रिस्क्रिप्शन र पातलो कोर्नियाको लागि उत्तम।',
+        keywords: ['ICL शल्यक्रिया काठमाडौं', 'इम्प्लान्टेबल लेन्स नेपाल', 'IPCL शल्यक्रिया']
+      }
+    }
+  },
+  'cle-cataract': {
+    en: {
+      id: 'cle-cataract',
+      slug: 'cle-cataract',
+      title: 'Advanced Cataract Surgery / CLE',
+      subtitle: 'Permanent lens replacement to restore clarity and eliminate the need for cataract surgery in the future.',
+      videoUrl: 'https://www.youtube.com/embed/YXOWjOhLrQg',
+      videoCaption: 'Understand how CLE and Cataract surgery provide lifetime visual clarity.',
+      benefits: {
+        title: 'Key Benefits',
+        description: 'Permanent solution, eliminates cataracts, and premium IOL options can provide freedom from glasses for all distances.'
+      },
+      idealCandidate: {
+        title: 'Ideal Candidate',
+        description: 'Patients with cataracts or those over 50 seeking a permanent alternative to reading glasses and distance correction.'
+      },
+      advantage: {
+        title: 'Why choose us?',
+        description: 'Meticulous selection of premium IOLs (Trifocal/EDOF) to match your specific visual needs and lifestyle.'
+      },
+      technology: [
+        {
+          name: 'Premium IOLs',
+          description: 'Advanced intraocular lenses including Trifocal and EDOF options for a full range of vision.',
+          icon: 'Eye'
+        }
+      ],
+      timeline: [
+        { time: '24 Hours', description: 'Significant improvement in clarity and color perception.' },
+        { time: '1 Week', description: 'Most activities can be resumed; eyes begin to stabilize.' },
+        { time: '1 Month', description: 'Final visual outcome achieved; new lenses fully settled.' },
+        { time: 'Lifetime', description: 'Enjoy permanent clarity without the risk of future cataracts.' }
+      ],
+      comparison: {
+        title: 'How it differs',
+        description: 'CLE is essentially cataract surgery performed before a cataract develops, providing permanent vision correction.',
+        table: {
+          headers: ['Feature', 'CLE / Cataract', 'Laser Eye Surgery', 'Reading Glasses'],
+          rows: [
+            {
+              label: 'Procedure',
+              values: ['Lens replacement (permanent)', 'Corneal reshaping', 'External aid']
+            },
+            {
+              label: 'Recovery',
+              values: ['Fast (24-48 hours)', 'Fast (24-48 hours)', 'Immediate']
+            },
+            {
+              label: 'Ideal Candidates',
+              values: ['Cataracts, aged 50+', 'Aged 20-45', 'Aged 40+']
+            }
+          ]
+        }
+      },
+      investment: {
+        title: 'Value & Investment',
+        description: 'A lifetime of clear vision is an invaluable asset. We offer the latest in lens technology and surgical precision.'
+      },
+      clinicalDetails: [
+        {
+          title: 'Micro-Incision Surgery',
+          description: 'Using sub-2mm incisions for faster healing, less astigmatism, and minimal post-operative discomfort.'
+        },
+        {
+          title: 'Premium IOL Selection',
+          description: 'Customized selection of Trifocal or EDOF lenses to provide a full range of vision, reducing or eliminating the need for glasses.'
+        }
+      ],
+      targetProfessions: ['Senior Professionals', 'Active Seniors', 'Trekkers'],
+      cost: {
+        title: 'Latest Official Cost',
+        surgeryCost: 18000,
+        isStartingAt: true,
+        isPerEye: true,
+      },
+      faqs: [
+        {
+          question: 'Is cataract surgery a permanent solution?',
+          answer: 'Yes, once the natural cloudy lens is replaced with an artificial intraocular lens (IOL), it is permanent and cannot develop another cataract.'
+        },
+        {
+          question: 'What are premium IOLs (Trifocal/EDOF)?',
+          answer: 'Premium IOLs are advanced lenses that can provide a full range of vision (near, intermediate, and far), often eliminating the need for glasses after surgery.'
+        }
+      ],
+      seo: {
+        title: 'Cataract Surgery Kathmandu | Premium IOL Nepal',
+        description: 'Advanced cataract and CLE surgery in Kathmandu by Dr. Kaushal Pokhrel. Premium Trifocal and EDOF IOL options.',
+        keywords: ['Cataract Surgery Kathmandu', 'Premium IOL Nepal', 'CLE Surgery']
+      }
+    },
+    np: {
+      id: 'cle-cataract',
+      slug: 'cle-cataract',
+      title: 'उन्नत मोतियाबिन्दु शल्यक्रिया / CLE',
+      subtitle: 'स्पष्टता पुनर्स्थापित गर्न र भविष्यमा मोतियाबिन्दु शल्यक्रियाको आवश्यकतालाई हटाउन स्थायी लेन्स प्रतिस्थापन।',
+      videoUrl: 'https://www.youtube.com/embed/YXOWjOhLrQg',
+      videoCaption: 'CLE र मोतियाबिन्दु शल्यक्रियाले कसरी जीवनभर दृश्य स्पष्टता प्रदान गर्दछ बुझ्नुहोस्।',
+      benefits: {
+        title: 'मुख्य फाइदाहरू',
+        description: 'स्थायी समाधान, मोतियाबिन्दु हटाउँछ, र प्रिमियम IOL विकल्पहरूले सबै दूरीका लागि चश्माबाट स्वतन्त्रता प्रदान गर्न सक्छन्।'
+      },
+      idealCandidate: {
+        title: 'आदर्श उम्मेद्वार',
+        description: 'मोतियाबिन्दु भएका बिरामीहरू वा ५० वर्षभन्दा माथिका व्यक्तिहरू जो पढ्ने चश्मा र दूरी सुधारको स्थायी विकल्प खोजिरहेका छन्।'
+      },
+      advantage: {
+        title: 'हामीलाई किन रोज्ने?',
+        description: 'तपाईंको विशेष दृश्य आवश्यकता र जीवनशैलीसँग मेल खाने प्रिमियम IOL हरू (Trifocal/EDOF) को सावधानीपूर्वक चयन।'
+      },
+      technology: [
+        {
+          name: 'प्रिमियम IOL हरू',
+          description: 'दृष्टिको पूर्ण दायराका लागि Trifocal र EDOF विकल्पहरू सहित उन्नत इन्ट्राओकुलर लेन्सहरू।',
+          icon: 'Eye'
+        }
+      ],
+      timeline: [
+        { time: '२४ घण्टा', description: 'स्पष्टता र रंग धारणामा महत्त्वपूर्ण सुधार।' },
+        { time: '१ हप्ता', description: 'अधिकांश गतिविधिहरू पुनः सुरु गर्न सकिन्छ; आँखा स्थिर हुन थाल्छ।' },
+        { time: '१ महिना', description: 'अन्तिम दृश्य परिणाम प्राप्त; नयाँ लेन्सहरू पूर्ण रूपमा सेट हुन्छन्।' },
+        { time: 'जीवनभर', description: 'भविष्यमा मोतियाबिन्दुको जोखिम बिना स्थायी स्पष्टताको आनन्द लिनुहोस्।' }
+      ],
+      comparison: {
+        title: 'यो कसरी फरक छ',
+        description: 'CLE मूलतः मोतियाबिन्दु विकसित हुनु अघि गरिने मोतियाबिन्दु शल्यक्रिया हो, जसले स्थायी दृष्टि सुधार प्रदान गर्दछ।',
+        table: {
+          headers: ['विशेषता', 'CLE / मोतियाबिन्दु', 'लेजर आँखाको शल्यक्रिया', 'पढ्ने चश्मा'],
+          rows: [
+            {
+              label: 'प्रक्रिया',
+              values: ['लेन्स प्रतिस्थापन (स्थायी)', 'कोर्नियल रिसेपिङ', 'बाहिरी सहायता']
+            },
+            {
+              label: 'रिकभरी',
+              values: ['छिटो (२४-४८ घण्टा)', 'छिटो (२४-४८ घण्टा)', 'तुरुन्तै']
+            },
+            {
+              label: 'आदर्श उम्मेद्वार',
+              values: ['मोतियाबिन्दु, ५०+ वर्ष', '२०-४५ वर्ष', '४०+ वर्ष']
+            }
+          ]
+        }
+      },
+      investment: {
+        title: 'मूल्य र लगानी',
+        description: 'स्पष्ट दृष्टिको जीवनभरको अनुभव एक अमूल्य सम्पत्ति हो। हामी लेन्स प्रविधि र शल्यक्रिया सटीकतामा पछिल्लो सेवा प्रदान गर्दछौं।'
+      },
+      clinicalDetails: [
+        {
+          title: 'माइक्रो-इन्सिजन शल्यक्रिया',
+          description: 'छिटो निको हुन, कम एस्टिग्माटिज्म, र शल्यक्रिया पछि न्यूनतम असुविधाको लागि २ मिमी भन्दा कम चीराको प्रयोग।'
+        },
+        {
+          title: 'प्रिमियम IOL चयन',
+          description: 'दृष्टिको पूर्ण दायरा प्रदान गर्न Trifocal वा EDOF लेन्सहरूको अनुकूलित चयन, जसले चश्माको आवश्यकतालाई कम वा हटाउँछ।'
+        }
+      ],
+      targetProfessions: ['वरिष्ठ पेशेवर', 'सक्रिय वृद्धहरू', 'ट्रेकर'],
+      cost: {
+        title: 'पछिल्लो आधिकारिक लागत',
+        surgeryCost: 18000,
+        isStartingAt: true,
+        isPerEye: true,
+      },
+      faqs: [
+        {
+          question: 'के मोतियाबिन्दु शल्यक्रिया स्थायी समाधान हो?',
+          answer: 'हो, एक पटक प्राकृतिक धमिलो लेन्सलाई कृत्रिम इन्ट्राओकुलर लेन्स (IOL) ले प्रतिस्थापन गरेपछि, यो स्थायी हुन्छ र अर्को मोतियाबिन्दु विकसित हुन सक्दैन।'
+        },
+        {
+          question: 'प्रिमियम IOL हरू (Trifocal/EDOF) के हुन्?',
+          answer: 'प्रिमियम IOL हरू उन्नत लेन्सहरू हुन् जसले दृष्टिको पूर्ण दायरा (नजिक, मध्यवर्ती, र टाढा) प्रदान गर्न सक्छन्, जसले अक्सर शल्यक्रिया पछि चश्माको आवश्यकतालाई हटाउँछ।'
+        }
+      ],
+      seo: {
+        title: 'मोतियाबिन्दु शल्यक्रिया काठमाडौं | प्रिमियम IOL नेपाल',
+        description: 'डा. कौशल पोखरेलद्वारा काठमाडौंमा उन्नत मोतियाबिन्दु र CLE शल्यक्रिया। प्रिमियम Trifocal र EDOF IOL विकल्पहरू।',
+        keywords: ['मोतियाबिन्दु शल्यक्रिया काठमाडौं', 'प्रिमियम IOL नेपाल', 'CLE शल्यक्रिया']
+      }
+    }
+  }
+};
