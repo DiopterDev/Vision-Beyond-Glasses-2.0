@@ -102,7 +102,7 @@ const TargetProfessions: React.FC = () => {
     return (
       <div 
         className={cn(
-          "bg-background border border-primary/20 rounded-2xl p-8 md:p-12 shadow-2xl relative group cursor-pointer",
+          "bg-background border border-primary/10 rounded-2xl p-8 md:p-12 shadow-2xl relative group cursor-pointer",
           isTabletOrMobile ? "mt-4" : "mt-10"
         )}
         onClick={() => setActiveId(null)}
@@ -214,7 +214,7 @@ const TargetProfessions: React.FC = () => {
                       "w-full h-full p-5 md:p-8 rounded-2xl flex flex-col items-center text-center transition-all duration-150 border group relative overflow-hidden",
                       isActive 
                         ? "bg-primary text-white border-primary shadow-2xl ring-4 ring-primary/10" 
-                        : "bg-background text-text-heading border-gray-100 dark:border-gray-800 hover:shadow-xl"
+                        : "bg-background text-text-heading border-primary/10 hover:border-primary/20 hover:shadow-xl"
                     )}
                   >
                     {/* Subtle Background Image on Hover */}

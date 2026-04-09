@@ -37,7 +37,7 @@ const SurgeryCard: React.FC<SurgeryCardProps> = ({ titleKey, descKey, detailsKey
         <div className="absolute inset-0 backface-hidden" style={{ transform: 'translateZ(0)' }}>
           <button 
             type="button"
-            className="h-full w-full p-6 rounded-xl border border-gray-100 dark:border-gray-800 bg-background shadow-lg group-hover:shadow-[0_30px_60px_rgba(0,0,0,0.2)] dark:group-hover:shadow-[0_30px_60px_rgba(0,0,0,0.5)] flex flex-col items-center text-center justify-center space-y-3 transition-all duration-500 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary overflow-hidden"
+            className="h-full w-full p-6 rounded-xl border border-primary/10 bg-background shadow-lg group-hover:shadow-[0_30px_60px_rgba(0,0,0,0.2)] dark:group-hover:shadow-[0_30px_60px_rgba(0,0,0,0.5)] flex flex-col items-center text-center justify-center space-y-3 transition-all duration-500 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary overflow-hidden"
             onClick={() => setIsFlipped(true)}
             aria-label={`${t(titleKey)}. ${t(descKey)}. Click to see more details.`}
           >
@@ -94,7 +94,7 @@ const SurgeryCard: React.FC<SurgeryCardProps> = ({ titleKey, descKey, detailsKey
           <button 
             type="button"
             onClick={() => setIsFlipped(false)}
-            className="h-full w-full p-8 rounded-xl border border-primary/30 bg-primary/5 dark:bg-primary/10 shadow-inner group-hover:shadow-[0_30px_60px_rgba(0,0,0,0.2)] dark:group-hover:shadow-[0_30px_60px_rgba(0,0,0,0.5)] flex flex-col items-center text-center justify-center space-y-4 transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="h-full w-full p-8 rounded-xl border border-primary/20 bg-primary/5 dark:bg-primary/10 shadow-inner group-hover:shadow-[0_30px_60px_rgba(0,0,0,0.2)] dark:group-hover:shadow-[0_30px_60px_rgba(0,0,0,0.5)] flex flex-col items-center text-center justify-center space-y-4 transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             aria-label={`Back to ${t(titleKey)} summary.`}
           >
             <h3 className="text-lg font-bold text-primary">

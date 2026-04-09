@@ -74,7 +74,7 @@ const CostOverview: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ delay: i * 0.1 }}
-                  className="group p-8 rounded-3xl bg-background border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
+                  className="group p-8 rounded-3xl bg-background border border-primary/10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
                 >
                   <div className="flex items-center justify-between mb-6">
                     <h3 className="text-xl font-bold text-text-heading group-hover:text-primary transition-colors">

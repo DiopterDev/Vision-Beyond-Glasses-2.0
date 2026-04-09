@@ -60,7 +60,7 @@ const CredentialsMarquee: React.FC = () => {
               key={index}
               whileHover={{ scale: 1.02, y: -2 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="flex items-center space-x-3 px-4 py-2 rounded-full bg-surface border border-text-heading/10 backdrop-blur-sm shadow-md hover:shadow-lg transition-all duration-300 group cursor-default"
+              className="flex items-center space-x-3 px-4 py-2 rounded-full bg-surface border border-primary/10 backdrop-blur-sm shadow-md hover:shadow-lg transition-all duration-300 group cursor-default"
             >
               <span className="text-primary group-hover:scale-110 transition-transform duration-300">
                 {cred.icon}
