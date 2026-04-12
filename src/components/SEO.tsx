@@ -16,7 +16,7 @@ const SEO: React.FC = () => {
     "image": "https://i.ibb.co/SXKFTjB2/dr-pokhrel.webp",
     "description": "Expert Refractive and Cataract Surgeon in Kathmandu, Nepal. Specializing in SMILE PRO, LASIK, and ICL for demanding professions including British Gurkha, Singaporean Police, Pilots, Surgeons, and Athletes.",
     "url": baseUrl,
-    "telephone": "+977-1-4493684", // Example Tilganga number, replace if needed
+    "telephone": "+977-1-4584574", // Example Tilganga number, replace if needed
     "medicalSpecialty": ["Ophthalmology", "Refractive Surgery", "Cataract Surgery"],
     "address": {
       "@type": "PostalAddress",
@@ -80,7 +80,7 @@ const SEO: React.FC = () => {
       {/* Meta Tags */}
       <title>{language === 'en' 
         ? "LASIK Eye Surgery in Nepal | SMILE Pro & Vision Correction – Dr. Kaushal Pokhrel" 
-        : "नेपालमा लेजर (LASIK) आँखा शल्यक्रिया | SMILE Pro र दृष्टि सुधार – डा. कौशल पोखरेल"}
+        : "नेपालमा लेजर (लेसिक) आँखा शल्यक्रिया | स्माइल प्रो र दृष्टि सुधार – डा. कौशल पोखरेल"}
       </title>
       <meta name="description" content={language === 'en' 
         ? "Search for LASIK eye surgery in Nepal and learn about modern options like SMILE Pro, PRK, and lens-based vision correction, guided by careful clinical evaluation." 
