@@ -22,9 +22,8 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-bold text-primary">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2 text-sm text-text-body dark:text-dark-text-body">
               <li><Link to="/#home" className="hover:text-primary transition-colors">{t('nav.home')}</Link></li>
-              <li><Link to="/#surgeries" className="hover:text-primary transition-colors">{t('nav.surgeries')}</Link></li>
-              <li><Link to="/#eligibility" className="hover:text-primary transition-colors">{t('nav.eligibility')}</Link></li>
               <li><Link to="/#costs" className="hover:text-primary transition-colors">{t('nav.costs')}</Link></li>
+              <li><Link to="/#eligibility" className="hover:text-primary transition-colors">{t('nav.eligibility')}</Link></li>
               <li><Link to="/resources" className="hover:text-primary transition-colors">{t('resources.title')}</Link></li>
               <li><Link to="/about" className="hover:text-primary transition-colors">{t('nav.about')}</Link></li>
               <li><Link to="/#contact" className="hover:text-primary transition-colors">{t('nav.contact')}</Link></li>

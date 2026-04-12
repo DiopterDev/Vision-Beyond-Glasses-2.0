@@ -39,10 +39,10 @@ const Contact: React.FC = () => {
     <section id="contact" className="py-24 bg-surface relative overflow-hidden" aria-labelledby="contact-title">
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 id="contact-title" className="text-3xl md:text-4xl font-bold text-text-heading mb-4">
+          <h2 id="contact-title" className="text-3xl md:text-4xl font-bold text-text-heading mb-4 tracking-tight">
             {t('contact.title')}
           </h2>
-          <p className="text-text-body max-w-2xl mx-auto">
+          <p className="text-lg text-text-body max-w-2xl mx-auto">
             {t('contact.subtitle')}
           </p>
         </div>

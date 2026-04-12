@@ -30,7 +30,7 @@ const translations: Translations = {
     np: 'लागत',
   },
   'nav.reviews': {
-    en: 'Testimonials',
+    en: 'Reviews',
     np: 'प्रतिक्रियाहरू',
   },
   'nav.faq': {
@@ -41,9 +41,9 @@ const translations: Translations = {
     en: 'Contact',
     np: 'सम्पर्क',
   },
-  'nav.targetProfessions': {
-    en: 'Target Professions',
-    np: 'लक्षित पेशाहरू',
+  'nav.visionAndWork': {
+    en: 'Vision & Work',
+    np: 'दृष्टि र कार्य',
   },
   'nav.eligibilityChecker': {
     en: 'Eligibility Checker',
@@ -99,16 +99,24 @@ const translations: Translations = {
   'footer.social.youtube': { en: 'Visit our YouTube channel', np: 'हाम्रो यूट्यूब च्यानल हेर्नुहोस्' },
   'footer.social.tiktok': { en: 'Visit our TikTok profile', np: 'हाम्रो टिकटक प्रोफाइल हेर्नुहोस्' },
   'hero.credentials': {
-    en: 'MBBS · MD Ophthalmology · Fellowship in Refractive Surgery',
-    np: 'एम.बि.बि.एस. · आँखारोगमा स्नातकोत्तर · लेजर शल्यक्रियामा फेलोसिप',
+    en: 'Dr. Kaushal Pokhrel, MBBS, MD | Ophthalmology · Fellowship in Refractive Surgery',
+    np: 'डा. कौशल पोखरेल, MBBS, MD | आँखारोग विशेषज्ञ · लेजर शल्यक्रियामा फेलोसिप',
   },
   'hero.title': {
-    en: 'LASER Eye Surgeon in Nepal',
-    np: 'नेपालका लेजर आँखा शल्यचिकित्सक',
+    en: 'LASIK Eye Surgery Specialist in Nepal',
+    np: 'नेपालमा लेजर (LASIK) आँखा शल्यक्रिया विशेषज्ञ',
+  },
+  'hero.titleSecondary': {
+    en: '— and modern alternatives like SMILE Pro, PRK, and lens-based vision correction',
+    np: '— र SMILE Pro, PRK, तथा लेन्समा आधारित आधुनिक दृष्टि सुधार विकल्पहरू',
   },
   'hero.subtitle': {
-    en: 'The permanent solution to myopia, hypermetropia, astigmatism & presbyopia.',
-    np: 'नजिक वा टाढाको दृष्टि दोषको स्थायी लेजर उपचार।',
+    en: 'Helping patients reduce dependence on glasses and contact lenses—by choosing the most suitable procedure for their eyes, not just LASIK.',
+    np: 'बिरामीहरूलाई चश्मा र कन्ट्याक्ट लेन्समाथिको निर्भरता कम गर्न मद्दत गर्दै—केवल LASIK मात्र नभई, तपाईंको आँखाका लागि सबैभन्दा उपयुक्त प्रक्रिया छनोट गरेर।',
+  },
+  'hero.disclaimer': {
+    en: 'Consultation and surgery are advised only after a complete eye examination.',
+    np: 'पूर्ण आँखा परीक्षण पछि मात्र परामर्श र शल्यक्रियाको सल्लाह दिइन्छ।',
   },
   'hero.quote.text': {
     en: 'Refractive surgery is not just about removing glasses or contact lenses — it is about restoring confidence, independence, and quality of life.',
@@ -131,20 +139,20 @@ const translations: Translations = {
     np: 'स्वास्थ्य र सुधारको प्रतीक',
   },
   'cta.eligibility': {
-    en: 'Check Surgical Eligibility',
+    en: 'Check Eligibility',
     np: 'योग्यता जाँच गर्नुहोस्',
   },
   'cta.consultation': {
-    en: 'Book Consultation',
-    np: 'परामर्श समय लिनुहोस्',
+    en: 'Book a Consultation',
+    np: 'परामर्श बुक गर्नुहोस्',
   },
   'surgeries.title': {
-    en: 'Surgeries & Services',
-    np: 'शल्यक्रिया र सेवाहरू',
+    en: 'Vision Correction Procedures We Offer',
+    np: 'हामीले प्रदान गर्ने दृष्टि सुधार प्रक्रियाहरू',
   },
   'surgeries.subtitle': {
-    en: 'Advanced clinical solutions for every vision need.',
-    np: 'हरेक दृष्टि समस्याका लागि आधुनिक क्लिनिकल समाधानहरू।',
+    en: 'LASIK, SMILE Pro, ICL, and other clinically proven options as no single procedure is best for everyone',
+    np: 'LASIK, SMILE Pro, ICL, र अन्य क्लिनिकली प्रमाणित विकल्पहरू किनभने कुनै एक प्रक्रिया सबैका लागि उत्कृष्ट हुँदैन',
   },
   'surgeries.flipHint': {
     en: 'Click to see clinical details',
@@ -167,12 +175,12 @@ const translations: Translations = {
     np: 'थोरै देखाउनुहोस्',
   },
   'costs.title': {
-    en: 'LATEST Official 2026 Pricing',
-    np: '२०२६ को आधिकारिक मूल्य सूची',
+    en: 'Laser Eye Surgery Costs (2026)',
+    np: 'लेजर आँखा शल्यक्रिया लागत (२०२६)',
   },
   'costs.subtitle': {
-    en: 'Invest in your vision with confidence. Clear and upfront cost for all our procedures at Tilganga.',
-    np: 'आत्मविश्वासका साथ आफ्नो दृष्टिमा लगानी गर्नुहोस्। तिलगङ्गाको लेजर अपरेसनहरुको स्पष्ट मूल्य यस प्रकार छ। ',
+    en: 'Clear, transparent pricing for procedures at Tilganga Institute of Ophthalmology',
+    np: 'तिलगंगा आँखा प्रतिष्ठानमा गरिने प्रक्रियाहरूको लागि स्पष्ट र पारदर्शी मूल्य निर्धारण',
   },
   'costs.from': {
     en: 'From',
@@ -296,12 +304,12 @@ const translations: Translations = {
   },
 
   'elig.title': {
-    en: 'Surgical Eligibility Checker',
-    np: 'शल्यक्रिया योग्यता जाँच',
+    en: 'Check If You’re Eligible for Laser Eye Surgery',
+    np: 'के तपाईं लेजर आँखा शल्यक्रियाका लागि योग्य हुनुहुन्छ? जाँच गर्नुहोस्',
   },
   'elig.subtitle': {
-    en: 'Find out which vision correction procedure is best for you in less than a minute.',
-    np: 'तपाईंको लागि कुन दृष्टि सुधार प्रक्रिया उत्तम छ, एक मिनेट भन्दा कम समयमा पत्ता लगाउनुहोस्।',
+    en: 'A quick self-assessment to understand your suitability',
+    np: 'तपाईंको उपयुक्तता बुझ्नको लागि एक द्रुत आत्म-मूल्याङ्कन',
   },
   'elig.consent.title': {
     en: 'Answer simple questions to find if you are fit for surgery.',
@@ -499,8 +507,8 @@ const translations: Translations = {
   'elig.bookConsultation': { en: 'Book Consultation', np: 'परामर्श बुक गर्नुहोस्' },
 
   // --- Contact & Reviews ---
-  'contact.title': { en: 'Contact Us', np: 'हामीलाई सम्पर्क गर्नुहोस्' },
-  'contact.subtitle': { en: 'Get in touch for a professional consultation.', np: 'व्यावसायिक परामर्शका लागि सम्पर्क गर्नुहोस्।' },
+  'contact.title': { en: 'Book a Consultation or Contact Us', np: 'परामर्श बुक गर्नुहोस् वा हामीलाई सम्पर्क गर्नुहोस्' },
+  'contact.subtitle': { en: 'Talk directly with our clinical team about your eyes', np: 'तपाईंको आँखाको बारेमा हाम्रो क्लिनिकल टोलीसँग सीधा कुरा गर्नुहोस्' },
   'contact.location.title': { en: 'Location', np: 'स्थान' },
   'contact.location.desc': { en: 'Tilganga Institute of Ophthalmology, Refractive Surgery Unit (RSU).', np: 'तिलगंगा आँखा प्रतिष्ठान, रिफ्र्याक्टिभ सर्जरी युनिट (RSU)।' },
   'contact.email.title': { en: 'Email', np: 'इमेल' },
@@ -594,14 +602,14 @@ const translations: Translations = {
   'about.personal.touch': { en: 'The Power of Giving', np: 'दानको शक्ति' },
   'about.personal.desc': { en: 'When you step into my clinic, you are not just a patient; you are a person with a story. I look forward to hearing yours.', np: 'जब तपाईं मेरो क्लिनिकमा आउनुहुन्छ, तपाईं केवल एक बिरामी मात्र हुनुहुन्न; तपाईं एक कथा भएको व्यक्ति हुनुहुन्छ। म तपाईंको कथा सुन्न उत्सुक छु।' },
 
-  'reviews.title': { en: 'What Our Patients Say', np: 'हाम्रा बिरामीहरूको अनुभव' },
-  'reviews.source': { en: 'Reviews from real patients.', np: 'वास्तविक बिरामीहरूका अनुभवहरू।' },
+  'reviews.title': { en: 'Patient Experiences & Reviews', np: 'बिरामीका अनुभव र समीक्षाहरू' },
+  'reviews.source': { en: 'What people who underwent vision correction with us share', np: 'हामीसँग दृष्टि सुधार गराएका व्यक्तिहरूले साझा गरेका अनुभवहरू' },
 
   // --- Professions Section ---
-  'professions.title': { en: 'Who is this Surgery For?', np: 'यो शल्यक्रिया कसका लागि हो?' },
+  'professions.title': { en: 'Is Laser Eye Surgery Right for Your Profession?', np: 'के लेजर आँखा शल्यक्रिया तपाईंको पेशाको लागि सही छ?' },
   'professions.subtitle': { 
-    en: 'Vision correction tailored for demanding professions and active lifestyles—from the British Gurkha to commercial pilots.', 
-    np: 'ब्रिटिश गोर्खादेखि व्यावसायिक पाइलटहरूसम्म—कठिन पेशा र सक्रिय जीवनशैलीका लागि अनुकूलित दृष्टि सुधार।' 
+    en: 'Vision correction options for occupations and lifestyles that demand excellent unaided vision—such as military service, aviation, driving, and physically active work.', 
+    np: 'सैन्य सेवा, उड्डयन, ड्राइभिङ, र शारीरिक रूपमा सक्रिय काम जस्ता उत्कृष्ट दृष्टि आवश्यक पर्ने पेशा र जीवनशैलीका लागि दृष्टि सुधारका विकल्पहरू।' 
   },
   'professions.military.title': { en: 'Military & Police', np: 'सेना र प्रहरी' },
   'professions.military.desc': { en: 'British Army, Nepal Army, Singaporean Police', np: 'ब्रिटिश आर्मी, नेपाल आर्मी, सिंगापुर प्रहरी' },
@@ -669,8 +677,8 @@ const translations: Translations = {
   'cred.lions': { en: 'VP: Vision Circle, Lions Club of Kathmandu', np: 'उपाध्यक्ष: भिजन सर्कल, लायन्स क्लब अफ काठमाडौं' },
 
   // --- FAQ Section ---
-  'faq.title': { en: 'Frequently Asked Questions', np: 'धेरै सोधिने प्रश्नहरू' },
-  'faq.subtitle': { en: 'Everything you need to know about vision correction.', np: 'दृष्टि सुधारका बारेमा तपाईंले जान्नुपर्ने सबै कुराहरू।' },
+  'faq.title': { en: 'Laser Eye Surgery: Common Questions Answered', np: 'लेजर आँखा शल्यक्रिया: सामान्य प्रश्नहरूको जवाफ' },
+  'faq.subtitle': { en: 'Clear answers to the questions patients ask most', np: 'बिरामीहरूले धेरै सोध्ने प्रश्नहरूको स्पष्ट जवाफ' },
   'faq.seeMore': {
     en: 'See More FAQs',
     np: 'थप प्रश्नहरू हेर्नुहोस्',
@@ -774,6 +782,31 @@ const translations: Translations = {
   'faq.reading.a': { 
     en: 'Laser surgery corrects your current distance vision. As you age, you may still develop presbyopia (age-related reading vision loss), which might require reading glasses or a procedure like Presbyond.',
     np: 'लेजर शल्यक्रियाले तपाईंको हालको टाढाको दृष्टि सुधार गर्दछ। उमेर बढ्दै जाँदा, तपाईंलाई प्रेसबायोपिया (उमेरसँगै आउने नजिकको दृष्टि दोष) हुन सक्छ, जसका लागि पढ्ने चश्मा वा Presbyond जस्तो प्रक्रिया आवश्यक हुन सक्छ।'
+  },
+  'faq.smile_safety.q': { en: 'Is SMILE Pro safer than LASIK?', np: 'के SMILE Pro, LASIK भन्दा सुरक्षित छ?' },
+  'faq.smile_safety.a': { 
+    en: 'Both procedures have high safety profiles. SMILE Pro is a flapless procedure, which may be preferred for patients concerned about flap-related issues or those with active lifestyles. LASIK is a well-established method with a long track record of safety and precision. The choice often depends on individual eye characteristics and clinical suitability.',
+    np: 'दुबै प्रक्रियाहरूको उच्च सुरक्षा प्रोफाइलहरू छन्। SMILE Pro एक फ्ल्याप-रहित प्रक्रिया हो, जुन फ्ल्याप-सम्बन्धित समस्याहरूको बारेमा चिन्तित बिरामीहरू वा सक्रिय जीवनशैली भएकाहरूका लागि उपयुक्त हुन सक्छ। LASIK सुरक्षा र सटीकताको लामो इतिहास भएको एक स्थापित विधि हो। छनोट प्रायः व्यक्तिगत आँखाको विशेषताहरू र क्लिनिकल उपयुक्ततामा भर पर्छ।'
+  },
+  'faq.lasik_unsuitable.q': { en: 'Who is not suitable for LASIK?', np: 'LASIK को लागि को उपयुक्त छैन?' },
+  'faq.lasik_unsuitable.a': { 
+    en: 'LASIK may not be the most suitable option for patients with very thin or irregular corneas, severe dry eye syndrome, or certain underlying medical conditions. In such cases, alternative procedures like SMILE Pro, PRK, or ICL are often considered to ensure the best possible outcome and safety.',
+    np: 'धेरै पातलो वा अनियमित कोर्निया, गम्भीर सुख्खा आँखा सिन्ड्रोम, वा केही अन्तर्निहित चिकित्सा अवस्थाहरू भएका बिरामीहरूका लागि LASIK सबैभन्दा उपयुक्त विकल्प नहुन सक्छ। यस्तो अवस्थामा, उत्तम सम्भावित परिणाम र सुरक्षा सुनिश्चित गर्न SMILE Pro, PRK, वा ICL जस्ता वैकल्पिक प्रक्रियाहरू प्रायः विचार गरिन्छ।'
+  },
+  'faq.smile_replace_lasik.q': { en: 'Can SMILE Pro replace LASIK?', np: 'के SMILE Pro ले LASIK लाई प्रतिस्थापन गर्न सक्छ?' },
+  'faq.smile_replace_lasik.a': { 
+    en: 'SMILE Pro is a modern alternative to LASIK, but it does not replace it entirely. While SMILE Pro is excellent for correcting myopia and astigmatism, LASIK remains a versatile option that can also address hyperopia (farsightedness). Both procedures continue to be valuable tools in refractive surgery, chosen based on the patient\'s specific vision needs.',
+    np: 'SMILE Pro, LASIK को एक आधुनिक विकल्प हो, तर यसले यसलाई पूर्ण रूपमा प्रतिस्थापन गर्दैन। जबकि SMILE Pro अदूरदृष्टि (myopia) र एस्टिग्माटिज्म सुधार गर्नका लागि उत्कृष्ट छ, LASIK एक बहुमुखी विकल्पको रूपमा रहन्छ जसले दूरदृष्टि (hyperopia) लाई पनि सम्बोधन गर्न सक्छ। दुबै प्रक्रियाहरू रिफ्र्याक्टिभ शल्यक्रियामा मूल्यवान उपकरणहरू हुन्, जुन बिरामीको विशिष्ट दृष्टि आवश्यकताहरूको आधारमा छनोट गरिन्छ।'
+  },
+  'faq.recovery_speed.q': { en: 'Is recovery faster with LASIK or SMILE Pro?', np: 'के LASIK वा SMILE Pro मा निको हुने प्रक्रिया छिटो हुन्छ?' },
+  'faq.recovery_speed.a': { 
+    en: 'Both procedures typically offer rapid visual recovery, with many patients returning to normal activities within 24 to 48 hours. SMILE Pro may offer a slightly faster return to contact sports or swimming due to its flapless nature, while LASIK patients often notice an almost immediate improvement in clarity.',
+    np: 'दुबै प्रक्रियाहरूले सामान्यतया छिटो दृष्टि सुधार प्रदान गर्दछ, धेरै बिरामीहरू २४ देखि ४८ घण्टा भित्र सामान्य गतिविधिहरूमा फर्कन्छन्। SMILE Pro ले यसको फ्ल्याप-रहित प्रकृतिको कारण खेलकुद वा पौडी खेल्नका लागि अलि छिटो फर्कने सुविधा दिन सक्छ, जबकि LASIK बिरामीहरूले प्रायः स्पष्टतामा तुरुन्तै सुधार महसुस गर्छन्।'
+  },
+  'faq.why_still_lasik.q': { en: 'Why some patients still choose LASIK?', np: 'किन केही बिरामीहरू अझै पनि LASIK रोज्छन्?' },
+  'faq.why_still_lasik.a': { 
+    en: 'LASIK remains a popular choice because of its extensive clinical history, versatility in treating various refractive errors (including farsightedness), and the high level of predictability in visual outcomes. It is often preferred for patients whose specific eye measurements or vision requirements are better addressed by the excimer laser technology used in LASIK.',
+    np: 'LASIK यसको व्यापक क्लिनिकल इतिहास, विभिन्न दृष्टि दोषहरू (दूरदृष्टि सहित) उपचार गर्ने बहुमुखी प्रतिभा, र दृष्टि परिणामहरूमा उच्च स्तरको भविष्यवाणीका कारण लोकप्रिय छनोटको रूपमा रहन्छ। यो प्रायः ती बिरामीहरूका लागि उपयुक्त हुन्छ जसको विशिष्ट आँखाको मापन वा दृष्टि आवश्यकताहरू LASIK मा प्रयोग गरिने एक्साइमर लेजर प्रविधिद्वारा राम्रोसँग सम्बोधन गरिन्छ।'
   },
 };
 

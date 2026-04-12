@@ -59,6 +59,11 @@ const ResourcesPage: React.FC = () => {
         { q: 'faq.q3.question', a: 'faq.q3.answer' },
         { q: 'faq.q4.question', a: 'faq.q4.answer' },
         { q: 'faq.q5.question', a: 'faq.q5.answer' },
+        { q: 'faq.smile_safety.q', a: 'faq.smile_safety.a' },
+        { q: 'faq.lasik_unsuitable.q', a: 'faq.lasik_unsuitable.a' },
+        { q: 'faq.smile_replace_lasik.q', a: 'faq.smile_replace_lasik.a' },
+        { q: 'faq.recovery_speed.q', a: 'faq.recovery_speed.a' },
+        { q: 'faq.why_still_lasik.q', a: 'faq.why_still_lasik.a' },
       ]
     },
     {

@@ -330,7 +330,7 @@ const ReviewMarquee: React.FC = () => {
     <section id="reviews" className="py-16 overflow-hidden bg-background relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center relative">
         <div className="flex flex-col items-center">
-          <h2 className="text-3xl font-bold text-text-heading mb-3 tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4 tracking-tight">
             {t('reviews.title')}
           </h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
@@ -338,9 +338,9 @@ const ReviewMarquee: React.FC = () => {
               href="https://maps.app.goo.gl/HKaonPUrv5rNtqGM6"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 text-sm text-tagline hover:text-primary transition-colors group"
+              className="inline-flex items-center space-x-2 text-lg text-text-body max-w-2xl mx-auto hover:text-primary transition-colors group"
             >
-              <MapPin size={14} className="group-hover:animate-bounce text-primary" />
+              <MapPin size={18} className="group-hover:animate-bounce text-primary" />
               <span className="font-medium">{t('reviews.source')}</span>
             </a>
           </div>

@@ -51,7 +51,7 @@ const CostOverview: React.FC = () => {
     <section id="costs" className="py-24 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-text-heading mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4 tracking-tight">
             {t('costs.title')}
           </h2>
           <p className="text-lg text-text-body max-w-2xl mx-auto">

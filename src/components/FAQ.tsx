@@ -111,7 +111,7 @@ const FAQ: React.FC = () => {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4 tracking-tight">
             {t('faq.title')}
           </h2>
           <p className="text-lg text-text-body max-w-2xl mx-auto">

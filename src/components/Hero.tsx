@@ -27,30 +27,46 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col space-y-6"
           >
-            <span className="text-sm font-bold text-tagline uppercase tracking-widest">
-              {t('hero.credentials')}
-            </span>
-            <h1 id="hero-title" className="text-2xl md:text-4xl font-bold tracking-tight text-text-heading leading-tight">
+            <div className="flex flex-col space-y-1">
+              <span className="text-sm font-bold text-tagline uppercase tracking-widest">
+                Dr. Kaushal Pokhrel, MBBS, MD
+              </span>
+              <span className="text-xs font-medium text-primary uppercase tracking-wider">
+                Ophthalmology · Fellowship in Refractive Surgery
+              </span>
+            </div>
+            
+            <h1 id="hero-title" className="text-4xl md:text-6xl font-bold tracking-tight text-text-heading leading-tight">
               {t('hero.title')}
+              <span className="block text-2xl md:text-3xl font-medium text-text-body mt-2 opacity-90">
+                {t('hero.titleSecondary')}
+              </span>
             </h1>
-            <p className="text-sm md:text-base text-text-body leading-relaxed max-w-xl">
+            
+            <p className="text-lg text-text-body leading-relaxed max-w-xl">
               {t('hero.subtitle')}
             </p>
-            <div className="flex flex-wrap gap-4 pt-2">
-              <a 
-                href="#eligibility"
-                onClick={(e) => scrollToSection(e, 'eligibility')}
-                className="bg-success text-white px-6 py-3 rounded-xl font-bold hover:bg-opacity-90 transition-all shadow-floating text-center inline-block"
-              >
-                {t('cta.eligibility')}
-              </a>
-              <a 
-                href="#contact"
-                onClick={(e) => scrollToSection(e, 'contact')}
-                className="bg-transparent border-2 border-primary text-primary px-6 py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-all shadow-floating text-center inline-block"
-              >
-                {t('cta.consultation')}
-              </a>
+            
+            <div className="flex flex-col space-y-4 pt-2">
+              <div className="flex flex-wrap gap-4">
+                <a 
+                  href="#eligibility"
+                  onClick={(e) => scrollToSection(e, 'eligibility')}
+                  className="bg-success text-white px-6 py-3 rounded-xl font-bold hover:bg-opacity-90 transition-all shadow-floating text-center inline-block min-w-[180px]"
+                >
+                  {t('cta.eligibility')}
+                </a>
+                <a 
+                  href="#contact"
+                  onClick={(e) => scrollToSection(e, 'contact')}
+                  className="bg-transparent border-2 border-primary text-primary px-6 py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-all shadow-floating text-center inline-block min-w-[180px]"
+                >
+                  {t('cta.consultation')}
+                </a>
+              </div>
+              <p className="text-[10px] md:text-xs text-tagline italic opacity-70">
+                {t('hero.disclaimer')}
+              </p>
             </div>
           </motion.div>
 
@@ -73,7 +89,7 @@ const Hero: React.FC = () => {
               >
                 <img
                   src="https://i.ibb.co/SXKFTjB2/dr-pokhrel.webp"
-                  alt="Dr. Kaushal Pokhrel - LASIK, SMILE PRO, and ICL Specialist at Tilganga Institute of Ophthalmology, Kathmandu, Nepal"
+                  alt="Dr. Kaushal Pokhrel - LASIK Eye Surgery Specialist in Nepal offering SMILE Pro, PRK, and ICL at Tilganga Institute of Ophthalmology"
                   className="w-full h-full object-cover transition-all duration-1000 ease-out group-hover/hero-img:scale-[1.03] group-hover/hero-img:translate-y-1 group-hover/hero-img:opacity-95"
                   referrerPolicy="no-referrer"
                   fetchPriority="high"

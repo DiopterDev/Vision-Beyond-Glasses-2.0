@@ -9,17 +9,17 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
 import CredentialsMarquee from './components/CredentialsMarquee';
-import ReviewMarquee from './components/ReviewMarquee';
-import SurgeriesGrid from './components/SurgeriesGrid';
-import EligibilityChecker from './components/EligibilityChecker';
-import FAQ from './components/FAQ';
-import Contact from './components/Contact';
 import SEO from './components/SEO';
 import BackToTop from './components/BackToTop';
-import TargetProfessions from './components/TargetProfessions';
-import CostOverview from './components/CostOverview';
 
-// Lazy load surgery page
+// Lazy load components for better performance
+const TargetProfessions = lazy(() => import('./components/TargetProfessions'));
+const SurgeriesGrid = lazy(() => import('./components/SurgeriesGrid'));
+const CostOverview = lazy(() => import('./components/CostOverview'));
+const ReviewMarquee = lazy(() => import('./components/ReviewMarquee'));
+const EligibilityChecker = lazy(() => import('./components/EligibilityChecker'));
+const FAQ = lazy(() => import('./components/FAQ'));
+const Contact = lazy(() => import('./components/Contact'));
 const SurgeryPage = lazy(() => import('./pages/SurgeryPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ResourcesPage = lazy(() => import('./pages/ResourcesPage'));
@@ -57,9 +57,9 @@ const HomePage: React.FC = () => {
     <>
       <Hero />
       <CredentialsMarquee />
-      <TargetProfessions />
       <SurgeriesGrid />
       <CostOverview />
+      <TargetProfessions />
       <ReviewMarquee />
       <EligibilityChecker />
       <FAQ />

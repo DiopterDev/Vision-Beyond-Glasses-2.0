@@ -953,6 +953,7 @@ const PrecisionToolsSection: React.FC<{ slug: string; language: 'en' | 'np' }> =
                   alt={tools[activeIndex].alt}
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                 />
               <div className="absolute bottom-4 right-4 text-[8px] text-white/50 bg-black/10 px-1.5 py-0.5 rounded-full z-20">
                 © Dr. Kaushal Pokhrel

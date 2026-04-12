@@ -48,7 +48,8 @@ const SEO: React.FC = () => {
       }
     ],
     "knowsAbout": [
-      "SMILE PRO", "Femto-LASIK", "LASIK", "ICL", "IPCL", "Presbyond", "Cataract Surgery",
+      "SMILE PRO", "Femto-LASIK", "LASIK", "PRK", "ICL", "IPCL", "Presbyond", "Cataract Surgery",
+      "Lens-based vision correction",
       "Vision Correction for British Gurkha Army",
       "SMILE Pro for Singaporean Police",
       "Visual Standards for Pilots and Cabin Crew",
@@ -77,11 +78,15 @@ const SEO: React.FC = () => {
       </script>
 
       {/* Meta Tags */}
+      <title>{language === 'en' 
+        ? "LASIK Eye Surgery in Nepal | SMILE Pro & Vision Correction – Dr. Kaushal Pokhrel" 
+        : "नेपालमा लेजर (LASIK) आँखा शल्यक्रिया | SMILE Pro र दृष्टि सुधार – डा. कौशल पोखरेल"}
+      </title>
       <meta name="description" content={language === 'en' 
-        ? "Expert Refractive and Cataract Surgeon in Kathmandu, Nepal. SMILE PRO, LASIK (Femto-LASIK), and ICL for British Gurkha, Pilots, Surgeons, and Athletes." 
-        : "काठमाडौंमा विशेषज्ञ रिफ्र्याक्टिभ र मोतियाबिन्दु शल्यचिकित्सक। ब्रिटिश गोर्खा, पाइलट, शल्यचिकित्सक र खेलाडीहरूका लागि SMILE PRO, LASIK (Femto-LASIK) र ICL।"} 
+        ? "Search for LASIK eye surgery in Nepal and learn about modern options like SMILE Pro, PRK, and lens-based vision correction, guided by careful clinical evaluation." 
+        : "नेपालमा LASIK आँखा शल्यक्रियाको बारेमा खोज्नुहोस् र SMILE Pro, PRK, र लेन्समा आधारित दृष्टि सुधार जस्ता आधुनिक विकल्पहरूको बारेमा जानकारी लिनुहोस्, जुन सावधानीपूर्वक क्लिनिकल मूल्याङ्कनद्वारा निर्देशित छ।"} 
       />
-      <meta name="keywords" content="SMILE PRO Nepal, LASIK Kathmandu, Femto-LASIK Nepal, ICL surgery Nepal, British Gurkha eye surgery, Singapore police eye test, pilot vision correction, Dr. Kaushal Pokhrel" />
+      <meta name="keywords" content="SMILE PRO Nepal, LASIK Kathmandu, PRK Nepal, Femto-LASIK Nepal, ICL surgery Nepal, lens-based vision correction Nepal, British Gurkha eye surgery, Singapore police eye test, pilot vision correction, Dr. Kaushal Pokhrel" />
 
       {/* Language Meta */}
       <html lang={language === 'en' ? 'en' : 'ne'} />

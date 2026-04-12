@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
 
     let sections: string[] = [];
     if (isHomePage) {
-      sections = ['home', 'professions', 'surgeries', 'costs', 'reviews', 'eligibility', 'faq', 'contact'];
+      sections = ['home', 'surgeries', 'costs', 'professions', 'reviews', 'eligibility', 'faq', 'contact'];
     } else if (isAboutPage) {
       sections = ['interviews', 'hobbies', 'social-services', 'spreading-smiles', 'research', 'contact'];
     }
@@ -113,9 +113,9 @@ const Navbar: React.FC = () => {
   const getSubNavItemsForId = (id: string) => {
     if (id === 'home') {
       return [
-        { key: 'nav.targetProfessions', href: '/#professions', id: 'professions' },
         { key: 'nav.surgeries', href: '/#surgeries', id: 'surgeries' },
         { key: 'nav.costs', href: '/#costs', id: 'costs' },
+        { key: 'nav.visionAndWork', href: '/#professions', id: 'professions' },
         { key: 'nav.reviews', href: '/#reviews', id: 'reviews' },
         { key: 'nav.eligibilityChecker', href: '/#eligibility', id: 'eligibility' },
         { key: 'nav.faq', href: '/#faq', id: 'faq' },

@@ -216,7 +216,7 @@ const AboutPage: React.FC = () => {
         <section id="interviews" className="py-24 bg-surface/50 border-y border-text-heading/5">
           <div className="px-6 md:px-8 max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4 tracking-tight">
                 Media Interviews
               </h2>
               <p className="text-lg text-text-body max-w-2xl mx-auto leading-relaxed">
@@ -260,7 +260,7 @@ const AboutPage: React.FC = () => {
                 className="order-2 lg:order-1"
               >
                 <div className="mb-6">
-                  <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4">
+                  <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4 tracking-tight">
                     {t('about.travel.title')}
                   </h2>
                   <p className="text-lg text-primary font-medium italic">
@@ -325,13 +325,13 @@ const AboutPage: React.FC = () => {
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-4">
                         <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border border-white/10 relative">
-                          <img src={categoryImages[activeCategory][0].url} alt={categoryImages[activeCategory][0].alt} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                          <img src={categoryImages[activeCategory][0].url} alt={categoryImages[activeCategory][0].alt} className="w-full h-full object-cover" referrerPolicy="no-referrer" loading="lazy" />
                           <div className="absolute bottom-2 right-2 text-[8px] text-white/50 bg-black/10 px-1.5 py-0.5 rounded-full">
                             © Dr. Kaushal Pokhrel
                           </div>
                         </div>
                         <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl border border-white/10 relative">
-                          <img src={categoryImages[activeCategory][1].url} alt={categoryImages[activeCategory][1].alt} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                          <img src={categoryImages[activeCategory][1].url} alt={categoryImages[activeCategory][1].alt} className="w-full h-full object-cover" referrerPolicy="no-referrer" loading="lazy" />
                           <div className="absolute bottom-2 right-2 text-[8px] text-white/50 bg-black/10 px-1.5 py-0.5 rounded-full">
                             © Dr. Kaushal Pokhrel
                           </div>
@@ -339,13 +339,13 @@ const AboutPage: React.FC = () => {
                       </div>
                       <div className="space-y-4 pt-8">
                         <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl border border-white/10 relative">
-                          <img src={categoryImages[activeCategory][2].url} alt={categoryImages[activeCategory][2].alt} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                          <img src={categoryImages[activeCategory][2].url} alt={categoryImages[activeCategory][2].alt} className="w-full h-full object-cover" referrerPolicy="no-referrer" loading="lazy" />
                           <div className="absolute bottom-2 right-2 text-[8px] text-white/50 bg-black/10 px-1.5 py-0.5 rounded-full">
                             © Dr. Kaushal Pokhrel
                           </div>
                         </div>
                         <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border border-white/10 relative">
-                          <img src={categoryImages[activeCategory][3].url} alt={categoryImages[activeCategory][3].alt} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                          <img src={categoryImages[activeCategory][3].url} alt={categoryImages[activeCategory][3].alt} className="w-full h-full object-cover" referrerPolicy="no-referrer" loading="lazy" />
                           <div className="absolute bottom-2 right-2 text-[8px] text-white/50 bg-black/10 px-1.5 py-0.5 rounded-full">
                             © Dr. Kaushal Pokhrel
                           </div>
@@ -418,7 +418,7 @@ const AboutPage: React.FC = () => {
         <section id="social-services" className="bg-surface/50 py-24 border-y border-text-heading/5">
           <div className="px-6 md:px-8 max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4 tracking-tight">
                 {t('about.humanitarian.title')}
               </h2>
               <p className="text-lg text-text-body max-w-2xl mx-auto leading-relaxed">
@@ -472,10 +472,10 @@ const AboutPage: React.FC = () => {
               <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6">
                 Humanitarian Efforts
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4 tracking-tight">
                 {t('about.giving.title')}
               </h2>
-              <p className="text-lg text-text-body leading-relaxed mb-10">
+              <p className="text-lg text-text-body leading-relaxed max-w-2xl mb-10">
                 {t('about.giving.intro')}
               </p>
               <div className="flex items-center space-x-3 text-primary font-bold text-lg">
@@ -490,7 +490,7 @@ const AboutPage: React.FC = () => {
         <section id="research" className="bg-primary/5 py-24">
           <div className="px-6 md:px-8 max-w-7xl mx-auto">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-12 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-12 text-center tracking-tight">
                 {t('about.research.title')}
               </h2>
               <div className="space-y-10">
