@@ -127,8 +127,8 @@ const translations: Translations = {
     np: '- डा. कौशल पोखरेल',
   },
   'hero.image.caption': {
-    en: 'Dr. Kaushal Pokhrel, Refractive and Cataract Surgeon',
-    np: 'डा. कौशल पोखरेल, लेजर तथा मोतिविन्दु विशेषज्ञ',
+    en: 'Dr. Kaushal Pokhrel',
+    np: 'डा. कौशल पोखरेल',
   },
   'hero.deco.blue': {
     en: 'Visual accent representing clarity and precision',

@@ -246,12 +246,12 @@ const ReviewCard: React.FC<{
       )}
     >
       <div className="flex justify-between items-center">
-        <div className="flex text-yellow-400">
+        <div className="flex text-yellow-500">
           {[...Array(5)].map((_, i) => (
             <Star key={i} size={14} fill="currentColor" />
           ))}
         </div>
-        <span className="text-[10px] font-bold uppercase tracking-widest bg-primary/10 text-primary px-2 py-1 rounded-full">
+        <span className="text-[10px] font-bold uppercase tracking-widest bg-primary text-white px-2.5 py-1 rounded-full shadow-sm">
           {review.tag[language]}
         </span>
       </div>

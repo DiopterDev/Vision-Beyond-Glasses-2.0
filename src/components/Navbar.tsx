@@ -286,7 +286,7 @@ const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={toggleTheme}
-                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                 aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
               >
                 {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
@@ -295,7 +295,7 @@ const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setLanguage(language === 'en' ? 'np' : 'en')}
-                className="flex items-center space-x-1 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-bold transition-colors"
+                className="flex items-center space-x-1 p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-bold transition-colors"
                 aria-label={language === 'en' ? 'नेपालीमा परिवर्तन गर्नुहोस्' : 'Switch to English'}
               >
                 <Globe size={18} className="text-primary" />

@@ -100,7 +100,7 @@ const CostOverview: React.FC = () => {
                           )}
                           {formatPrice(data.cost.surgeryCost)}
                         </p>
-                        <p className="text-xs text-text-body/60 font-medium uppercase tracking-wider">
+                        <p className="text-xs text-text-body font-bold uppercase tracking-wider">
                           {data.cost.isPerEye 
                             ? t('costs.perEye')
                             : t('costs.bothEyes')}
@@ -111,7 +111,7 @@ const CostOverview: React.FC = () => {
 
                   <div className="space-y-3 mb-8">
                     {data.cost.eligibilityScan && (
-                      <div className="flex items-center text-sm text-text-body/80">
+                      <div className="flex items-center text-sm text-text-body font-medium">
                         <CheckCircle2 size={16} className="text-success mr-2" />
                         <span>
                           {t('costs.eligibilityScan')}
@@ -119,12 +119,12 @@ const CostOverview: React.FC = () => {
                         </span>
                       </div>
                     )}
-                    <div className="flex items-center text-sm text-text-body/80">
+                    <div className="flex items-center text-sm text-text-body font-medium">
                       <CheckCircle2 size={16} className="text-success mr-2" />
                       <span>{t('costs.postOpCare')}</span>
                     </div>
                     <div className="pt-3 mt-3 border-t border-gray-100 dark:border-gray-800">
-                      <p className="text-[10px] text-text-body/60 leading-tight italic">
+                      <p className="text-[11px] text-text-body font-medium leading-tight italic">
                         {t('costs.disclaimer')}
                       </p>
                     </div>
@@ -132,7 +132,7 @@ const CostOverview: React.FC = () => {
 
                   <Link 
                     to={`/surgery/${s.slug}`}
-                    className="w-full py-4 rounded-2xl bg-surface border border-gray-100 dark:border-gray-800 text-text-heading font-bold flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all shadow-sm"
+                    className="w-full py-5 rounded-2xl bg-surface border border-gray-100 dark:border-gray-800 text-text-heading font-bold flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all shadow-sm"
                     aria-label={`${t('costs.viewDetails')} ${s.name}`}
                   >
                     {t('costs.viewDetails')}

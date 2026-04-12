@@ -77,10 +77,10 @@ const CostCard: React.FC<CostCardProps> = ({ costData, className }) => {
             {costData.eligibilityScan && (
               <div className="flex justify-between items-center pb-4 border-b border-text-body/10">
                 <div>
-                  <p className="text-sm text-text-body/60 uppercase tracking-wider font-bold mb-1">
+                  <p className="text-sm text-text-body font-bold uppercase tracking-wider mb-1">
                     {t('costs.eligibilityScan')}
                   </p>
-                  <p className="text-text-body text-sm">
+                  <p className="text-text-body text-sm font-medium">
                     {t('costs.eligibilityScanDesc')}
                   </p>
                 </div>
@@ -94,10 +94,10 @@ const CostCard: React.FC<CostCardProps> = ({ costData, className }) => {
 
             <div className="flex justify-between items-center">
               <div>
-                <p className="text-sm text-text-body/60 uppercase tracking-wider font-bold mb-1">
+                <p className="text-sm text-text-body font-bold uppercase tracking-wider mb-1">
                   {t('costs.surgeryCost')}
                 </p>
-                <p className="text-text-body text-sm">
+                <p className="text-text-body text-sm font-medium">
                   {costData.isPerEye 
                     ? t('costs.perEye')
                     : t('costs.bothEyes')}
@@ -106,7 +106,7 @@ const CostCard: React.FC<CostCardProps> = ({ costData, className }) => {
               <div className="text-right">
                 <p className="text-3xl font-black text-primary">
                   {costData.isStartingAt && (
-                    <span className="text-sm font-bold text-text-body/60 mr-2 uppercase">
+                    <span className="text-sm font-bold text-text-body mr-2 uppercase">
                       {t('costs.from')}
                     </span>
                   )}
@@ -115,9 +115,9 @@ const CostCard: React.FC<CostCardProps> = ({ costData, className }) => {
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-surface/50 dark:bg-white/5 flex items-start space-x-3">
+            <div className="p-5 rounded-xl bg-surface/50 dark:bg-white/5 flex items-start space-x-3">
               <Info className="text-primary shrink-0 mt-0.5" size={18} />
-              <p className="text-xs text-text-body/80 leading-relaxed">
+              <p className="text-xs text-text-body font-medium leading-relaxed">
                 {t('costs.disclaimer')}
               </p>
             </div>
@@ -125,7 +125,7 @@ const CostCard: React.FC<CostCardProps> = ({ costData, className }) => {
             <div className="pt-4 border-t border-text-body/10">
               <Link 
                 to="/#costs" 
-                className="inline-flex items-center text-sm font-bold text-primary hover:underline group/link"
+                className="inline-flex items-center text-sm font-bold text-primary hover:underline group/link py-2"
               >
                 {t('costs.viewAll')}
                 <ArrowRight size={16} className="ml-2 transition-transform group-hover/link:translate-x-1" />

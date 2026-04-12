@@ -28,22 +28,22 @@ const Hero: React.FC = () => {
             className="flex flex-col space-y-6"
           >
             <div className="flex flex-col space-y-1">
-              <span className="text-sm font-bold text-tagline uppercase tracking-widest">
+              <span className="text-sm font-bold text-text-heading uppercase tracking-widest">
                 Dr. Kaushal Pokhrel, MBBS, MD
               </span>
-              <span className="text-xs font-medium text-primary uppercase tracking-wider">
+              <span className="text-xs font-bold text-primary uppercase tracking-wider">
                 Ophthalmology · Fellowship in Refractive Surgery
               </span>
             </div>
             
             <h1 id="hero-title" className="text-4xl md:text-6xl font-bold tracking-tight text-text-heading leading-tight">
               {t('hero.title')}
-              <span className="block text-2xl md:text-3xl font-medium text-text-body mt-2 opacity-90">
+              <span className="block text-2xl md:text-3xl font-medium text-text-body mt-2">
                 {t('hero.titleSecondary')}
               </span>
             </h1>
             
-            <p className="text-lg text-text-body leading-relaxed max-w-xl">
+            <p className="text-lg text-text-body font-medium leading-relaxed max-w-xl">
               {t('hero.subtitle')}
             </p>
             
@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
                   {t('cta.consultation')}
                 </a>
               </div>
-              <p className="text-[10px] md:text-xs text-tagline italic opacity-90">
+              <p className="text-xs md:text-sm text-text-body font-medium italic">
                 {t('hero.disclaimer')}
               </p>
             </div>
@@ -81,7 +81,7 @@ const Hero: React.FC = () => {
             }}
             className="relative group/hero-img"
           >
-            <figure className="relative">
+            <div className="relative">
               <motion.div 
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
@@ -98,10 +98,7 @@ const Hero: React.FC = () => {
                   © Dr. Kaushal Pokhrel
                 </div>
               </motion.div>
-              <figcaption className="mt-3 text-xs font-medium text-tagline opacity-60 text-center md:text-left italic">
-                {t('hero.image.caption')}
-              </figcaption>
-            </figure>
+            </div>
             
             {/* Quote block */}
             <div className="mt-4 md:mt-0 md:absolute md:-right-4 md:-bottom-6 md:w-80 bg-surface/20 backdrop-blur-sm p-4 md:p-6 rounded-2xl border border-primary/20 shadow-2xl z-20 transition-transform duration-500">

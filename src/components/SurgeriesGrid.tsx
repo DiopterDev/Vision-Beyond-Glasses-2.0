@@ -101,18 +101,18 @@ const SurgeryCard: React.FC<SurgeryCardProps> = ({ titleKey, descKey, detailsKey
               {t(titleKey)}
             </h3>
             <div className="w-12 h-1 bg-primary/20 rounded-full" />
-            <p className="text-sm text-text-body leading-relaxed">
+            <p className="text-sm text-text-body font-medium leading-relaxed">
               {t(detailsKey)}
             </p>
             <div className="flex justify-center pt-2">
               <Link 
                 to={`/surgery/${slug}`}
                 onClick={(e) => e.stopPropagation()}
-                className="flex items-center text-xs font-bold text-primary hover:text-primary/80 transition-colors uppercase tracking-wider"
+                className="flex items-center text-xs font-bold text-primary hover:text-primary/80 transition-colors uppercase tracking-wider py-3 px-6 rounded-xl bg-primary/5 hover:bg-primary/10 border border-primary/10"
                 aria-label={`${t('surgeries.learnMore')} ${t(titleKey)}`}
               >
                 {t('surgeries.learnMore')}
-                <ArrowRight size={14} className="ml-1" />
+                <ArrowRight size={14} className="ml-2" />
               </Link>
             </div>
           </button>

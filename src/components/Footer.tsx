@@ -51,7 +51,8 @@ const Footer: React.FC = () => {
                 href="https://maps.app.goo.gl/XmsjR6Ljqz2dZVQJ7" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-start space-x-3 text-sm text-text-body dark:text-dark-text-body hover:text-primary transition-colors group"
+                className="flex items-start space-x-3 text-sm text-text-body dark:text-dark-text-body hover:text-primary transition-colors group py-1"
+                aria-label="View Tilganga Institute of Ophthalmology on Google Maps"
               >
                 <MapPin size={18} className="text-primary shrink-0 mt-1 group-hover:scale-110 transition-transform" />
                 <p className="group-hover:text-primary transition-colors">Tilganga Institute of Ophthalmology, Refractive Surgery Unit (RSU), Kathmandu, Nepal</p>
@@ -60,7 +61,8 @@ const Footer: React.FC = () => {
                 href="https://maps.app.goo.gl/xJaK6g28MmZaHfof9" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-start space-x-3 text-sm text-text-body dark:text-dark-text-body hover:text-primary transition-colors group"
+                className="flex items-start space-x-3 text-sm text-text-body dark:text-dark-text-body hover:text-primary transition-colors group py-1"
+                aria-label="View Tilganga City Eye Center on Google Maps"
               >
                 <MapPin size={18} className="text-primary shrink-0 mt-1 group-hover:scale-110 transition-transform" />
                 <p className="group-hover:text-primary transition-colors">Tilganga City Eye Center, Dampa Complex, Chuchepati, Kathmandu, Nepal</p>
@@ -73,7 +75,8 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-bold text-primary">{t('footer.contact')}</h3>
             <a 
               href={`mailto:mail@kaushalpokhrel.com.np?subject=${encodeURIComponent("Appointment request from Dr. Kaushal's website")}&body=${encodeURIComponent("Dear Team RSU, please book me an appointment with Dr. Kaushal Pokhrel based on available appointment slot.")}`}
-              className="flex items-center space-x-3 text-sm text-text-body dark:text-dark-text-body mb-2 hover:text-primary transition-colors group"
+              className="flex items-center space-x-3 text-sm text-text-body dark:text-dark-text-body mb-2 hover:text-primary transition-colors group py-1"
+              aria-label="Send an email to Dr. Kaushal Pokhrel"
             >
               <Mail size={18} className="text-primary group-hover:scale-110 transition-transform" />
               <p className="group-hover:text-primary transition-colors">mail@kaushalpokhrel.com.np</p>
@@ -83,46 +86,46 @@ const Footer: React.FC = () => {
                 href="https://www.facebook.com/Da.eyedoc" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-primary/5 text-primary hover:bg-primary hover:text-white transition-all"
+                className="p-3 rounded-full bg-primary/5 text-primary hover:bg-primary hover:text-white transition-all"
                 aria-label={t('footer.social.facebook')}
               >
-                <Facebook size={18} />
+                <Facebook size={20} />
               </a>
               <a 
                 href="https://www.instagram.com/da.eyedoc" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-primary/5 text-primary hover:bg-primary hover:text-white transition-all"
+                className="p-3 rounded-full bg-primary/5 text-primary hover:bg-primary hover:text-white transition-all"
                 aria-label={t('footer.social.instagram')}
               >
-                <Instagram size={18} />
+                <Instagram size={20} />
               </a>
               <a 
                 href="https://www.linkedin.com/in/kaushalpokhrel" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-primary/5 text-primary hover:bg-primary hover:text-white transition-all"
+                className="p-3 rounded-full bg-primary/5 text-primary hover:bg-primary hover:text-white transition-all"
                 aria-label={t('footer.social.linkedin')}
               >
-                <Linkedin size={18} />
+                <Linkedin size={20} />
               </a>
               <a 
                 href="https://www.youtube.com/@da.eyedoc" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-primary/5 text-primary hover:bg-primary hover:text-white transition-all"
+                className="p-3 rounded-full bg-primary/5 text-primary hover:bg-primary hover:text-white transition-all"
                 aria-label={t('footer.social.youtube')}
               >
-                <Youtube size={18} />
+                <Youtube size={20} />
               </a>
               <a 
                 href="https://www.tiktok.com/@da.eyedoc" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-primary/5 text-primary hover:bg-primary hover:text-white transition-all"
+                className="p-3 rounded-full bg-primary/5 text-primary hover:bg-primary hover:text-white transition-all"
                 aria-label={t('footer.social.tiktok')}
               >
-                <Video size={18} />
+                <Video size={20} />
               </a>
             </div>
           </div>

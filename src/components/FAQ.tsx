@@ -50,7 +50,7 @@ export const FAQItem: React.FC<FAQItemProps> = ({
               {q}
             </h3>
             {isVerified && !isOpen && (
-              <span className="text-[10px] font-bold text-primary/60 uppercase tracking-widest flex items-center mt-1">
+              <span className="text-[10px] font-bold text-primary uppercase tracking-widest flex items-center mt-1">
                 <ShieldCheck size={10} className="mr-1" />
                 Verified Insight
               </span>
