@@ -202,8 +202,8 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 lg:space-x-3 group" onMouseEnter={() => !isMobile && setHoveredNavItem(null)}>
             <img 
-              src="https://i.ibb.co/67kvrH5N/logo-Dr-Kaushal.png" 
-              alt="Dr. Kaushal Pokhrel Logo" 
+              src="https://i.ibb.co/cSPhLMyD/logo-Dr-Kaushal.webp" 
+              alt="Dr. Kaushal Pokhrel - LASIK and SMILE PRO Surgeon Logo" 
               className="h-10 w-10 lg:h-12 lg:w-12 object-contain transition-transform duration-300 group-hover:scale-110"
               referrerPolicy="no-referrer"
             />

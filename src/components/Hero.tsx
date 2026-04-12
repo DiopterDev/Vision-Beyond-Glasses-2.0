@@ -72,8 +72,8 @@ const Hero: React.FC = () => {
                 className="aspect-square rounded-2xl overflow-hidden shadow-xl border border-gray-100 dark:border-gray-800 relative"
               >
                 <img
-                  src="https://i.ibb.co/C51znhX7/dr-pokhrel.jpg"
-                  alt={t('hero.image.caption')}
+                  src="https://i.ibb.co/SXKFTjB2/dr-pokhrel.webp"
+                  alt="Dr. Kaushal Pokhrel - LASIK, SMILE PRO, and ICL Specialist at Tilganga Institute of Ophthalmology, Kathmandu, Nepal"
                   className="w-full h-full object-cover transition-all duration-1000 ease-out group-hover/hero-img:scale-[1.03] group-hover/hero-img:translate-y-1 group-hover/hero-img:opacity-95"
                   referrerPolicy="no-referrer"
                   fetchPriority="high"

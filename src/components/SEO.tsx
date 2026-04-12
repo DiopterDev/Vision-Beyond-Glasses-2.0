@@ -13,7 +13,7 @@ const SEO: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "Physician",
     "name": "Dr. Kaushal Pokhrel",
-    "image": "https://i.ibb.co/C51znhX7/dr-pokhrel.jpg",
+    "image": "https://i.ibb.co/SXKFTjB2/dr-pokhrel.webp",
     "description": "Expert Refractive and Cataract Surgeon in Kathmandu, Nepal. Specializing in SMILE PRO, LASIK, and ICL for demanding professions including British Gurkha, Singaporean Police, Pilots, Surgeons, and Athletes.",
     "url": baseUrl,
     "telephone": "+977-1-4493684", // Example Tilganga number, replace if needed
