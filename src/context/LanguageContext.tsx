@@ -174,6 +174,10 @@ const translations: Translations = {
     en: 'Show Less',
     np: 'थोरै देखाउनुहोस्',
   },
+  'surgeries.learnMore': {
+    en: 'Learn More',
+    np: 'थप जान्नुहोस्',
+  },
   'costs.title': {
     en: 'Laser Eye Surgery Costs (2026)',
     np: 'लेजर आँखा शल्यक्रिया लागत (२०२६)',

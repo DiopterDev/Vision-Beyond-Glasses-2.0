@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { BookOpen, HelpCircle, ChevronRight, Search, FileText, ArrowRight, X } from 'lucide-react';
 import { cn } from '../lib/utils';

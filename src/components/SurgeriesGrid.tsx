@@ -109,8 +109,9 @@ const SurgeryCard: React.FC<SurgeryCardProps> = ({ titleKey, descKey, detailsKey
                 to={`/surgery/${slug}`}
                 onClick={(e) => e.stopPropagation()}
                 className="flex items-center text-xs font-bold text-primary hover:text-primary/80 transition-colors uppercase tracking-wider"
+                aria-label={`${t('surgeries.learnMore')} ${t(titleKey)}`}
               >
-                Learn More
+                {t('surgeries.learnMore')}
                 <ArrowRight size={14} className="ml-1" />
               </Link>
             </div>
@@ -256,6 +257,7 @@ const SurgeriesGrid: React.FC = () => {
             <button
               onClick={() => setShowAll(!showAll)}
               className="flex items-center space-x-2 px-8 py-4 bg-primary text-white rounded-full font-bold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all active:scale-95"
+              aria-label={showAll ? t('surgeries.seeLess') : t('surgeries.seeMore')}
             >
               <span>{showAll ? t('surgeries.seeLess') : t('surgeries.seeMore')}</span>
               {showAll ? <ChevronUp size={20} /> : <ChevronDown size={20} />}

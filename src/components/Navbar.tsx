@@ -257,7 +257,7 @@ const Navbar: React.FC = () => {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.95 }}
                       transition={{ duration: 0.2, ease: "easeOut" }}
-                      className="absolute top-[76px] left-1/2 -translate-x-1/2 w-56 py-3 bg-surface/95 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-2xl rounded-2xl overflow-hidden z-50"
+                      className="absolute top-[76px] left-1/2 -translate-x-1/2 w-56 py-3 bg-surface border border-white/20 dark:border-white/10 shadow-2xl rounded-2xl overflow-hidden z-50"
                     >
                       <div className="flex flex-col">
                         {getSubNavItemsForId(item.id).map((sub) => (
@@ -268,8 +268,8 @@ const Navbar: React.FC = () => {
                             className={cn(
                               "px-5 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:bg-primary/5",
                               (item.id === 'home' || item.id === 'about') 
-                                ? (activeSubSection === sub.id ? "text-primary bg-primary/5" : "text-text-body/60 hover:text-primary")
-                                : (pathname === sub.href ? "text-primary bg-primary/5" : "text-text-body/60 hover:text-primary")
+                                ? (activeSubSection === sub.id ? "text-primary bg-primary/5" : "text-text-body hover:text-primary")
+                                : (pathname === sub.href ? "text-primary bg-primary/5" : "text-text-body hover:text-primary")
                             )}
                           >
                             {t(sub.key)}
@@ -287,7 +287,7 @@ const Navbar: React.FC = () => {
                 type="button"
                 onClick={toggleTheme}
                 className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                aria-label="Toggle theme"
+                aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
               >
                 {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
               </button>
@@ -296,6 +296,7 @@ const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => setLanguage(language === 'en' ? 'np' : 'en')}
                 className="flex items-center space-x-1 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-bold transition-colors"
+                aria-label={language === 'en' ? 'नेपालीमा परिवर्तन गर्नुहोस्' : 'Switch to English'}
               >
                 <Globe size={18} className="text-primary" />
                 <span>{language === 'en' ? 'ने' : 'EN'}</span>
@@ -309,6 +310,7 @@ const Navbar: React.FC = () => {
               type="button"
               onClick={toggleTheme}
               className="p-2 rounded-full"
+              aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
             >
               {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
             </button>
@@ -316,6 +318,7 @@ const Navbar: React.FC = () => {
               type="button"
               onClick={() => setLanguage(language === 'en' ? 'np' : 'en')}
               className="p-2 font-bold text-sm"
+              aria-label={language === 'en' ? 'नेपालीमा परिवर्तन गर्नुहोस्' : 'Switch to English'}
             >
               {language === 'en' ? 'ने' : 'EN'}
             </button>
@@ -323,6 +326,7 @@ const Navbar: React.FC = () => {
               type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 text-primary"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -337,7 +341,7 @@ const Navbar: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden border-t border-text-heading/5 bg-surface/98 backdrop-blur-xl overflow-hidden"
+            className="lg:hidden border-t border-text-heading/5 bg-surface overflow-hidden"
           >
             <div className="px-6 py-6 space-y-2">
               {mainNavItems.map((item) => (
@@ -385,7 +389,7 @@ const Navbar: React.FC = () => {
                               "block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors",
                               (sub.href.startsWith('#') && activeSubSection === sub.id) || pathname === sub.href
                                 ? "text-primary bg-primary/5" 
-                                : "text-text-body/70 hover:text-primary"
+                                : "text-text-body hover:text-primary"
                             )}
                           >
                             {t(sub.key)}

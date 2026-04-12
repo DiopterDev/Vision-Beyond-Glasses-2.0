@@ -123,11 +123,17 @@ const CostOverview: React.FC = () => {
                       <CheckCircle2 size={16} className="text-success mr-2" />
                       <span>{t('costs.postOpCare')}</span>
                     </div>
+                    <div className="pt-3 mt-3 border-t border-gray-100 dark:border-gray-800">
+                      <p className="text-[10px] text-text-body/60 leading-tight italic">
+                        {t('costs.disclaimer')}
+                      </p>
+                    </div>
                   </div>
 
                   <Link 
                     to={`/surgery/${s.slug}`}
                     className="w-full py-4 rounded-2xl bg-surface border border-gray-100 dark:border-gray-800 text-text-heading font-bold flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all shadow-sm"
+                    aria-label={`${t('costs.viewDetails')} ${s.name}`}
                   >
                     {t('costs.viewDetails')}
                     <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
@@ -149,6 +155,7 @@ const CostOverview: React.FC = () => {
             <button
               onClick={() => setShowAll(!showAll)}
               className="flex items-center space-x-2 px-8 py-4 bg-primary text-white rounded-full font-bold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all active:scale-95"
+              aria-label={showAll ? t('surgeries.seeLess') : t('surgeries.seeMore')}
             >
               <span>{showAll ? t('surgeries.seeLess') : t('surgeries.seeMore')}</span>
               {showAll ? <ChevronUp size={20} /> : <ChevronDown size={20} />}

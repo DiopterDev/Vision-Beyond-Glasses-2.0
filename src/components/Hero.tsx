@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
                   {t('cta.consultation')}
                 </a>
               </div>
-              <p className="text-[10px] md:text-xs text-tagline italic opacity-70">
+              <p className="text-[10px] md:text-xs text-tagline italic opacity-90">
                 {t('hero.disclaimer')}
               </p>
             </div>
