@@ -50,10 +50,9 @@ export const FAQItem: React.FC<FAQItemProps> = ({
               {q}
             </h3>
             {isVerified && !isOpen && (
-              <span className="text-[10px] font-bold text-primary uppercase tracking-widest flex items-center mt-1">
-                <ShieldCheck size={10} className="mr-1" />
-                Verified Insight
-              </span>
+              <div className="text-primary mt-1" title="Verified Clinical Insight">
+                <ShieldCheck size={14} />
+              </div>
             )}
           </div>
         </div>
@@ -132,6 +131,7 @@ const FAQ: React.FC = () => {
                 key={index}
                 questionKey={item.q}
                 answerKey={item.a}
+                isVerified={true}
                 isOpen={openIndex === index}
                 onToggle={() => setOpenIndex(openIndex === index ? null : index)}
               />

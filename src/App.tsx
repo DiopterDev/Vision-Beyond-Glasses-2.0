@@ -25,14 +25,12 @@ const SurgeryPage = lazy(() => import('./pages/SurgeryPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ResourcesPage = lazy(() => import('./pages/ResourcesPage'));
 
-const ScrollToTop: React.FC<{ isLoading: boolean }> = ({ isLoading }) => {
+const ScrollToTop: React.FC = () => {
   const { pathname, hash } = useLocation();
   
   useEffect(() => {
-    if (isLoading) return;
-
     if (!hash) {
-      // Small timeout to ensure content is rendered after loading screen
+      // Small timeout to ensure content is rendered
       setTimeout(() => {
         window.scrollTo({ top: 0, behavior: 'auto' });
       }, 100);
@@ -48,7 +46,7 @@ const ScrollToTop: React.FC<{ isLoading: boolean }> = ({ isLoading }) => {
         }, 150);
       }
     }
-  }, [pathname, hash, isLoading]);
+  }, [pathname, hash]);
   
   return null;
 };
@@ -132,7 +130,7 @@ const AppContent: React.FC = () => {
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow pb-32 lg:pb-0">
-          <ScrollToTop isLoading={false} />
+          <ScrollToTop />
           <Suspense fallback={<div className="h-screen bg-background" />}>
             <Routes>
               <Route path="/" element={<><HomePage /><Contact /></>} />

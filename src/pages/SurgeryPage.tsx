@@ -44,7 +44,7 @@ const SurgeryPage: React.FC = () => {
   const aeoItems = slug ? aeoData[slug]?.[language as 'en' | 'np'] || [] : [];
 
   const mergedFaqs = [
-    ...(data?.faqs || []).map(faq => ({ ...faq, isVerified: false })),
+    ...(data?.faqs || []).map(faq => ({ ...faq, isVerified: true })),
     ...aeoItems.map((item: any) => ({ 
       question: item.question, 
       answer: item.answer, 

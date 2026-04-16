@@ -315,6 +315,7 @@ const ResourcesPage: React.FC = () => {
                                 key={index}
                                 question={highlightText(qText, searchQuery)}
                                 answer={highlightText(aText, searchQuery)}
+                                isVerified={true}
                                 isOpen={openFaqIndex === index}
                                 onToggle={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
                               />
