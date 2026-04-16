@@ -390,6 +390,93 @@ const SurgeryPage: React.FC = () => {
         </div>
       </section>
 
+      {/* IOL Selection Guide (Advanced Cataract Only) */}
+      {data.iolSelection && (
+        <section className="py-24 bg-surface/30 dark:bg-white/5">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4">
+                {data.iolSelection.title}
+              </h2>
+              <p className="text-text-body max-w-2xl mx-auto">
+                {data.iolSelection.description}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {data.iolSelection.options.map((option, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="group bg-white dark:bg-white/5 rounded-3xl overflow-hidden border border-primary/10 shadow-sm hover:shadow-xl transition-all duration-500"
+                >
+                  <div className="aspect-[4/3] overflow-hidden relative">
+                    <img 
+                      src={option.image} 
+                      alt={option.name}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </div>
+                  <div className="p-8">
+                    <h3 className="text-xl font-bold text-primary mb-3">{option.name}</h3>
+                    <p className="text-text-body text-sm leading-relaxed">
+                      {option.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Available IOLs at Tilganga (Advanced Cataract Only) */}
+      {data.availableIols && (
+        <section className="py-24 bg-background">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4">
+                {data.availableIols.title}
+              </h2>
+              <p className="text-text-body max-w-2xl mx-auto">
+                {data.availableIols.description}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {data.availableIols.lenses.map((lens, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="p-6 rounded-3xl bg-white dark:bg-white/5 border border-primary/5 shadow-sm hover:shadow-md transition-all text-center group"
+                >
+                  <div className="w-full aspect-square rounded-2xl overflow-hidden mb-6 bg-surface">
+                    <img 
+                      src={lens.image} 
+                      alt={lens.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <h4 className="font-bold text-text-heading mb-2">{lens.name}</h4>
+                  <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold">
+                    {lens.cost}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Recovery Timeline */}
       <section className="py-24 bg-surface/30 dark:bg-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -622,48 +709,50 @@ const SurgeryPage: React.FC = () => {
       )}
 
       {/* Crawlable Eligibility Logic Summary */}
-      <section className="py-24 bg-primary/5 border-t border-primary/10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-text-heading mb-8 text-center">
-            {language === 'en' ? 'Surgery Eligibility Criteria Summary' : 'शल्यक्रिया योग्यता मापदण्ड सारांश'}
-          </h2>
-          <div className="prose prose-slate dark:prose-invert max-w-none text-text-body text-sm leading-relaxed">
-            <p>
-              {language === 'en' 
-                ? 'Our clinical eligibility logic for refractive surgery considers multiple factors to ensure patient safety and optimal visual outcomes. Key criteria include:'
-                : 'अपवर्तक शल्यक्रियाका लागि हाम्रो क्लिनिकल योग्यता तर्कले बिरामीको सुरक्षा र इष्टतम दृश्य परिणामहरू सुनिश्चित गर्न धेरै कारकहरू विचार गर्दछ। मुख्य मापदण्डहरू समावेश छन्:'}
-            </p>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 list-none pl-0">
-              <li className="flex items-start space-x-2">
-                <CheckCircle2 size={16} className="text-primary mt-1 shrink-0" />
-                <span>{language === 'en' ? 'Stable prescription for at least 6 months.' : 'कमतीमा ६ महिनाको लागि स्थिर प्रिस्क्रिप्शन।'}</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <CheckCircle2 size={16} className="text-primary mt-1 shrink-0" />
-                <span>{language === 'en' ? 'Healthy corneal thickness and shape (no Keratoconus).' : 'स्वस्थ कोर्नियल मोटाई र आकार (केराटोकोनस नभएको)।'}</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <CheckCircle2 size={16} className="text-primary mt-1 shrink-0" />
-                <span>{language === 'en' ? 'Absence of active eye infections or severe dry eye.' : 'सक्रिय आँखा संक्रमण वा गम्भीर सुख्खा आँखाको अभाव।'}</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <CheckCircle2 size={16} className="text-primary mt-1 shrink-0" />
-                <span>{language === 'en' ? 'Age appropriateness (typically 18-45 for laser, 45+ for Presbyond/CLE).' : 'उपयुक्त उमेर (सामान्यतया लेजरका लागि १८-४५, Presbyond/CLE का लागि ४५+)।'}</span>
-              </li>
-            </ul>
+      {slug !== 'cle-cataract' && (
+        <section className="py-24 bg-primary/5 border-t border-primary/10">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-text-heading mb-8 text-center">
+              {language === 'en' ? 'Surgery Eligibility Criteria Summary' : 'शल्यक्रिया योग्यता मापदण्ड सारांश'}
+            </h2>
+            <div className="prose prose-slate dark:prose-invert max-w-none text-text-body text-sm leading-relaxed">
+              <p>
+                {language === 'en' 
+                  ? 'Our clinical eligibility logic for refractive surgery considers multiple factors to ensure patient safety and optimal visual outcomes. Key criteria include:'
+                  : 'अपवर्तक शल्यक्रियाका लागि हाम्रो क्लिनिकल योग्यता तर्कले बिरामीको सुरक्षा र इष्टतम दृश्य परिणामहरू सुनिश्चित गर्न धेरै कारकहरू विचार गर्दछ। मुख्य मापदण्डहरू समावेश छन्:'}
+              </p>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 list-none pl-0">
+                <li className="flex items-start space-x-2">
+                  <CheckCircle2 size={16} className="text-primary mt-1 shrink-0" />
+                  <span>{language === 'en' ? 'Stable prescription for at least 6 months.' : 'कमतीमा ६ महिनाको लागि स्थिर प्रिस्क्रिप्शन।'}</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <CheckCircle2 size={16} className="text-primary mt-1 shrink-0" />
+                  <span>{language === 'en' ? 'Healthy corneal thickness and shape (no Keratoconus).' : 'स्वस्थ कोर्नियल मोटाई र आकार (केराटोकोनस नभएको)।'}</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <CheckCircle2 size={16} className="text-primary mt-1 shrink-0" />
+                  <span>{language === 'en' ? 'Absence of active eye infections or severe dry eye.' : 'सक्रिय आँखा संक्रमण वा गम्भीर सुख्खा आँखाको अभाव।'}</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <CheckCircle2 size={16} className="text-primary mt-1 shrink-0" />
+                  <span>{language === 'en' ? 'Age appropriateness (typically 18-45 for laser, 45+ for Presbyond/CLE).' : 'उपयुक्त उमेर (सामान्यतया लेजरका लागि १८-४५, Presbyond/CLE का लागि ४५+)।'}</span>
+                </li>
+              </ul>
 
-            <div className="mt-10 flex justify-center">
-              <Link 
-                to="/#eligibility" 
-                className="inline-flex items-center space-x-2 px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 group"
-              >
-                <span>{t('cta.eligibility')}</span>
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
+              <div className="mt-10 flex justify-center">
+                <Link 
+                  to="/#eligibility" 
+                  className="inline-flex items-center space-x-2 px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 group"
+                >
+                  <span>{t('cta.eligibility')}</span>
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </div>
   );
 };
@@ -737,6 +826,15 @@ const PrecisionToolsSection: React.FC<{ slug: string; language: 'en' | 'np' }> =
     }] : []),
 
     // Investigation Devices (Common)
+    {
+      category: language === 'en' ? 'Investigation' : 'अनुसन्धान',
+      name: 'IOL Master 700',
+      description: language === 'en' 
+        ? 'The gold standard in optical biometry, providing precise measurements for accurate IOL power calculation.'
+        : 'अप्टिकल बायोमेट्रीमा स्वर्ण मानक, जसले सटीक IOL पावर गणनाको लागि सही मापन प्रदान गर्दछ।',
+      image: 'https://i.ibb.co/pBjKwZyy/LVC-Normogram.webp', // Placeholder image, will use a better one if found
+      alt: 'ZEISS IOL Master 700 for precise IOL power calculation'
+    },
     {
       category: language === 'en' ? 'Investigation' : 'अनुसन्धान',
       name: 'MS-39',

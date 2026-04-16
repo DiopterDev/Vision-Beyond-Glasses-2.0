@@ -53,6 +53,7 @@ export interface SurgeryData {
   };
   cost?: {
     title: string;
+    opdRegistration?: number;
     eligibilityScan?: number;
     surgeryCost: number;
     isPerEye?: boolean;
@@ -65,6 +66,24 @@ export interface SurgeryData {
     description: string;
   }[];
   targetProfessions?: string[];
+  iolSelection?: {
+    title: string;
+    description: string;
+    options: {
+      name: string;
+      description: string;
+      image?: string;
+    }[];
+  };
+  availableIols?: {
+    title: string;
+    description: string;
+    lenses: {
+      name: string;
+      cost: string;
+      image?: string;
+    }[];
+  };
   seo: {
     title: string;
     description: string;

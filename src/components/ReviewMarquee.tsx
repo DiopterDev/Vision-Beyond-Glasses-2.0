@@ -348,24 +348,26 @@ const ReviewMarquee: React.FC = () => {
       </div>
       
       <div className="relative">
-        <div className="relative flex overflow-x-hidden group">
-          {/* Edge Fade Shadows */}
-          <div className="absolute inset-y-0 left-0 w-8 md:w-40 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-8 md:w-40 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-          
-          <div
-            className="flex whitespace-nowrap animate-marquee py-12 px-4 hover:pause-animation"
-            style={{ width: 'max-content', animationDuration: '180s' }}
-          >
-            {duplicatedReviews.map((review, index) => (
-              <ReviewCard 
-                key={index} 
-                review={review} 
-                isExpanded={false}
-                onToggle={() => openCarousel(index)}
-                onClose={() => {}}
-              />
-            ))}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative flex overflow-x-hidden group">
+            {/* Edge Fade Shadows */}
+            <div className="absolute inset-y-0 left-0 w-8 md:w-40 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-8 md:w-40 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+            
+            <div
+              className="flex whitespace-nowrap animate-marquee py-12 px-4 hover:pause-animation"
+              style={{ width: 'max-content', animationDuration: '180s' }}
+            >
+              {duplicatedReviews.map((review, index) => (
+                <ReviewCard 
+                  key={index} 
+                  review={review} 
+                  isExpanded={false}
+                  onToggle={() => openCarousel(index)}
+                  onClose={() => {}}
+                />
+              ))}
+            </div>
           </div>
         </div>
 

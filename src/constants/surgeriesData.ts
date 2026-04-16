@@ -157,6 +157,7 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       targetProfessions: ['Military', 'Police', 'Pilots', 'Surgeons', 'Athletes', 'Trekkers'],
       cost: {
         title: 'Cost of SMILE Pro Surgery',
+        opdRegistration: 200,
         eligibilityScan: 3500,
         surgeryCost: 92000,
       },
@@ -246,6 +247,7 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       targetProfessions: ['सेना', 'प्रहरी', 'पाइलट', 'सर्जन', 'एथलीट', 'ट्रेकर'],
       cost: {
         title: 'SMILE Pro शल्यक्रियाको लागत',
+        opdRegistration: 200,
         eligibilityScan: 3500,
         surgeryCost: 92000,
       },
@@ -351,6 +353,7 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       targetProfessions: ['Pilots', 'Surgeons', 'Presbyopic People', 'Office Professionals', 'Medical Professionals'],
       cost: {
         title: 'Cost of Femto-LASIK Surgery',
+        opdRegistration: 200,
         eligibilityScan: 3500,
         surgeryCost: 90000,
       },
@@ -444,6 +447,7 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       targetProfessions: ['पाइलट', 'सर्जन', 'प्रेसबायोपिक व्यक्तिहरू', 'कार्यालय पेशेवर', 'चिकित्सा पेशेवर'],
       cost: {
         title: 'Femto-LASIK शल्यक्रियाको लागत',
+        opdRegistration: 200,
         eligibilityScan: 3500,
         surgeryCost: 90000,
       },
@@ -538,6 +542,7 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       targetProfessions: ['Military', 'Police', 'Pilots', 'Surgeons', 'Athletes', 'Trekkers'],
       cost: {
         title: 'Cost of PRK Surgery',
+        opdRegistration: 200,
         eligibilityScan: 3500,
         surgeryCost: 70000,
       },
@@ -626,6 +631,7 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       targetProfessions: ['सेना', 'प्रहरी', 'पाइलट', 'सर्जन', 'एथलीट', 'ट्रेकर'],
       cost: {
         title: 'PRK शल्यक्रियाको लागत',
+        opdRegistration: 200,
         eligibilityScan: 3500,
         surgeryCost: 70000,
       },
@@ -716,6 +722,7 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       },
       cost: {
         title: 'Cost of Presbyond Surgery',
+        opdRegistration: 200,
         surgeryCost: 0,
         notStarted: true,
       },
@@ -804,6 +811,7 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       },
       cost: {
         title: 'Presbyond शल्यक्रियाको लागत',
+        opdRegistration: 200,
         surgeryCost: 0,
         notStarted: true,
       },
@@ -908,6 +916,8 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       targetProfessions: ['High Prescription Patients', 'Pilots', 'Surgeons', 'Trekkers'],
       cost: {
         title: 'Cost of ICL / IPCL Surgery',
+        opdRegistration: 200,
+        eligibilityScan: 3500,
         surgeryCost: 120000,
         isPerEye: true,
         isStartingAt: true,
@@ -1011,6 +1021,8 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       targetProfessions: ['उच्च प्रिस्क्रिप्शन बिरामीहरू', 'पाइलट', 'सर्जन', 'ट्रेकर'],
       cost: {
         title: 'ICL / IPCL शल्यक्रियाको लागत',
+        opdRegistration: 200,
+        eligibilityScan: 3500,
         surgeryCost: 120000,
         isPerEye: true,
         isStartingAt: true,
@@ -1062,6 +1074,11 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       },
       technology: [
         {
+          name: 'IOL Master 700',
+          description: 'The gold standard in optical biometry, providing precise measurements for accurate IOL power calculation.',
+          icon: 'Zap'
+        },
+        {
           name: 'Premium IOLs',
           description: 'Advanced intraocular lenses including Trifocal and EDOF options for a full range of vision.',
           icon: 'Eye'
@@ -1074,22 +1091,22 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
         { time: 'Lifetime', description: 'Enjoy permanent clarity without the risk of future cataracts.' }
       ],
       comparison: {
-        title: 'How it differs',
-        description: 'CLE is essentially cataract surgery performed before a cataract develops, providing permanent vision correction.',
+        title: 'IOL Comparison',
+        description: 'Understanding the differences between standard and premium intraocular lenses helps you choose the best option for your lifestyle.',
         table: {
-          headers: ['Feature', 'CLE / Cataract', 'Laser Eye Surgery', 'Reading Glasses'],
+          headers: ['Feature', 'Monofocal IOL', 'EDOF IOL', 'Trifocal IOL'],
           rows: [
             {
-              label: 'Procedure',
-              values: ['Lens replacement (permanent)', 'Corneal reshaping', 'External aid']
+              label: 'Range of Vision',
+              values: ['Distance only', 'Distance & Intermediate', 'Near, Intermediate & Distance']
             },
             {
-              label: 'Recovery',
-              values: ['Fast (24-48 hours)', 'Fast (24-48 hours)', 'Immediate']
+              label: 'Spectacle Independence',
+              values: ['Requires reading glasses', 'Reduced need for glasses', 'Minimal to no need for glasses']
             },
             {
-              label: 'Ideal Candidates',
-              values: ['Cataracts, aged 50+', 'Aged 20-45', 'Aged 40+']
+              label: 'Visual Quality',
+              values: ['Excellent contrast', 'High contrast, smooth transition', 'Excellent all-range clarity']
             }
           ]
         }
@@ -1100,17 +1117,69 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       },
       clinicalDetails: [
         {
-          title: 'Micro-Incision Surgery',
-          description: 'Using sub-2mm incisions for faster healing, less astigmatism, and minimal post-operative discomfort.'
+          title: 'Advanced Phaco-emulsification Technique',
+          description: 'Using high-frequency ultrasound to gently break up and remove the cataract with maximum precision and safety.'
+        },
+        {
+          title: 'Surgery Without Injection (Topical Anesthesia)',
+          description: 'Performing the entire procedure using only numbing eye drops, eliminating the need for painful injections and ensuring a faster recovery.'
         },
         {
           title: 'Premium IOL Selection',
           description: 'Customized selection of Trifocal or EDOF lenses to provide a full range of vision, reducing or eliminating the need for glasses.'
         }
       ],
-      targetProfessions: ['Senior Professionals', 'Active Seniors', 'Trekkers'],
+      targetProfessions: ['Senior Professionals', 'Active Seniors', 'Those not fit for laser and ICL patients', 'Patients with cataract'],
+      iolSelection: {
+        title: 'IOL Selection Guide',
+        description: 'Choosing the right Intraocular Lens (IOL) is crucial for your post-operative visual quality. We offer a range of advanced options tailored to your lifestyle.',
+        options: [
+          {
+            name: 'Toric IOL',
+            description: 'Specifically designed to correct astigmatism, providing sharp distance vision for patients with significant corneal curvature.',
+            image: 'https://picsum.photos/seed/toric/800/600'
+          },
+          {
+            name: 'EDOF (Extended Depth of Focus)',
+            description: 'Provides a continuous range of high-quality vision from far to intermediate distances, ideal for active lifestyles and computer work.',
+            image: 'https://picsum.photos/seed/edof/800/600'
+          },
+          {
+            name: 'Trifocal IOL',
+            description: 'The most advanced option, providing clear vision at near, intermediate, and far distances, often completely eliminating the need for glasses.',
+            image: 'https://picsum.photos/seed/trifocal/800/600'
+          }
+        ]
+      },
+      availableIols: {
+        title: 'IOLs Available at Tilganga',
+        description: 'We provide a wide selection of world-class intraocular lenses. Prices are subject to change and will be confirmed during your consultation.',
+        lenses: [
+          {
+            name: 'Monofocal IOL (Standard)',
+            cost: 'Contact for Pricing',
+            image: 'https://picsum.photos/seed/monofocal/400/300'
+          },
+          {
+            name: 'Toric IOL (Premium)',
+            cost: 'Contact for Pricing',
+            image: 'https://picsum.photos/seed/toric-lens/400/300'
+          },
+          {
+            name: 'EDOF IOL (Premium)',
+            cost: 'Contact for Pricing',
+            image: 'https://picsum.photos/seed/edof-lens/400/300'
+          },
+          {
+            name: 'Trifocal IOL (Premium)',
+            cost: 'Contact for Pricing',
+            image: 'https://picsum.photos/seed/trifocal-lens/400/300'
+          }
+        ]
+      },
       cost: {
         title: 'Latest Official Cost',
+        opdRegistration: 200,
         surgeryCost: 18000,
         isStartingAt: true,
         isPerEye: true,
@@ -1152,6 +1221,11 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       },
       technology: [
         {
+          name: 'IOL Master 700',
+          description: 'अप्टिकल बायोमेट्रीमा स्वर्ण मानक, जसले सटीक IOL पावर गणनाको लागि सही मापन प्रदान गर्दछ।',
+          icon: 'Zap'
+        },
+        {
           name: 'प्रिमियम IOL हरू',
           description: 'दृष्टिको पूर्ण दायराका लागि Trifocal र EDOF विकल्पहरू सहित उन्नत इन्ट्राओकुलर लेन्सहरू।',
           icon: 'Eye'
@@ -1164,22 +1238,22 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
         { time: 'जीवनभर', description: 'भविष्यमा मोतियाबिन्दुको जोखिम बिना स्थायी स्पष्टताको आनन्द लिनुहोस्।' }
       ],
       comparison: {
-        title: 'यो कसरी फरक छ',
-        description: 'CLE मूलतः मोतियाबिन्दु विकसित हुनु अघि गरिने मोतियाबिन्दु शल्यक्रिया हो, जसले स्थायी दृष्टि सुधार प्रदान गर्दछ।',
+        title: 'IOL तुलना',
+        description: 'मानक र प्रिमियम इन्ट्राओकुलर लेन्सहरू बीचको भिन्नता बुझ्नाले तपाईंलाई आफ्नो जीवनशैलीको लागि उत्तम विकल्प रोज्न मद्दत गर्दछ।',
         table: {
-          headers: ['विशेषता', 'CLE / मोतियाबिन्दु', 'लेजर आँखाको शल्यक्रिया', 'पढ्ने चश्मा'],
+          headers: ['विशेषता', 'Monofocal IOL', 'EDOF IOL', 'Trifocal IOL'],
           rows: [
             {
-              label: 'प्रक्रिया',
-              values: ['लेन्स प्रतिस्थापन (स्थायी)', 'कोर्नियल रिसेपिङ', 'बाहिरी सहायता']
+              label: 'दृष्टिको दायरा',
+              values: ['टाढाको मात्र', 'टाढा र मध्यवर्ती', 'नजिक, मध्यवर्ती र टाढा']
             },
             {
-              label: 'रिकभरी',
-              values: ['छिटो (२४-४८ घण्टा)', 'छिटो (२४-४८ घण्टा)', 'तुरुन्तै']
+              label: 'चश्माबाट स्वतन्त्रता',
+              values: ['पढ्ने चश्मा आवश्यक', 'चश्माको आवश्यकता कम', 'चश्माको न्यूनतम वा शून्य आवश्यकता']
             },
             {
-              label: 'आदर्श उम्मेद्वार',
-              values: ['मोतियाबिन्दु, ५०+ वर्ष', '२०-४५ वर्ष', '४०+ वर्ष']
+              label: 'दृश्य गुणस्तर',
+              values: ['उत्कृष्ट कन्ट्रास्ट', 'उच्च कन्ट्रास्ट, सहज संक्रमण', 'सबै दायरामा उत्कृष्ट स्पष्टता']
             }
           ]
         }
@@ -1190,17 +1264,69 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       },
       clinicalDetails: [
         {
-          title: 'माइक्रो-इन्सिजन शल्यक्रिया',
-          description: 'छिटो निको हुन, कम एस्टिग्माटिज्म, र शल्यक्रिया पछि न्यूनतम असुविधाको लागि २ मिमी भन्दा कम चीराको प्रयोग।'
+          title: 'उन्नत फाको-इमल्सिफिकेशन प्रविधि',
+          description: 'अधिकतम सटीकता र सुरक्षाको साथ मोतियाबिन्दुलाई बिस्तारै टुक्रा पार्न र हटाउन उच्च-फ्रिक्वेन्सी अल्ट्रासाउन्डको प्रयोग।'
+        },
+        {
+          title: 'सुई बिनाको शल्यक्रिया (टोपिकल एनेस्थेसिया)',
+          description: 'दुखाइ दिने सुईको आवश्यकतालाई हटाउँदै र छिटो रिकभरी सुनिश्चित गर्दै केवल लठ्याउने थोपा प्रयोग गरेर सम्पूर्ण प्रक्रिया सम्पन्न गर्ने।'
         },
         {
           title: 'प्रिमियम IOL चयन',
           description: 'दृष्टिको पूर्ण दायरा प्रदान गर्न Trifocal वा EDOF लेन्सहरूको अनुकूलित चयन, जसले चश्माको आवश्यकतालाई कम वा हटाउँछ।'
         }
       ],
-      targetProfessions: ['वरिष्ठ पेशेवर', 'सक्रिय वृद्धहरू', 'ट्रेकर'],
+      targetProfessions: ['वरिष्ठ पेशेवर', 'सक्रिय वृद्धहरू', 'लेजर र ICL का लागि अनुपयुक्त बिरामीहरू', 'मोतियाबिन्दु भएका बिरामीहरू'],
+      iolSelection: {
+        title: 'IOL चयन गाइड',
+        description: 'सही इन्ट्राओकुलर लेन्स (IOL) छनौट गर्नु तपाईंको शल्यक्रिया पछिको दृश्य गुणस्तरको लागि महत्त्वपूर्ण छ। हामी तपाईंको जीवनशैली अनुसार उन्नत विकल्पहरू प्रदान गर्दछौं।',
+        options: [
+          {
+            name: 'Toric IOL',
+            description: 'विशेष गरी एस्टिग्माटिज्म सुधार गर्न डिजाइन गरिएको, जसले कोर्नियल कर्भेचर भएका बिरामीहरूलाई स्पष्ट टाढाको दृष्टि प्रदान गर्दछ।',
+            image: 'https://picsum.photos/seed/toric/800/600'
+          },
+          {
+            name: 'EDOF (Extended Depth of Focus)',
+            description: 'टाढादेखि मध्यवर्ती दूरीसम्म उच्च गुणस्तरको निरन्तर दृष्टि प्रदान गर्दछ, जुन सक्रिय जीवनशैली र कम्प्युटर कार्यका लागि उपयुक्त छ।',
+            image: 'https://picsum.photos/seed/edof/800/600'
+          },
+          {
+            name: 'Trifocal IOL',
+            description: 'सबैभन्दा उन्नत विकल्प, जसले नजिक, मध्यवर्ती र टाढाको स्पष्ट दृष्टि प्रदान गर्दछ, र अक्सर चश्माको आवश्यकतालाई पूर्ण रूपमा हटाउँछ।',
+            image: 'https://picsum.photos/seed/trifocal/800/600'
+          }
+        ]
+      },
+      availableIols: {
+        title: 'तिलगंगामा उपलब्ध IOL हरू',
+        description: 'हामी विश्व-स्तरीय इन्ट्राओकुलर लेन्सहरूको विस्तृत चयन प्रदान गर्दछौं। मूल्यहरू परिवर्तन हुन सक्छन् र तपाईंको परामर्शको क्रममा पुष्टि गरिनेछ।',
+        lenses: [
+          {
+            name: 'Monofocal IOL (Standard)',
+            cost: 'मूल्यको लागि सम्पर्क गर्नुहोस्',
+            image: 'https://picsum.photos/seed/monofocal/400/300'
+          },
+          {
+            name: 'Toric IOL (Premium)',
+            cost: 'मूल्यको लागि सम्पर्क गर्नुहोस्',
+            image: 'https://picsum.photos/seed/toric-lens/400/300'
+          },
+          {
+            name: 'EDOF IOL (Premium)',
+            cost: 'मूल्यको लागि सम्पर्क गर्नुहोस्',
+            image: 'https://picsum.photos/seed/edof-lens/400/300'
+          },
+          {
+            name: 'Trifocal IOL (Premium)',
+            cost: 'मूल्यको लागि सम्पर्क गर्नुहोस्',
+            image: 'https://picsum.photos/seed/trifocal-lens/400/300'
+          }
+        ]
+      },
       cost: {
         title: 'पछिल्लो आधिकारिक लागत',
+        opdRegistration: 200,
         surgeryCost: 18000,
         isStartingAt: true,
         isPerEye: true,

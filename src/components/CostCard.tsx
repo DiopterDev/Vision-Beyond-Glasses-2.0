@@ -10,6 +10,7 @@ import { cn } from '../lib/utils';
 interface CostCardProps {
   costData?: {
     title: string;
+    opdRegistration?: number;
     eligibilityScan?: number;
     surgeryCost: number;
     isPerEye?: boolean;
@@ -74,6 +75,24 @@ const CostCard: React.FC<CostCardProps> = ({ costData, className }) => {
           </div>
         ) : (
           <div className="space-y-8">
+            {costData.opdRegistration && (
+              <div className="flex justify-between items-center pb-4 border-b border-text-body/10">
+                <div>
+                  <p className="text-sm text-text-body font-bold uppercase tracking-wider mb-1">
+                    {t('costs.opdRegistration')}
+                  </p>
+                  <p className="text-text-body text-sm font-medium">
+                    {t('costs.opdRegistrationDesc')}
+                  </p>
+                </div>
+                <div className="text-right">
+                  <p className="text-xl font-bold text-text-heading">
+                    {formatPrice(costData.opdRegistration)}
+                  </p>
+                </div>
+              </div>
+            )}
+
             {costData.eligibilityScan && (
               <div className="flex justify-between items-center pb-4 border-b border-text-body/10">
                 <div>

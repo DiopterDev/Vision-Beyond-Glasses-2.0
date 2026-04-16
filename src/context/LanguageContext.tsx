@@ -222,6 +222,14 @@ const translations: Translations = {
     en: 'Required for laser surgeries',
     np: 'लेजर शल्यक्रियाका लागि आवश्यक',
   },
+  'costs.opdRegistration': {
+    en: 'OPD Registration: ',
+    np: 'OPD दर्ता: ',
+  },
+  'costs.opdRegistrationDesc': {
+    en: 'Standard hospital fee',
+    np: 'मानक अस्पताल शुल्क',
+  },
   'costs.surgeryCost': {
     en: 'Surgery Cost',
     np: 'शल्यक्रिया लागत',

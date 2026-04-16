@@ -110,6 +110,15 @@ const CostOverview: React.FC = () => {
                   </div>
 
                   <div className="space-y-3 mb-8">
+                    {data.cost.opdRegistration && (
+                      <div className="flex items-center text-sm text-text-body font-medium">
+                        <CheckCircle2 size={16} className="text-success mr-2" />
+                        <span>
+                          {t('costs.opdRegistration')}
+                          <span className="font-bold">{formatPrice(data.cost.opdRegistration)}</span>
+                        </span>
+                      </div>
+                    )}
                     {data.cost.eligibilityScan && (
                       <div className="flex items-center text-sm text-text-body font-medium">
                         <CheckCircle2 size={16} className="text-success mr-2" />
