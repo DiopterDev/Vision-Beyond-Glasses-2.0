@@ -27,7 +27,7 @@
   --text-heading: #0F172A;
   --text-body: #334155;
   --tagline: #475569;
-  --primary: #0369A1;
+  --primary: #025A8B;
   --nav-text: #1E293B;
   --floating-shadow: var(--shadow-floating);
 }
@@ -71,9 +71,9 @@
 @layer utilities {
   .glass-nav {
     @apply z-50;
-    backdrop-filter: blur(10px);
-    background-color: color-mix(in srgb, var(--surface) 70%, transparent);
-    border-color: color-mix(in srgb, var(--text-heading) 5%, transparent);
+    backdrop-filter: blur(12px);
+    background-color: color-mix(in srgb, var(--surface) 95%, transparent);
+    border-color: color-mix(in srgb, var(--text-heading) 10%, transparent);
   }
 
   .card-modern {

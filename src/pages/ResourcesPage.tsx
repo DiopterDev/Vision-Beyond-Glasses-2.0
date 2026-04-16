@@ -14,7 +14,7 @@ interface ResourceTopic {
   faqs?: { q: string; a: string }[];
 }
 
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 
 const ResourcesPage: React.FC = () => {
   const { t, language } = useLanguage();
@@ -152,24 +152,22 @@ const ResourcesPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background pt-24 pb-12">
-      <Helmet>
-        <title>{language === 'en' ? 'Eye Surgery FAQs & Resources | Dr. Kaushal Pokhrel' : 'आँखा शल्यक्रिया प्रश्नहरू र स्रोतहरू | डा. कौशल पोखरेल'}</title>
-        <meta name="description" content={language === 'en' ? 'Expert answers to common questions about SMILE Pro, LASIK, ICL, and refractive surgery in Nepal. Clinical insights by Dr. Kaushal Pokhrel.' : 'SMILE Pro, LASIK, ICL, र नेपालमा अपवर्तक शल्यक्रियाको बारेमा सामान्य प्रश्नहरूको विशेषज्ञ जवाफ। डा. कौशल पोखरेलद्वारा क्लिनिकल अन्तर्दृष्टि।'} />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": topics.filter(t => t.type === 'faq').flatMap(t => t.faqs || []).map(faq => ({
-              "@type": "Question",
-              "name": faq.q.includes('.') ? t(faq.q) : faq.q,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.a.includes('.') ? t(faq.a) : faq.a
-              }
-            }))
-          })}
-        </script>
-      </Helmet>
+      <SEO 
+        title={language === 'en' ? 'Eye Surgery FAQs & Resources | Dr. Kaushal Pokhrel' : 'आँखा शल्यक्रिया प्रश्नहरू र स्रोतहरू | डा. कौशल पोखरेल'}
+        description={language === 'en' ? 'Expert answers to common questions about SMILE Pro, LASIK, ICL, and refractive surgery in Nepal. Clinical insights by Dr. Kaushal Pokhrel.' : 'SMILE Pro, LASIK, ICL, र नेपालमा अपवर्तक शल्यक्रियाको बारेमा सामान्य प्रश्नहरूको विशेषज्ञ जवाफ। डा. कौशल पोखरेलद्वारा क्लिनिकल अन्तर्दृष्टि।'}
+        schemas={[{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": topics.filter(t => t.type === 'faq').flatMap(t => t.faqs || []).map(faq => ({
+            "@type": "Question",
+            "name": faq.q.includes('.') ? t(faq.q) : faq.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.a.includes('.') ? t(faq.a) : faq.a
+            }
+          }))
+        }]}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-8">
           

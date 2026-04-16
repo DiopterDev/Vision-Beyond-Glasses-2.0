@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
 import CredentialsMarquee from './components/CredentialsMarquee';
+import { useLanguage } from './context/LanguageContext';
 import SEO from './components/SEO';
 import BackToTop from './components/BackToTop';
 
@@ -53,8 +54,59 @@ const ScrollToTop: React.FC<{ isLoading: boolean }> = ({ isLoading }) => {
 };
 
 const HomePage: React.FC = () => {
+  const { t } = useLanguage();
+  
+  // FAQ Schema for Home Page
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": t('faq.q1.question'),
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": t('faq.q1.answer')
+        }
+      },
+      {
+        "@type": "Question",
+        "name": t('faq.q2.question'),
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": t('faq.q2.answer')
+        }
+      },
+      {
+        "@type": "Question",
+        "name": t('faq.q3.question'),
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": t('faq.q3.answer')
+        }
+      },
+      {
+        "@type": "Question",
+        "name": t('faq.q4.question'),
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": t('faq.q4.answer')
+        }
+      },
+      {
+        "@type": "Question",
+        "name": t('faq.q5.question'),
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": t('faq.q5.answer')
+        }
+      }
+    ]
+  };
+
   return (
     <>
+      <SEO schemas={[faqSchema]} />
       <Hero />
       <CredentialsMarquee />
       <SurgeriesGrid />
@@ -78,7 +130,6 @@ const AppContent: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col relative">
       <div className="flex flex-col min-h-screen">
-        <SEO />
         <Navbar />
         <main className="flex-grow pb-32 lg:pb-0">
           <ScrollToTop isLoading={false} />

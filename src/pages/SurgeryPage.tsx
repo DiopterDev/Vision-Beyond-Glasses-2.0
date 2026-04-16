@@ -25,7 +25,7 @@ import {
   Target,
   Users
 } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import { cn } from '../lib/utils';
 import CostCard from '../components/CostCard';
 import { FAQItem } from '../components/FAQ';
@@ -103,38 +103,60 @@ const SurgeryPage: React.FC = () => {
     'प्रेसबायोपिक व्यक्तिहरू': <Eye size={24} />,
   };
 
+  const surgerySchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": data.title,
+    "description": data.subtitle,
+    "procedureType": "SurgicalProcedure",
+    "bodyLocation": "Eye",
+    "relevantSpecialty": {
+      "@type": "MedicalSpecialty",
+      "name": "Ophthalmology"
+    },
+    "provider": {
+      "@type": "Physician",
+      "name": "Dr. Kaushal Pokhrel",
+      "medicalSpecialty": "Ophthalmology",
+      "description": "Expert in Laser Vision Correction and Refractive Surgery",
+      "url": window.location.origin
+    },
+    "offers": data.cost ? {
+      "@type": "Offer",
+      "price": data.cost.surgeryCost,
+      "priceCurrency": "NPR",
+      "description": data.investment.description,
+      "availability": "https://schema.org/InStock"
+    } : {
+      "@type": "Offer",
+      "description": data.investment.description
+    }
+  };
+
+  const faqSchema = mergedFaqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": mergedFaqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : null;
+
+  const schemas: any[] = [surgerySchema];
+  if (faqSchema) schemas.push(faqSchema);
+
   return (
     <div className="bg-background pt-20">
-      <Helmet>
-        <title>{data.seo.title}</title>
-        <meta name="description" content={data.seo.description} />
-        <meta name="keywords" content={data.seo.keywords.join(', ')} />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "MedicalProcedure",
-            "name": data.title,
-            "description": data.subtitle,
-            "procedureType": "SurgicalProcedure",
-            "bodyLocation": "Eye",
-            "relevantSpecialty": {
-              "@type": "MedicalSpecialty",
-              "name": "Ophthalmology"
-            },
-            "provider": {
-              "@type": "Physician",
-              "name": "Dr. Kaushal Pokhrel",
-              "medicalSpecialty": "Ophthalmology",
-              "description": "Expert in Laser Vision Correction and Refractive Surgery",
-              "url": window.location.origin
-            },
-            "offers": {
-              "@type": "Offer",
-              "description": data.investment.description
-            }
-          })}
-        </script>
-      </Helmet>
+      <SEO 
+        title={data.seo.title}
+        description={data.seo.description}
+        keywords={data.seo.keywords.join(', ')}
+        schemas={schemas}
+      />
 
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">

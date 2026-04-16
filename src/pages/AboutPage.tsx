@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import { useLanguage } from '../context/LanguageContext';
 import { motion, AnimatePresence, useAnimate } from 'motion/react';
 import { Heart, Users, BookOpen, Award, Droplets, Scissors, Globe, Quote, Mountain, Trees, Compass, MapPin, MessageSquare, Activity, Stethoscope, Eye, ChevronRight } from 'lucide-react';
@@ -158,19 +158,12 @@ const AboutPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background transition-colors duration-500">
-      <Helmet>
-        <title>About Dr. Kaushal Pokhrel | Ophthalmologist & Humanitarian</title>
-        <meta name="description" content="Learn about Dr. Kaushal Pokhrel's journey as an ophthalmologist, his passion for nature and adventure, and his commitment to humanitarian eye care in Nepal." />
-        <meta name="keywords" content="Dr. Kaushal Pokhrel, Ophthalmologist, Eye Surgeon, Nepal, Humanitarian, Nature Photography, Trekking" />
-        <meta property="og:title" content="About Dr. Kaushal Pokhrel | Ophthalmologist & Humanitarian" />
-        <meta property="og:description" content="Discover the life and work of Dr. Kaushal Pokhrel, from advanced eye surgeries to spreading smiles through social service." />
-        <meta property="og:image" content="https://i.ibb.co/x8wj59HG/Nature-Green.webp" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Dr. Kaushal Pokhrel | Ophthalmologist & Humanitarian" />
-        <meta name="twitter:description" content="Discover the life and work of Dr. Kaushal Pokhrel, from advanced eye surgeries to spreading smiles through social service." />
-        <meta name="twitter:image" content="https://i.ibb.co/x8wj59HG/Nature-Green.webp" />
-      </Helmet>
+      <SEO 
+        title="About Dr. Kaushal Pokhrel | Ophthalmologist & Humanitarian"
+        description="Learn about Dr. Kaushal Pokhrel's journey as an ophthalmologist, his passion for nature and adventure, and his commitment to humanitarian eye care in Nepal."
+        keywords={["Dr. Kaushal Pokhrel", "Ophthalmologist", "Eye Surgeon", "Nepal", "Humanitarian", "Nature Photography", "Trekking"].join(', ')}
+        image="https://i.ibb.co/x8wj59HG/Nature-Green.webp"
+      />
       <main className="pt-24 pb-20">
         {/* 1. Hero Section */}
         <section className="px-6 md:px-8 max-w-7xl mx-auto mb-20">

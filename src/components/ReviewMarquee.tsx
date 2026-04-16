@@ -251,7 +251,7 @@ const ReviewCard: React.FC<{
             <Star key={i} size={14} fill="currentColor" />
           ))}
         </div>
-        <span className="text-[10px] font-bold uppercase tracking-widest bg-primary text-white px-2.5 py-1 rounded-full shadow-sm">
+        <span className="text-xs font-bold uppercase tracking-widest bg-primary text-white px-3 py-1 rounded-full shadow-sm">
           {review.tag[language]}
         </span>
       </div>

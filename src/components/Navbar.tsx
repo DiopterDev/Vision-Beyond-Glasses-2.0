@@ -200,7 +200,7 @@ const Navbar: React.FC = () => {
       <div className="px-6 lg:px-8">
         <div className="flex justify-between items-center h-14 lg:h-[76px]">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 lg:space-x-3 group" onMouseEnter={() => !isMobile && setHoveredNavItem(null)}>
+          <Link to="/" className="flex items-center space-x-2 lg:space-x-3 group" aria-label="Dr. Kaushal Pokhrel - Home" onMouseEnter={() => !isMobile && setHoveredNavItem(null)}>
             <img 
               src="https://i.ibb.co/cSPhLMyD/logo-Dr-Kaushal.webp" 
               alt="Dr. Kaushal Pokhrel - LASIK and SMILE PRO Surgeon Logo" 
@@ -211,7 +211,7 @@ const Navbar: React.FC = () => {
               <span className="text-base lg:text-xl font-bold tracking-tight text-primary leading-tight">
                 {t('logo.title')}
               </span>
-              <span className="text-[10px] lg:text-xs font-medium text-tagline uppercase tracking-widest opacity-70 leading-tight">
+              <span className="text-xs font-bold text-text-body uppercase tracking-widest leading-tight">
                 {t('logo.subtitle')}
               </span>
             </div>

@@ -284,7 +284,7 @@ const EligibilityChecker: React.FC = () => {
                       </div>
 
                       <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 w-full justify-center mt-auto">
-                        <a href="#contact" className="flex items-center justify-center space-x-2 px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+                        <a href="#contact" className="flex items-center justify-center space-x-2 px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all shadow-lg shadow-primary/20" aria-label={t('elig.bookConsultation')}>
                           <Calendar size={20} /><span>{t('elig.bookConsultation')}</span>
                         </a>
                         <button onClick={reset} className="flex items-center justify-center space-x-2 px-8 py-4 bg-surface border border-gray-200 dark:border-gray-700 text-text-heading font-bold rounded-xl hover:border-primary transition-all">

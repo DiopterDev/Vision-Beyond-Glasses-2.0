@@ -94,7 +94,7 @@ const CostOverview: React.FC = () => {
                       <div className="space-y-2">
                         <p className="text-3xl font-black text-primary">
                           {data.cost.isStartingAt && (
-                            <span className="text-xs font-bold text-text-body/60 mr-2 uppercase">
+                            <span className="text-xs font-bold text-text-body mr-2 uppercase">
                               {t('costs.from')}
                             </span>
                           )}
