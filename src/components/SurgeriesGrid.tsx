@@ -11,10 +11,9 @@ interface SurgeryCardProps {
   detailsKey: string;
   slug: string;
   icon: React.ReactNode;
-  targetProfessions?: string[];
 }
 
-const SurgeryCard: React.FC<SurgeryCardProps> = ({ titleKey, descKey, detailsKey, slug, icon, targetProfessions }) => {
+const SurgeryCard: React.FC<SurgeryCardProps> = ({ titleKey, descKey, detailsKey, slug, icon }) => {
   const { t } = useLanguage();
   const [isFlipped, setIsFlipped] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -66,21 +65,6 @@ const SurgeryCard: React.FC<SurgeryCardProps> = ({ titleKey, descKey, detailsKey
             <p className="text-sm text-text-body leading-relaxed line-clamp-2">
               {t(descKey)}
             </p>
-
-            {targetProfessions && targetProfessions.length > 0 && (
-              <div className="flex flex-wrap justify-center gap-1.5 pt-2">
-                {targetProfessions.slice(0, 3).map((prof) => (
-                  <span key={prof} className="px-2 py-0.5 bg-primary/5 text-primary/70 text-[10px] font-bold uppercase tracking-wider rounded-full border border-primary/10">
-                    {prof}
-                  </span>
-                ))}
-                {targetProfessions.length > 3 && (
-                  <span className="px-2 py-0.5 bg-primary/5 text-primary/70 text-[10px] font-bold uppercase tracking-wider rounded-full border border-primary/10">
-                    +{targetProfessions.length - 3}
-                  </span>
-                )}
-              </div>
-            )}
 
             <div className="pt-2 flex items-center text-xs font-bold text-primary uppercase tracking-widest opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
               <Info size={14} className="mr-2" />
@@ -161,7 +145,6 @@ const SurgeriesGrid: React.FC = () => {
       detailsKey: 'surgery.smile.details',
       slug: 'smile-pro',
       icon: <Scan size={32} />,
-      targetProfessions: surgeriesData['smile-pro'][language].targetProfessions,
     },
     {
       titleKey: 'surgery.lasik.title',
@@ -169,7 +152,6 @@ const SurgeriesGrid: React.FC = () => {
       detailsKey: 'surgery.lasik.details',
       slug: 'femto-lasik',
       icon: <Zap size={32} />,
-      targetProfessions: surgeriesData['femto-lasik'][language].targetProfessions,
     },
     {
       titleKey: 'surgery.prk.title',
@@ -177,7 +159,6 @@ const SurgeriesGrid: React.FC = () => {
       detailsKey: 'surgery.prk.details',
       slug: 'prk',
       icon: <Layers size={32} />,
-      targetProfessions: surgeriesData['prk'][language].targetProfessions,
     },
     {
       titleKey: 'surgery.presbyond.title',
@@ -185,7 +166,6 @@ const SurgeriesGrid: React.FC = () => {
       detailsKey: 'surgery.presbyond.details',
       slug: 'presbyond',
       icon: <BookOpen size={32} />,
-      targetProfessions: surgeriesData['presbyond'][language].targetProfessions,
     },
     {
       titleKey: 'surgery.icl.title',
@@ -193,7 +173,6 @@ const SurgeriesGrid: React.FC = () => {
       detailsKey: 'surgery.icl.details',
       slug: 'icl-ipcl',
       icon: <CircleDot size={32} />,
-      targetProfessions: surgeriesData['icl-ipcl'][language].targetProfessions,
     },
     {
       titleKey: 'surgery.cle.title',
@@ -201,7 +180,6 @@ const SurgeriesGrid: React.FC = () => {
       detailsKey: 'surgery.cle.details',
       slug: 'cle-cataract',
       icon: <Eye size={32} />,
-      targetProfessions: surgeriesData['cle-cataract'][language].targetProfessions,
     },
   ];
 
