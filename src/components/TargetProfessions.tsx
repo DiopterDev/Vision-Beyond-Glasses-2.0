@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Shield, Plane, Stethoscope, Trophy, Mountain, Info, X, ChevronDown } from 'lucide-react';
+import { Shield, Plane, Stethoscope, Trophy, Mountain, Info, X, ChevronDown, Hand, ArrowRight, Wallet } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { cn } from '../lib/utils';
 
@@ -68,14 +68,95 @@ const professions: Profession[] = [
   },
 ];
 
+const ProfessionCard: React.FC<{ profession: Profession }> = ({ profession }) => {
+  const { t } = useLanguage();
+  const [isFlipped, setIsFlipped] = useState(false);
+  const Icon = profession.icon;
+
+  return (
+    <div className="relative h-[360px] w-full perspective-1000 group">
+      <motion.div
+        className="w-full h-full relative preserve-3d z-0 will-change-transform"
+        initial={false}
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      >
+        {/* Front Side */}
+        <div className="absolute inset-0 backface-hidden" style={{ transform: 'translateZ(0)' }}>
+          <button 
+            type="button"
+            className="h-full w-full p-8 rounded-3xl border border-primary/10 bg-background shadow-sm flex flex-col items-center text-center justify-center space-y-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary overflow-hidden"
+            onClick={() => setIsFlipped(true)}
+          >
+            <div className="p-4 rounded-2xl bg-primary/10 text-primary mb-2">
+              <Icon size={32} />
+            </div>
+            <h3 className="text-lg font-bold text-text-heading uppercase tracking-widest">
+              {t(profession.titleKey)}
+            </h3>
+            <p className="text-sm text-primary font-semibold">
+              {t(profession.descKey)}
+            </p>
+            <div className="pt-4 flex items-center text-[10px] font-bold text-primary uppercase tracking-widest opacity-60">
+              <Info size={14} className="mr-2" />
+              {t('surgeries.flipHint')}
+            </div>
+          </button>
+        </div>
+
+        {/* Back Side */}
+        <div className="absolute inset-0 backface-hidden rotate-y-180" style={{ transform: 'rotateY(180deg) translateZ(0)' }}>
+          <button 
+            type="button"
+            onClick={() => setIsFlipped(false)}
+            className="h-full w-full p-8 rounded-3xl border border-primary/20 bg-background shadow-inner flex flex-col items-center text-center justify-center space-y-4 overflow-hidden relative"
+          >
+            {/* Background Image */}
+            <div 
+              className="absolute inset-0 opacity-40 pointer-events-none"
+              style={{
+                backgroundImage: `url(${profession.image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
+            {/* Overlay for readability */}
+            <div className="absolute inset-0 bg-background/80 pointer-events-none" />
+            
+            <div className="relative z-10 space-y-4">
+              <h3 className="text-base font-bold text-primary uppercase tracking-widest">
+                {t(profession.titleKey)}
+              </h3>
+              <div className="w-12 h-1 bg-primary/20 mx-auto rounded-full" />
+              <p className="text-xs text-text-body font-medium leading-relaxed italic">
+                "{t(profession.criteriaKey)}"
+              </p>
+              <div className="pt-4">
+                <span className="text-[10px] font-bold text-primary uppercase tracking-widest opacity-60">
+                  {t('professions.close')}
+                </span>
+              </div>
+            </div>
+          </button>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
 const TargetProfessions: React.FC = () => {
   const { t } = useLanguage();
   const [activeId, setActiveId] = useState<string | null>(null);
   const [isTabletOrMobile, setIsTabletOrMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const checkScreenSize = () => setIsTabletOrMobile(window.innerWidth < 1024);
+    const checkScreenSize = () => {
+      setIsTabletOrMobile(window.innerWidth < 1024);
+      setIsMobile(window.innerWidth < 768);
+    };
     checkScreenSize();
     window.addEventListener('resize', checkScreenSize);
     return () => window.removeEventListener('resize', checkScreenSize);
@@ -90,6 +171,15 @@ const TargetProfessions: React.FC = () => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const cardWidth = container.offsetWidth * 0.78;
+      const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
 
   const toggleProfession = (id: string) => {
     setActiveId(activeId === id ? null : id);
@@ -156,6 +246,91 @@ const TargetProfessions: React.FC = () => {
       </div>
     );
   };
+
+  if (isMobile) {
+    return (
+      <section 
+        ref={sectionRef}
+        id="professions"
+        className="py-24 bg-surface relative overflow-hidden"
+      >
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <div className="text-center mb-10">
+            <motion.h2 
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl font-bold text-text-heading mb-4 tracking-tight"
+            >
+              {t('professions.title')}
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-base text-text-body max-w-2xl mx-auto"
+            >
+              {t('professions.subtitle')}
+            </motion.p>
+          </div>
+
+          <div 
+            ref={scrollContainerRef}
+            className="flex overflow-x-auto pb-4 snap-x snap-mandatory -mx-4 px-4 custom-scrollbar"
+          >
+            <AnimatePresence mode="popLayout">
+              {professions.map((prof, index) => (
+                <motion.div
+                  key={prof.id}
+                  layout
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="flex items-center shrink-0"
+                >
+                  <div className="w-[78vw] min-w-[78vw] max-w-[78vw] snap-center px-1">
+                    <ProfessionCard profession={prof} />
+                  </div>
+
+                  {index < professions.length - 1 && (
+                    <div className="flex items-center justify-center px-2 opacity-20 shrink-0">
+                      <div className="w-1 h-12 bg-primary rounded-full" />
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+
+          {/* Scroll Controls */}
+          <div className="flex items-center justify-center space-x-6 mt-4">
+            <button
+              onClick={() => scroll('left')}
+              className="p-3 rounded-full bg-primary/10 text-primary active:scale-90"
+              aria-label="Scroll left"
+            >
+              <ArrowRight size={20} className="rotate-180" />
+            </button>
+            <div className="w-12 h-1 bg-primary/10 rounded-full overflow-hidden">
+              <motion.div 
+                className="h-full bg-primary/30 rounded-full"
+                animate={{ x: ["-100%", "100%"] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+              />
+            </div>
+            <button
+              onClick={() => scroll('right')}
+              className="p-3 rounded-full bg-primary/10 text-primary active:scale-90"
+              aria-label="Scroll right"
+            >
+              <ArrowRight size={20} />
+            </button>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section 

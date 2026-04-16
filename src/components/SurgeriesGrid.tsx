@@ -107,12 +107,55 @@ const SurgeryCard: React.FC<SurgeryCardProps> = ({ titleKey, descKey, detailsKey
   );
 };
 
+const surgeries = [
+  {
+    titleKey: 'surgery.smile.title',
+    descKey: 'surgery.smile.desc',
+    detailsKey: 'surgery.smile.details',
+    slug: 'smile-pro',
+    icon: <Scan size={32} />,
+  },
+  {
+    titleKey: 'surgery.lasik.title',
+    descKey: 'surgery.lasik.desc',
+    detailsKey: 'surgery.lasik.details',
+    slug: 'femto-lasik',
+    icon: <Zap size={32} />,
+  },
+  {
+    titleKey: 'surgery.prk.title',
+    descKey: 'surgery.prk.desc',
+    detailsKey: 'surgery.prk.details',
+    slug: 'prk',
+    icon: <Layers size={32} />,
+  },
+  {
+    titleKey: 'surgery.presbyond.title',
+    descKey: 'surgery.presbyond.desc',
+    detailsKey: 'surgery.presbyond.details',
+    slug: 'presbyond',
+    icon: <BookOpen size={32} />,
+  },
+  {
+    titleKey: 'surgery.icl.title',
+    descKey: 'surgery.icl.desc',
+    detailsKey: 'surgery.icl.details',
+    slug: 'icl-ipcl',
+    icon: <CircleDot size={32} />,
+  },
+  {
+    titleKey: 'surgery.cle.title',
+    descKey: 'surgery.cle.desc',
+    detailsKey: 'surgery.cle.details',
+    slug: 'cle-cataract',
+    icon: <Eye size={32} />,
+  },
+];
+
 const SurgeriesGrid: React.FC = () => {
   const { t, language } = useLanguage();
-  const [showAll, setShowAll] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const secondCardRef = useRef<HTMLDivElement>(null);
-  const thirdCardRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -123,66 +166,98 @@ const SurgeriesGrid: React.FC = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Fix scroll position when expanding or collapsing on mobile
-  const isFirstRender = useRef(true);
-  useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      return;
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const cardWidth = container.offsetWidth * 0.78; // 78vw from the card min-width
+      const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
+  };
 
-    // When expanding or collapsing on mobile, ensure the 2nd card (Femto-LASIK) is visible
-    if (isMobile && secondCardRef.current) {
-      const yOffset = -80; // Offset for navbar
-      const y = secondCardRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'auto' });
-    }
-  }, [showAll, isMobile]);
+  // Swipe Hint for Mobile
+  if (isMobile) {
+    return (
+      <section id="surgeries" className="py-24 bg-surface relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center mb-10"
+          >
+            <h2 className="text-3xl font-bold text-text-heading mb-4 tracking-tight">
+              {t('surgeries.title')}
+            </h2>
+            <p className="text-base text-text-body max-w-2xl mx-auto">
+              {t('surgeries.subtitle')}
+            </p>
+          </motion.div>
 
-  const surgeries = [
-    {
-      titleKey: 'surgery.smile.title',
-      descKey: 'surgery.smile.desc',
-      detailsKey: 'surgery.smile.details',
-      slug: 'smile-pro',
-      icon: <Scan size={32} />,
-    },
-    {
-      titleKey: 'surgery.lasik.title',
-      descKey: 'surgery.lasik.desc',
-      detailsKey: 'surgery.lasik.details',
-      slug: 'femto-lasik',
-      icon: <Zap size={32} />,
-    },
-    {
-      titleKey: 'surgery.prk.title',
-      descKey: 'surgery.prk.desc',
-      detailsKey: 'surgery.prk.details',
-      slug: 'prk',
-      icon: <Layers size={32} />,
-    },
-    {
-      titleKey: 'surgery.presbyond.title',
-      descKey: 'surgery.presbyond.desc',
-      detailsKey: 'surgery.presbyond.details',
-      slug: 'presbyond',
-      icon: <BookOpen size={32} />,
-    },
-    {
-      titleKey: 'surgery.icl.title',
-      descKey: 'surgery.icl.desc',
-      detailsKey: 'surgery.icl.details',
-      slug: 'icl-ipcl',
-      icon: <CircleDot size={32} />,
-    },
-    {
-      titleKey: 'surgery.cle.title',
-      descKey: 'surgery.cle.desc',
-      detailsKey: 'surgery.cle.details',
-      slug: 'cle-cataract',
-      icon: <Eye size={32} />,
-    },
-  ];
+          <div 
+            ref={scrollContainerRef}
+            className="flex overflow-x-auto pb-4 snap-x snap-mandatory -mx-4 px-4 custom-scrollbar"
+          >
+            <AnimatePresence mode="popLayout">
+              {surgeries.map((surgery, index) => (
+                <motion.div
+                  key={surgery.titleKey}
+                  layout
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.5, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex items-center shrink-0"
+                >
+                  <div className="min-w-[78vw] snap-center">
+                    <SurgeryCard {...surgery} />
+                  </div>
+                  
+                  {index < surgeries.length - 1 && (
+                    <div className="flex items-center justify-center px-2 opacity-20 shrink-0">
+                      <div className="w-1 h-12 bg-primary rounded-full" />
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+
+          {/* Scroll Controls for Mobile/Small Displays */}
+          <div className="flex items-center justify-center space-x-6 mt-4">
+            <button
+              onClick={() => scroll('left')}
+              className="p-3 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all active:scale-90"
+              aria-label="Scroll left"
+            >
+              <ArrowRight size={20} className="rotate-180" />
+            </button>
+            <div className="w-12 h-1 bg-primary/10 rounded-full overflow-hidden">
+              <motion.div 
+                className="h-full bg-primary/30 rounded-full"
+                animate={{ 
+                  x: ["-100%", "100%"] 
+                }}
+                transition={{ 
+                  duration: 3, 
+                  repeat: Infinity, 
+                  ease: "linear" 
+                }}
+              />
+            </div>
+            <button
+              onClick={() => scroll('right')}
+              className="p-3 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all active:scale-90"
+              aria-label="Scroll right"
+            >
+              <ArrowRight size={20} />
+            </button>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="surgeries" className="py-24 bg-surface relative overflow-hidden">
@@ -206,64 +281,22 @@ const SurgeriesGrid: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Swipe Hint for Mobile */}
-        {isMobile && !showAll && (
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center justify-center space-x-2 mb-6 text-primary/60"
-          >
-            <Hand size={16} className="animate-bounce" />
-            <span className="text-xs font-bold uppercase tracking-widest">
-              {language === 'en' ? 'Swipe to explore' : 'अन्वेषण गर्न स्वाइप गर्नुहोस्'}
-            </span>
-          </motion.div>
-        )}
-
-        <div className={cn(
-          "grid gap-8 transition-all duration-500",
-          isMobile && !showAll 
-            ? "flex overflow-x-auto pb-8 snap-x snap-mandatory -mx-4 px-4 no-scrollbar" 
-            : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-        )}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
             {surgeries.map((surgery, index) => (
               <motion.div
                 key={surgery.titleKey}
-                ref={index === 1 ? secondCardRef : index === 2 ? thirdCardRef : null}
                 layout
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.5, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                className={cn(
-                  "transition-all duration-500",
-                  isMobile && !showAll && "min-w-[85vw] snap-center"
-                )}
               >
                 <SurgeryCard {...surgery} />
               </motion.div>
             ))}
           </AnimatePresence>
         </div>
-
-        {/* Mobile See More Button */}
-        {isMobile && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="mt-12 flex justify-center md:hidden"
-          >
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="flex items-center space-x-2 px-8 py-4 bg-primary text-white rounded-full font-bold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all active:scale-95"
-              aria-label={showAll ? t('surgeries.seeLess') : t('surgeries.seeMore')}
-            >
-              <span>{showAll ? (language === 'en' ? 'Switch to Carousel' : 'क्यारोसेलमा फर्कनुहोस्') : (language === 'en' ? 'View All as Grid' : 'सबैलाई ग्रिडमा हेर्नुहोस्')}</span>
-              {showAll ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-            </button>
-          </motion.div>
-        )}
       </div>
     </section>
   );

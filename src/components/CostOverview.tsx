@@ -9,10 +9,8 @@ import { Link } from 'react-router-dom';
 const CostOverview: React.FC = () => {
   const { formatPrice } = useCurrency();
   const { t, language } = useLanguage();
-  const [showAll, setShowAll] = React.useState(false);
   const [isMobile, setIsMobile] = React.useState(false);
-  const buttonRef = React.useRef<HTMLDivElement>(null);
-  const femtoCardRef = React.useRef<HTMLDivElement>(null);
+  const scrollContainerRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -21,21 +19,14 @@ const CostOverview: React.FC = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Fix scroll position when collapsing on mobile
-  const isFirstRender = React.useRef(true);
-  React.useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      return;
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const cardWidth = container.offsetWidth * 0.78;
+      const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
-
-    // When collapsing on mobile, scroll back to the Femto-LASIK card
-    if (isMobile && !showAll && femtoCardRef.current) {
-      const yOffset = -120; // Offset for navbar and some breathing room
-      const y = femtoCardRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'auto' });
-    }
-  }, [showAll, isMobile]);
+  };
 
   const surgeries = [
     { slug: 'smile-pro', name: 'SMILE PRO' },
@@ -45,7 +36,152 @@ const CostOverview: React.FC = () => {
     { slug: 'cle-cataract', name: 'Advanced Cataract Surgery' },
   ];
 
-  const visibleSurgeries = isMobile && !showAll ? surgeries.slice(0, 2) : surgeries;
+  if (isMobile) {
+    return (
+      <section id="costs" className="py-24 bg-surface relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-text-heading mb-4 tracking-tight">
+              {t('costs.title')}
+            </h2>
+            <p className="text-base text-text-body max-w-2xl mx-auto">
+              {t('costs.subtitle')}
+            </p>
+          </div>
+
+          <div 
+            ref={scrollContainerRef}
+            className="flex overflow-x-auto pb-4 snap-x snap-mandatory -mx-4 px-4 custom-scrollbar"
+          >
+            <AnimatePresence mode="popLayout">
+              {surgeries.map((s, i) => {
+                const data = surgeriesData[s.slug]?.[language as 'en' | 'np'];
+                if (!data || !data.cost) return null;
+
+                return (
+                  <motion.div
+                    key={s.slug}
+                    layout
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex items-center shrink-0"
+                  >
+                    <div className="w-[78vw] min-w-[78vw] max-w-[78vw] snap-center px-1">
+                      <div className="p-5 rounded-3xl bg-background border border-primary/10 shadow-sm flex flex-col h-[360px] w-full overflow-hidden">
+                        <div className="flex items-center justify-between mb-4">
+                          <h3 className="text-base font-bold text-text-heading truncate mr-2">
+                            {s.name}
+                          </h3>
+                          <div className="p-2 rounded-xl bg-primary/10 text-primary shrink-0">
+                            <Wallet size={16} />
+                          </div>
+                        </div>
+
+                        <div className="mb-4 flex-grow">
+                          {data.cost.notStarted ? (
+                            <p className="text-amber-600 dark:text-amber-400 font-medium text-xs">
+                              {t('costs.startingSoon')}
+                            </p>
+                          ) : (
+                            <div className="space-y-0.5">
+                              <p className="text-xl font-black text-primary flex items-baseline flex-wrap">
+                                {data.cost.isStartingAt && (
+                                  <span className="text-[9px] font-bold text-text-body mr-1 uppercase">
+                                    {t('costs.from')}
+                                  </span>
+                                )}
+                                <span>{formatPrice(data.cost.surgeryCost)}</span>
+                              </p>
+                              <p className="text-[9px] text-text-body font-bold uppercase tracking-wider">
+                                {data.cost.isPerEye 
+                                  ? t('costs.perEye')
+                                  : t('costs.bothEyes')}
+                              </p>
+                            </div>
+                          )}
+                        </div>
+
+                        <div className="space-y-2 mb-4">
+                          {data.cost.opdRegistration && (
+                            <div className="flex items-center text-[11px] text-text-body font-medium">
+                              <CheckCircle2 size={12} className="text-success mr-2 shrink-0" />
+                              <span className="truncate">
+                                {t('costs.opdRegistration')}
+                                <span className="font-bold ml-1">{formatPrice(data.cost.opdRegistration)}</span>
+                              </span>
+                            </div>
+                          )}
+                          {data.cost.eligibilityScan && (
+                            <div className="flex items-center text-[11px] text-text-body font-medium">
+                              <CheckCircle2 size={12} className="text-success mr-2 shrink-0" />
+                              <span className="truncate">
+                                {t('costs.eligibilityScan')}
+                                <span className="font-bold ml-1">{formatPrice(data.cost.eligibilityScan)}</span>
+                              </span>
+                            </div>
+                          )}
+                          <div className="flex items-center text-[11px] text-text-body font-medium">
+                            <CheckCircle2 size={12} className="text-success mr-2 shrink-0" />
+                            <span>{t('costs.postOpCare')}</span>
+                          </div>
+                          <div className="pt-2 mt-2 border-t border-gray-100 dark:border-gray-800">
+                            <p className="text-[9px] text-text-body font-medium leading-tight italic line-clamp-2">
+                              {t('costs.disclaimer')}
+                            </p>
+                          </div>
+                        </div>
+
+                        <Link 
+                          to={`/surgery/${s.slug}`}
+                          className="w-full py-3 rounded-xl bg-surface border border-gray-100 dark:border-gray-800 text-text-heading font-bold flex items-center justify-center text-xs mt-auto"
+                        >
+                          {t('costs.viewDetails')}
+                          <ArrowRight size={14} className="ml-2" />
+                        </Link>
+                      </div>
+                    </div>
+
+                    {i < surgeries.length - 1 && (
+                      <div className="flex items-center justify-center px-2 opacity-20 shrink-0">
+                        <div className="w-1 h-12 bg-primary rounded-full" />
+                      </div>
+                    )}
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
+          </div>
+
+          {/* Scroll Controls */}
+          <div className="flex items-center justify-center space-x-6 mt-4">
+            <button
+              onClick={() => scroll('left')}
+              className="p-3 rounded-full bg-primary/10 text-primary active:scale-90"
+              aria-label="Scroll left"
+            >
+              <ArrowRight size={20} className="rotate-180" />
+            </button>
+            <div className="w-12 h-1 bg-primary/10 rounded-full overflow-hidden">
+              <motion.div 
+                className="h-full bg-primary/30 rounded-full"
+                animate={{ x: ["-100%", "100%"] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+              />
+            </div>
+            <button
+              onClick={() => scroll('right')}
+              className="p-3 rounded-full bg-primary/10 text-primary active:scale-90"
+              aria-label="Scroll right"
+            >
+              <ArrowRight size={20} />
+            </button>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="costs" className="py-24 bg-surface">
@@ -61,14 +197,13 @@ const CostOverview: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
-            {visibleSurgeries.map((s, i) => {
+            {surgeries.map((s, i) => {
               const data = surgeriesData[s.slug]?.[language as 'en' | 'np'];
               if (!data || !data.cost) return null;
 
               return (
                 <motion.div
                   key={s.slug}
-                  ref={s.slug === 'femto-lasik' ? femtoCardRef : null}
                   layout
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -152,25 +287,6 @@ const CostOverview: React.FC = () => {
             })}
           </AnimatePresence>
         </div>
-
-        {/* Mobile See More Button */}
-        {isMobile && surgeries.length > 2 && (
-          <motion.div 
-            ref={buttonRef}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="mt-12 flex justify-center md:hidden"
-          >
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="flex items-center space-x-2 px-8 py-4 bg-primary text-white rounded-full font-bold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all active:scale-95"
-              aria-label={showAll ? t('surgeries.seeLess') : t('surgeries.seeMore')}
-            >
-              <span>{showAll ? t('surgeries.seeLess') : t('surgeries.seeMore')}</span>
-              {showAll ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-            </button>
-          </motion.div>
-        )}
       </div>
     </section>
   );
