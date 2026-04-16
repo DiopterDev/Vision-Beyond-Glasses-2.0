@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
+import { cn } from '../lib/utils';
 import { Scan, Zap, Layers, BookOpen, CircleDot, Eye, Info, ChevronDown, ChevronUp, ArrowRight, Hand, MousePointer2 } from 'lucide-react';
 import { surgeriesData } from '../constants/surgeriesData';
 
@@ -183,8 +184,6 @@ const SurgeriesGrid: React.FC = () => {
     },
   ];
 
-  const visibleSurgeries = isMobile && !showAll ? surgeries.slice(0, 2) : surgeries;
-
   return (
     <section id="surgeries" className="py-24 bg-surface relative overflow-hidden">
       {/* Background Accents */}
@@ -207,9 +206,28 @@ const SurgeriesGrid: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Swipe Hint for Mobile */}
+        {isMobile && !showAll && (
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center justify-center space-x-2 mb-6 text-primary/60"
+          >
+            <Hand size={16} className="animate-bounce" />
+            <span className="text-xs font-bold uppercase tracking-widest">
+              {language === 'en' ? 'Swipe to explore' : 'अन्वेषण गर्न स्वाइप गर्नुहोस्'}
+            </span>
+          </motion.div>
+        )}
+
+        <div className={cn(
+          "grid gap-8 transition-all duration-500",
+          isMobile && !showAll 
+            ? "flex overflow-x-auto pb-8 snap-x snap-mandatory -mx-4 px-4 no-scrollbar" 
+            : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+        )}>
           <AnimatePresence mode="popLayout">
-            {visibleSurgeries.map((surgery, index) => (
+            {surgeries.map((surgery, index) => (
               <motion.div
                 key={surgery.titleKey}
                 ref={index === 1 ? secondCardRef : index === 2 ? thirdCardRef : null}
@@ -218,6 +236,10 @@ const SurgeriesGrid: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.5, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                className={cn(
+                  "transition-all duration-500",
+                  isMobile && !showAll && "min-w-[85vw] snap-center"
+                )}
               >
                 <SurgeryCard {...surgery} />
               </motion.div>
@@ -237,7 +259,7 @@ const SurgeriesGrid: React.FC = () => {
               className="flex items-center space-x-2 px-8 py-4 bg-primary text-white rounded-full font-bold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all active:scale-95"
               aria-label={showAll ? t('surgeries.seeLess') : t('surgeries.seeMore')}
             >
-              <span>{showAll ? t('surgeries.seeLess') : t('surgeries.seeMore')}</span>
+              <span>{showAll ? (language === 'en' ? 'Switch to Carousel' : 'क्यारोसेलमा फर्कनुहोस्') : (language === 'en' ? 'View All as Grid' : 'सबैलाई ग्रिडमा हेर्नुहोस्')}</span>
               {showAll ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
             </button>
           </motion.div>
