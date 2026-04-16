@@ -84,21 +84,21 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
     en: {
       id: 'smile-pro',
       slug: 'smile-pro',
-      title: 'SMILE PRO: The Future of Flapless Vision',
-      subtitle: 'Experience the next generation of laser vision correction with the fastest, most precise flapless procedure available today.',
+      title: 'SMILE Pro Laser Eye Surgery',
+      subtitle: 'An advanced, minimally invasive alternative to LASIK for selected patients.',
       videoUrl: 'https://www.youtube.com/embed/1oJFShANMTc',
       videoCaption: 'Watch how SMILE Pro provides a seamless, flapless vision correction experience.',
       benefits: {
-        title: 'Key Benefits',
+        title: 'Benefits and Important Considerations',
         description: 'Flapless, minimally invasive procedure with a tiny 2-4mm incision. Faster recovery and less risk of dry eyes compared to traditional methods.'
       },
       idealCandidate: {
-        title: 'Ideal Candidate',
-        description: 'Perfect for active individuals, athletes, and those with a busy lifestyle who want a quick return to their daily activities.'
+        title: 'Who Is This Surgery For?',
+        description: 'Often considered by patients with active lifestyles or occupational needs where flap-based surgery may not be preferred.'
       },
       advantage: {
-        title: 'Why choose us?',
-        description: 'Performed with the revolutionary VisuMax 800, ensuring maximum precision, safety, and patient comfort in just 10 seconds.'
+        title: 'How the Procedure Works (Clinically Explained)',
+        description: 'SMILE Pro involves creating and removing a small lenticule within the cornea using a femtosecond laser, without creating a large flap.'
       },
       technology: [
         {
@@ -110,9 +110,11 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       timeline: [
         { time: '2 Hours', description: 'Initial rest period to allow the eye to settle.' },
         { time: '24 Hours', description: 'Most patients can return to driving and work.' },
-        { time: '1 Week', description: 'Safe to resume active sports and swimming.' },
-        { time: '1 Month', description: 'Full visual stability and complete healing.' }
+        { time: '1 Week', description: 'Basic outdoor activities, indoor sports and gym can be started.' },
+        { time: '1 Month', description: 'Functional visual recovery achieved. Safe to resume swimming.' },
+        { time: '3 Months', description: 'Full visual stability and complete wound healing.' }
       ],
+      timelineNote: 'Recovery varies from person to person and depends on individual healing response.',
       comparison: {
         title: 'How it differs',
         description: 'Unlike LASIK, SMILE Pro is flapless, meaning no risk of flap complications and significantly less impact on corneal nerves.',
@@ -154,11 +156,28 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       ],
       targetProfessions: ['Military', 'Police', 'Pilots', 'Surgeons', 'Athletes', 'Trekkers'],
       cost: {
-        title: 'Latest Official Cost',
+        title: 'Cost of SMILE Pro Surgery',
         eligibilityScan: 3500,
         surgeryCost: 92000,
       },
-      faqs: [],
+      faqs: [
+        {
+          question: 'Is SMILE Pro better than LASIK?',
+          answer: 'No single procedure is best for everyone. SMILE Pro is an advanced alternative that is flapless and minimally invasive, making it excellent for patients with active lifestyles or dry eye concerns. The best choice depends on your individual eye anatomy and visual needs.'
+        },
+        {
+          question: 'Who should not have this procedure?',
+          answer: 'SMILE Pro may not be suitable for patients with very thin corneas, certain corneal irregularities, or those with specific types of farsightedness. A detailed clinical evaluation is necessary to determine suitability.'
+        },
+        {
+          question: 'How is this different from LASIK?',
+          answer: 'Unlike LASIK, which creates a 20mm circular flap, SMILE Pro uses a laser to create a small lenticule inside the cornea which is removed through a tiny 2-4mm incision. This preserves more corneal stability and reduces the risk of dry eyes.'
+        },
+        {
+          question: 'How does the surgeon decide?',
+          answer: 'The decision is based on a comprehensive eye exam, including corneal mapping (topography), corneal thickness measurement (pachymetry), and an assessment of your lifestyle and visual requirements.'
+        }
+      ],
       seo: {
         title: 'SMILE PRO Kathmandu | Flapless Laser Eye Surgery Nepal',
         description: 'Get SMILE PRO laser eye surgery in Kathmandu with Dr. Kaushal Pokhrel. The future of flapless vision correction.',
@@ -168,21 +187,21 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
     np: {
       id: 'smile-pro',
       slug: 'smile-pro',
-      title: 'SMILE PRO: फ्ल्यापलेस दृष्टिको भविष्य',
-      subtitle: 'आज उपलब्ध सबैभन्दा छिटो र सटीक फ्ल्यापलेस प्रक्रियाको साथ लेजर भिजन सुधारको अर्को पुस्ताको अनुभव लिनुहोस्।',
+      title: 'SMILE Pro लेजर आँखाको शल्यक्रिया',
+      subtitle: 'चयन गरिएका बिरामीहरूका लागि LASIK को एक उन्नत, न्यूनतम आक्रामक विकल्प।',
       videoUrl: 'https://www.youtube.com/embed/1oJFShANMTc',
       videoCaption: 'SMILE Pro ले कसरी सहज र फ्ल्यापलेस दृष्टि सुधारको अनुभव प्रदान गर्दछ हेर्नुहोस्।',
       benefits: {
-        title: 'मुख्य फाइदाहरू',
+        title: 'फाइदाहरू र महत्त्वपूर्ण विचारहरू',
         description: 'सानो २-४ मिमी चीराको साथ फ्ल्यापलेस, न्यूनतम आक्रामक प्रक्रिया। परम्परागत विधिहरूको तुलनामा छिटो रिकभरी र सुख्खा आँखाको कम जोखिम।'
       },
       idealCandidate: {
-        title: 'आदर्श उम्मेद्वार',
-        description: 'सक्रिय व्यक्तिहरू, एथलीटहरू, र व्यस्त जीवनशैली भएकाहरूका लागि उपयुक्त जो आफ्नो दैनिक गतिविधिहरूमा छिटो फर्कन चाहन्छन्।'
+        title: 'यो शल्यक्रिया कसका लागि हो?',
+        description: 'अक्सर सक्रिय जीवनशैली वा पेशागत आवश्यकताहरू भएका बिरामीहरूद्वारा विचार गरिन्छ जहाँ फ्ल्याप-आधारित शल्यक्रियालाई प्राथमिकता दिइँदैन।'
       },
       advantage: {
-        title: 'हामीलाई किन रोज्ने?',
-        description: 'क्रान्तिकारी VisuMax 800 को साथ गरिन्छ, जसले मात्र १० सेकेन्डमा अधिकतम सटीकता, सुरक्षा, र बिरामीको आराम सुनिश्चित गर्दछ।'
+        title: 'प्रक्रियाले कसरी काम गर्छ (क्लिनिकल व्याख्या)',
+        description: 'SMILE Pro मा ठूलो फ्ल्याप नबनाई फेम्टोसेकेन्ड लेजर प्रयोग गरेर कोर्निया भित्र सानो लेन्टिकल बनाएर निकालिन्छ।'
       },
       technology: [
         {
@@ -194,9 +213,11 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       timeline: [
         { time: '२ घण्टा', description: 'आँखालाई स्थिर हुन दिन प्रारम्भिक आराम अवधि।' },
         { time: '२४ घण्टा', description: 'अधिकांश बिरामीहरू ड्राइभिङ र काममा फर्कन सक्छन्।' },
-        { time: '१ हप्ता', description: 'सक्रिय खेलकुद र पौडी खेल्न सुरक्षित।' },
-        { time: '१ महिना', description: 'पूर्ण दृश्य स्थिरता र पूर्ण निको हुने समय।' }
+        { time: '१ हप्ता', description: 'आधारभूत बाहिरी गतिविधिहरू, भित्री खेलकुद र जिम सुरु गर्न सकिन्छ।' },
+        { time: '१ महिना', description: 'कार्यात्मक दृश्य रिकभरी प्राप्त। पौडी खेल्न सुरक्षित।' },
+        { time: '३ महिना', description: 'पूर्ण दृश्य स्थिरता र पूर्ण घाउ निको हुने समय।' }
       ],
+      timelineNote: 'निको हुने प्रक्रिया व्यक्ति अनुसार फरक हुन सक्छ र व्यक्तिगत निको हुने प्रतिक्रियामा भर पर्छ।',
       comparison: {
         title: 'यो कसरी फरक छ',
         description: 'LASIK को विपरीत, SMILE Pro फ्ल्यापलेस छ, जसको अर्थ फ्ल्याप जटिलताहरूको कुनै जोखिम हुँदैन र कोर्नियल नसाहरूमा उल्लेखनीय रूपमा कम प्रभाव पर्छ।',
@@ -224,11 +245,28 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       },
       targetProfessions: ['सेना', 'प्रहरी', 'पाइलट', 'सर्जन', 'एथलीट', 'ट्रेकर'],
       cost: {
-        title: 'पछिल्लो आधिकारिक लागत',
+        title: 'SMILE Pro शल्यक्रियाको लागत',
         eligibilityScan: 3500,
         surgeryCost: 92000,
       },
-      faqs: [],
+      faqs: [
+        {
+          question: 'के SMILE Pro LASIK भन्दा राम्रो छ?',
+          answer: 'कुनै पनि एकल प्रक्रिया सबैका लागि उत्तम हुँदैन। SMILE Pro एक उन्नत विकल्प हो जुन फ्ल्यापलेस र न्यूनतम आक्रामक छ, जसले यसलाई सक्रिय जीवनशैली वा सुख्खा आँखाको समस्या भएका बिरामीहरूका लागि उत्कृष्ट बनाउँछ। उत्तम छनौट तपाईंको व्यक्तिगत आँखाको संरचना र दृश्य आवश्यकताहरूमा भर पर्छ।'
+        },
+        {
+          question: 'यो प्रक्रिया कसले गराउनु हुँदैन?',
+          answer: 'धेरै पातलो कोर्निया, निश्चित कोर्नियल अनियमितता भएका बिरामीहरूका लागि SMILE Pro उपयुक्त नहुन सक्छ। उपयुक्तता निर्धारण गर्न विस्तृत क्लिनिकल मूल्याङ्कन आवश्यक छ।'
+        },
+        {
+          question: 'यो LASIK भन्दा कसरी फरक छ?',
+          answer: '२० मिमी गोलाकार फ्ल्याप बनाउने LASIK को विपरीत, SMILE Pro ले कोर्निया भित्र सानो लेन्टिकल बनाउन लेजरको प्रयोग गर्दछ जुन सानो २-४ मिमी चीरा मार्फत निकालिन्छ। यसले कोर्नियल स्थिरता बढी सुरक्षित राख्छ र सुख्खा आँखाको जोखिम कम गर्छ।'
+        },
+        {
+          question: 'सर्जनले कसरी निर्णय गर्नुहुन्छ?',
+          answer: 'निर्णय कोर्नियल म्यापिङ (टोपोग्राफी), कोर्नियल मोटाई मापन (प्याकिमेट्री), र तपाईंको जीवनशैली र दृश्य आवश्यकताहरूको मूल्याङ्कन सहित व्यापक आँखा परीक्षणमा आधारित हुन्छ।'
+        }
+      ],
       seo: {
         title: 'SMILE PRO काठमाडौं | फ्ल्यापलेस लेजर आँखाको शल्यक्रिया नेपाल',
         description: 'डा. कौशल पोखरेलसँग काठमाडौंमा SMILE PRO लेजर आँखाको शल्यक्रिया गराउनुहोस्। फ्ल्यापलेस दृष्टि सुधारको भविष्य।',
@@ -240,21 +278,21 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
     en: {
       id: 'femto-lasik',
       slug: 'femto-lasik',
-      title: 'Femto-LASIK: The Gold Standard',
-      subtitle: 'The world\'s most popular laser vision correction, now completely blade-free for enhanced safety and precision.',
+      title: 'Femto-LASIK Laser Eye Surgery',
+      subtitle: 'The most widely known laser eye surgery for vision correction, now completely blade-free.',
       videoUrl: 'https://www.youtube.com/embed/t80CNT5KK90',
       videoCaption: 'Learn about the precision and safety of the blade-free Femto-LASIK procedure.',
       benefits: {
-        title: 'Key Benefits',
+        title: 'Benefits and Important Considerations',
         description: 'Blade-free flap creation, highly predictable results, and rapid visual recovery within hours.'
       },
       idealCandidate: {
-        title: 'Ideal Candidate',
-        description: 'Suitable for a wide range of prescriptions, including nearsightedness, farsightedness, and astigmatism.'
+        title: 'Who Is This Surgery For?',
+        description: 'Suitable for many patients with stable vision and adequate corneal thickness who seek a fast return to daily activities.'
       },
       advantage: {
-        title: 'Why choose us?',
-        description: 'Utilizing the combined power of MEL 90 and VisuMax 800 for a truly customized and safe experience.'
+        title: 'How the Procedure Works (Clinically Explained)',
+        description: 'Femto-LASIK involves creating a thin corneal flap using a femtosecond laser, followed by reshaping the underlying tissue with an excimer laser.'
       },
       technology: [
         {
@@ -266,9 +304,11 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       timeline: [
         { time: '4 Hours', description: 'Rest with eyes closed to promote initial healing.' },
         { time: '24 Hours', description: 'Significant visual improvement; return to most activities.' },
-        { time: '1 Week', description: 'Resume light exercise and non-contact sports.' },
-        { time: '1 Month', description: 'Vision stabilizes completely.' }
+        { time: '1 Week', description: 'Basic outdoor activities, indoor sports and gym can be started.' },
+        { time: '1 Month', description: 'Functional visual recovery achieved. Safe to resume swimming.' },
+        { time: '3 Months', description: 'Full visual stability and complete wound healing.' }
       ],
+      timelineNote: 'Recovery varies from person to person and depends on individual healing response.',
       comparison: {
         title: 'How it differs',
         description: 'Femto-LASIK uses a laser to create the corneal flap, offering higher safety compared to traditional microkeratome (blade) LASIK.',
@@ -310,18 +350,30 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       ],
       targetProfessions: ['Pilots', 'Surgeons', 'Presbyopic People', 'Office Professionals', 'Medical Professionals'],
       cost: {
-        title: 'Latest Official Cost',
+        title: 'Cost of Femto-LASIK Surgery',
         eligibilityScan: 3500,
         surgeryCost: 90000,
       },
       faqs: [
         {
-          question: 'Is Femto-LASIK completely blade-free?',
-          answer: 'Yes, Femto-LASIK uses a femtosecond laser to create the corneal flap, eliminating the need for a mechanical blade (microkeratome) and enhancing safety.'
+          question: 'Is Femto-LASIK better than other procedures?',
+          answer: 'No single procedure is best for everyone. Femto-LASIK is the gold standard for many due to its rapid recovery and high predictability, but alternatives like SMILE Pro or PRK may be better depending on your corneal thickness and lifestyle.'
         },
         {
-          question: 'Can I get Femto-LASIK if I have astigmatism?',
-          answer: 'Absolutely. Femto-LASIK is highly effective at correcting astigmatism along with nearsightedness and farsightedness.'
+          question: 'Who should not have this procedure?',
+          answer: 'Patients with very thin corneas, severe dry eye, or certain corneal diseases may not be suitable for LASIK. A detailed evaluation is required.'
+        },
+        {
+          question: 'How is this different from SMILE Pro?',
+          answer: 'LASIK creates a circular flap to access the inner cornea, while SMILE Pro is flapless and uses a small incision. LASIK can treat a wider range of farsightedness compared to current SMILE technology.'
+        },
+        {
+          question: 'How does the surgeon decide?',
+          answer: 'The surgeon evaluates your corneal thickness, curvature, prescription stability, and lifestyle needs to recommend the safest and most effective option.'
+        },
+        {
+          question: 'Is Femto-LASIK completely blade-free?',
+          answer: 'Yes, Femto-LASIK uses a femtosecond laser to create the corneal flap, eliminating the need for a mechanical blade (microkeratome) and enhancing safety.'
         }
       ],
       seo: {
@@ -333,21 +385,21 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
     np: {
       id: 'femto-lasik',
       slug: 'femto-lasik',
-      title: 'Femto-LASIK: स्वर्ण मानक',
-      subtitle: 'विश्वको सबैभन्दा लोकप्रिय लेजर दृष्टि सुधार, अब परिष्कृत सुरक्षा र सटीकताको लागि पूर्ण रूपमा ब्लेड-रहित।',
+      title: 'Femto-LASIK लेजर आँखाको शल्यक्रिया',
+      subtitle: 'दृष्टि सुधारको लागि सबैभन्दा व्यापक रूपमा चिनिएको लेजर आँखाको शल्यक्रिया, अब पूर्ण रूपमा ब्लेड-रहित।',
       videoUrl: 'https://www.youtube.com/embed/t80CNT5KK90',
       videoCaption: 'ब्लेड-रहित Femto-LASIK प्रक्रियाको सटीकता र सुरक्षाको बारेमा जान्नुहोस्।',
       benefits: {
-        title: 'मुख्य फाइदाहरू',
+        title: 'फाइदाहरू र महत्त्वपूर्ण विचारहरू',
         description: 'ब्लेड-रहित फ्ल्याप निर्माण, अत्यधिक अनुमानित परिणामहरू, र केही घण्टा भित्र द्रुत दृश्य रिकभरी।'
       },
       idealCandidate: {
-        title: 'आदर्श उम्मेद्वार',
-        description: 'नजिकको दृष्टि, टाढाको दृष्टि, र एस्टिग्माटिज्म सहित प्रिस्क्रिप्शनहरूको विस्तृत दायराका लागि उपयुक्त।'
+        title: 'यो शल्यक्रिया कसका लागि हो?',
+        description: 'स्थिर दृष्टि र पर्याप्त कोर्नियल मोटाई भएका धेरै बिरामीहरूका लागि उपयुक्त जो दैनिक गतिविधिहरूमा छिटो फर्कन चाहन्छन्।'
       },
       advantage: {
-        title: 'हामीलाई किन रोज्ने?',
-        description: 'साँच्चै अनुकूलित र सुरक्षित अनुभवको लागि MEL 90 र VisuMax 800 को संयुक्त शक्तिको प्रयोग।'
+        title: 'प्रक्रियाले कसरी काम गर्छ (क्लिनिकल व्याख्या)',
+        description: 'Femto-LASIK मा फेम्टोसेकेन्ड लेजर प्रयोग गरेर पातलो कोर्नियल फ्ल्याप बनाइन्छ, त्यसपछि एक्साइमर लेजरले भित्री तन्तुलाई पुन: आकार दिइन्छ।'
       },
       technology: [
         {
@@ -359,9 +411,11 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       timeline: [
         { time: '४ घण्टा', description: 'प्रारम्भिक निको हुन मद्दत गर्न आँखा चिम्लेर आराम गर्नुहोस्।' },
         { time: '२४ घण्टा', description: 'महत्त्वपूर्ण दृश्य सुधार; अधिकांश गतिविधिहरूमा फर्कनुहोस्।' },
-        { time: '१ हप्ता', description: 'हल्का व्यायाम र गैर-सम्पर्क खेलहरू पुनः सुरु गर्नुहोस्।' },
-        { time: '१ महिना', description: 'दृष्टि पूर्ण रूपमा स्थिर हुन्छ।' }
+        { time: '१ हप्ता', description: 'आधारभूत बाहिरी गतिविधिहरू, भित्री खेलकुद र जिम सुरु गर्न सकिन्छ।' },
+        { time: '१ महिना', description: 'कार्यात्मक दृश्य रिकभरी प्राप्त। पौडी खेल्न सुरक्षित।' },
+        { time: '३ महिना', description: 'पूर्ण दृश्य स्थिरता र पूर्ण घाउ निको हुने समय।' }
       ],
+      timelineNote: 'निको हुने प्रक्रिया व्यक्ति अनुसार फरक हुन सक्छ र व्यक्तिगत निको हुने प्रतिक्रियामा भर पर्छ।',
       comparison: {
         title: 'यो कसरी फरक छ',
         description: 'Femto-LASIK ले कोर्नियल फ्ल्याप बनाउन लेजरको प्रयोग गर्दछ, जसले परम्परागत माइक्रोकेराटोम (ब्लेड) LASIK को तुलनामा उच्च सुरक्षा प्रदान गर्दछ।',
@@ -389,18 +443,30 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       },
       targetProfessions: ['पाइलट', 'सर्जन', 'प्रेसबायोपिक व्यक्तिहरू', 'कार्यालय पेशेवर', 'चिकित्सा पेशेवर'],
       cost: {
-        title: 'पछिल्लो आधिकारिक लागत',
+        title: 'Femto-LASIK शल्यक्रियाको लागत',
         eligibilityScan: 3500,
         surgeryCost: 90000,
       },
       faqs: [
         {
-          question: 'Femto-LASIK पूर्ण रूपमा ब्लेड-रहित छ?',
-          answer: 'हो, Femto-LASIK ले कोर्नियल फ्ल्याप बनाउन फेम्टोसेकेन्ड लेजरको प्रयोग गर्दछ, जसले मेकानिकल ब्लेडको आवश्यकतालाई हटाउँछ र सुरक्षा बढाउँछ।'
+          question: 'के Femto-LASIK अन्य प्रक्रियाहरू भन्दा राम्रो छ?',
+          answer: 'कुनै पनि एकल प्रक्रिया सबैका लागि उत्तम हुँदैन। Femto-LASIK यसको द्रुत रिकभरी र उच्च अनुमानितताका कारण धेरैका लागि स्वर्ण मानक हो, तर तपाईंको कोर्नियल मोटाई र जीवनशैलीको आधारमा SMILE Pro वा PRK जस्ता विकल्पहरू राम्रो हुन सक्छन्।'
         },
         {
-          question: 'यदि मलाई एस्टिग्माटिज्म छ भने के म Femto-LASIK गराउन सक्छु?',
-          answer: 'बिल्कुल। Femto-LASIK अदूरदृष्टि र दूरदृष्टिको साथसाथै एस्टिग्माटिज्म सुधार गर्न अत्यधिक प्रभावकारी छ।'
+          question: 'यो प्रक्रिया कसले गराउनु हुँदैन?',
+          answer: 'धेरै पातलो कोर्निया, गम्भीर सुख्खा आँखा, वा निश्चित कोर्नियल रोग भएका बिरामीहरू LASIK का लागि उपयुक्त नहुन सक्छन्। विस्तृत मूल्याङ्कन आवश्यक छ।'
+        },
+        {
+          question: 'यो SMILE Pro भन्दा कसरी फरक छ?',
+          answer: 'LASIK ले भित्री कोर्नियामा पुग्न गोलाकार फ्ल्याप बनाउँछ, जबकि SMILE Pro फ्ल्यापलेस हुन्छ र सानो चीरा प्रयोग गर्दछ। LASIK ले वर्तमान SMILE प्रविधिको तुलनामा दूरदृष्टिको फराकिलो दायरा उपचार गर्न सक्छ।'
+        },
+        {
+          question: 'सर्जनले कसरी निर्णय गर्नुहुन्छ?',
+          answer: 'सर्जनले तपाईंको कोर्नियल मोटाई, वक्रता, प्रिस्क्रिप्शन स्थिरता, र जीवनशैली आवश्यकताहरूको मूल्याङ्कन गरी तपाईंको लागि सबैभन्दा सुरक्षित र प्रभावकारी विकल्प सिफारिस गर्नुहुन्छ।'
+        },
+        {
+          question: 'के Femto-LASIK पूर्ण रूपमा ब्लेड-रहित छ?',
+          answer: 'हो, Femto-LASIK ले कोर्नियल फ्ल्याप बनाउन फेम्टोसेकेन्ड लेजरको प्रयोग गर्दछ, जसले मेकानिकल ब्लेडको आवश्यकतालाई हटाउँछ र सुरक्षा बढाउँछ।'
         }
       ],
       seo: {
@@ -414,21 +480,21 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
     en: {
       id: 'prk',
       slug: 'prk',
-      title: 'PRK: Surface-Based Precision',
-      subtitle: 'The ideal choice for patients with thin corneas or specific lifestyle needs where a flap is not recommended.',
+      title: 'PRK Laser Eye Surgery',
+      subtitle: 'A surface-based laser procedure suitable when LASIK or SMILE is not advised.',
       videoUrl: 'https://www.youtube.com/embed/1Pjh4ja1lH0',
       videoCaption: 'Discover how PRK offers a safe alternative for surface-based vision correction.',
       benefits: {
-        title: 'Key Benefits',
+        title: 'Benefits and Important Considerations',
         description: 'No corneal flap created, preserving maximum corneal structural integrity. Ideal for high-impact activities.'
       },
       idealCandidate: {
-        title: 'Ideal Candidate',
-        description: 'Patients with thin corneas, dry eye concerns, or those in professions like the military or contact sports.'
+        title: 'Who Is This Surgery For?',
+        description: 'Patients with thin corneas, dry eye concerns, or those in professions like the military or contact sports where a flap is not recommended.'
       },
       advantage: {
-        title: 'Why choose us?',
-        description: 'Expert application of MEL 90 technology for smooth surface ablation and optimized healing.'
+        title: 'How the Procedure Works (Clinically Explained)',
+        description: 'PRK involves removing the outer layer of the cornea (epithelium) and using an excimer laser to reshape the underlying tissue directly on the surface.'
       },
       technology: [
         {
@@ -439,10 +505,11 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       ],
       timeline: [
         { time: '1-3 Days', description: 'Epithelial healing period; rest in dim light recommended.' },
-        { time: '1 Week', description: 'Vision begins to clear; return to work possible.' },
-        { time: '1 Month', description: 'Significant visual clarity achieved.' },
-        { time: '3 Months', description: 'Full maturation of vision and complete healing.' }
+        { time: '1 Week', description: 'Vision begins to clear. Basic outdoor activities, indoor sports and gym can be started.' },
+        { time: '1 Month', description: 'Functional visual recovery achieved. Safe to resume swimming.' },
+        { time: '3 Months', description: 'Full visual stability and complete wound healing.' }
       ],
+      timelineNote: 'Recovery varies from person to person and depends on individual healing response.',
       comparison: {
         title: 'How it differs',
         description: 'Unlike LASIK, PRK does not involve a flap. The laser is applied directly to the surface after removing the outer layer (epithelium).',
@@ -470,18 +537,26 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       },
       targetProfessions: ['Military', 'Police', 'Pilots', 'Surgeons', 'Athletes', 'Trekkers'],
       cost: {
-        title: 'Latest Official Cost',
+        title: 'Cost of PRK Surgery',
         eligibilityScan: 3500,
         surgeryCost: 70000,
       },
       faqs: [
         {
-          question: 'Why choose PRK over LASIK?',
-          answer: 'PRK is often recommended for patients with thin corneas or those involved in high-impact activities, as it avoids the creation of a corneal flap.'
+          question: 'Is PRK better than LASIK?',
+          answer: 'No single procedure is best for everyone. PRK is often preferred for patients with thin corneas or those in high-impact professions (like military or boxing) because it avoids the creation of a corneal flap, preserving more structural integrity.'
         },
         {
-          question: 'Is the recovery after PRK painful?',
-          answer: 'While PRK has a slightly longer recovery than LASIK, any discomfort is typically managed with specialized contact lenses and eye drops for a few days.'
+          question: 'Who should not have this procedure?',
+          answer: 'PRK may not be suitable for patients with certain autoimmune diseases, uncontrolled diabetes, or very high refractive errors that exceed safe surface treatment limits.'
+        },
+        {
+          question: 'How is this different from LASIK?',
+          answer: 'LASIK creates a flap to treat the inner cornea, while PRK treats the surface directly after removing the epithelium. PRK has a longer initial recovery period but avoids all flap-related risks.'
+        },
+        {
+          question: 'How does the surgeon decide?',
+          answer: 'The surgeon considers your corneal thickness, lifestyle (especially risk of eye trauma), and the health of your eye surface to determine if PRK is the safest option for you.'
         }
       ],
       seo: {
@@ -493,21 +568,21 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
     np: {
       id: 'prk',
       slug: 'prk',
-      title: 'PRK: सतह-आधारित सटीकता',
-      subtitle: 'पातलो कोर्निया भएका बिरामीहरू वा विशेष जीवनशैली आवश्यकताहरूका लागि उपयुक्त जहाँ फ्ल्याप सिफारिस गरिँदैन।',
+      title: 'PRK लेजर आँखाको शल्यक्रिया',
+      subtitle: 'LASIK वा SMILE सिफारिस नगरिएको अवस्थामा उपयुक्त सतह-आधारित लेजर प्रक्रिया।',
       videoUrl: 'https://www.youtube.com/embed/1Pjh4ja1lH0',
       videoCaption: 'PRK ले कसरी सतह-आधारित दृष्टि सुधारको लागि सुरक्षित विकल्प प्रदान गर्दछ पत्ता लगाउनुहोस्।',
       benefits: {
-        title: 'मुख्य फाइदाहरू',
+        title: 'फाइदाहरू र महत्त्वपूर्ण विचारहरू',
         description: 'कुनै कोर्नियल फ्ल्याप बनाइँदैन, जसले अधिकतम कोर्नियल संरचनात्मक अखण्डता कायम राख्छ। उच्च-प्रभाव गतिविधिहरूको लागि आदर्श।'
       },
       idealCandidate: {
-        title: 'आदर्श उम्मेद्वार',
-        description: 'पातलो कोर्निया, सुख्खा आँखाको समस्या भएका बिरामीहरू, वा सेना वा सम्पर्क खेलकुद जस्ता पेशामा संलग्न व्यक्तिहरू।'
+        title: 'यो शल्यक्रिया कसका लागि हो?',
+        description: 'पातलो कोर्निया, सुख्खा आँखाको समस्या भएका बिरामीहरू, वा सेना वा सम्पर्क खेलकुद जस्ता पेशामा संलग्न व्यक्तिहरू जहाँ फ्ल्याप सिफारिस गरिँदैन।'
       },
       advantage: {
-        title: 'हामीलाई किन रोज्ने?',
-        description: 'निलो सतह एब्लेसन र अनुकूलित उपचारको लागि MEL 90 प्रविधिको विशेषज्ञ प्रयोग।'
+        title: 'प्रक्रियाले कसरी काम गर्छ (क्लिनिकल व्याख्या)',
+        description: 'PRK मा कोर्नियाको बाहिरी तह (एपिथेलियम) हटाएर एक्साइमर लेजरले भित्री तन्तुलाई सिधै सतहमा पुन: आकार दिइन्छ।'
       },
       technology: [
         {
@@ -518,10 +593,11 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       ],
       timeline: [
         { time: '१-३ दिन', description: 'एपिथेलियल निको हुने अवधि; मधुरो प्रकाशमा आराम गर्न सिफारिस गरिन्छ।' },
-        { time: '१ हप्ता', description: 'दृष्टि स्पष्ट हुन थाल्छ; काममा फर्कन सम्भव छ।' },
-        { time: '१ महिना', description: 'महत्त्वपूर्ण दृश्य स्पष्टता प्राप्त हुन्छ।' },
-        { time: '३ महिना', description: 'दृष्टिको पूर्ण परिपक्वता र पूर्ण निको हुने समय।' }
+        { time: '१ हप्ता', description: 'दृष्टि स्पष्ट हुन थाल्छ। आधारभूत बाहिरी गतिविधिहरू, भित्री खेलकुद र जिम सुरु गर्न सकिन्छ।' },
+        { time: '१ महिना', description: 'कार्यात्मक दृश्य रिकभरी प्राप्त। पौडी खेल्न सुरक्षित।' },
+        { time: '३ महिना', description: 'पूर्ण दृश्य स्थिरता र पूर्ण घाउ निको हुने समय।' }
       ],
+      timelineNote: 'निको हुने प्रक्रिया व्यक्ति अनुसार फरक हुन सक्छ र व्यक्तिगत निको हुने प्रतिक्रियामा भर पर्छ।',
       comparison: {
         title: 'यो कसरी फरक छ',
         description: 'LASIK को विपरीत, PRK मा फ्ल्याप समावेश हुँदैन। बाहिरी तह (एपिथेलियम) हटाएपछि लेजर सिधै सतहमा प्रयोग गरिन्छ।',
@@ -549,18 +625,26 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       },
       targetProfessions: ['सेना', 'प्रहरी', 'पाइलट', 'सर्जन', 'एथलीट', 'ट्रेकर'],
       cost: {
-        title: 'पछिल्लो आधिकारिक लागत',
+        title: 'PRK शल्यक्रियाको लागत',
         eligibilityScan: 3500,
         surgeryCost: 70000,
       },
       faqs: [
         {
-          question: 'LASIK को सट्टा PRK किन रोज्ने?',
-          answer: 'PRK अक्सर पातलो कोर्निया भएका बिरामीहरू वा उच्च-प्रभाव गतिविधिहरूमा संलग्न व्यक्तिहरूको लागि सिफारिस गरिन्छ, किनकि यसले कोर्नियल फ्ल्याप बनाउनबाट बचाउँछ।'
+          question: 'के PRK LASIK भन्दा राम्रो छ?',
+          answer: 'कुनै पनि एकल प्रक्रिया सबैका लागि उत्तम हुँदैन। PRK अक्सर पातलो कोर्निया भएका बिरामीहरू वा उच्च-प्रभाव पेशाहरू (जस्तै सेना वा बक्सिङ) मा संलग्न व्यक्तिहरूको लागि सिफारिस गरिन्छ किनभने यसले कोर्नियल फ्ल्याप बनाउनबाट बचाउँछ र संरचनात्मक अखण्डता बढी सुरक्षित राख्छ।'
         },
         {
-          question: 'PRK पछि रिकभरी पीडादायी हुन्छ?',
-          answer: 'PRK को रिकभरी LASIK भन्दा अलि लामो भए तापनि, कुनै पनि असुविधा सामान्यतया केही दिनको लागि विशेष कन्ट्याक्ट लेन्स र आँखाको थोपाको साथ व्यवस्थापन गरिन्छ।'
+          question: 'यो प्रक्रिया कसले गराउनु हुँदैन?',
+          answer: 'PRK निश्चित अटोइम्यून रोगहरू, अनियन्त्रित मधुमेह, वा धेरै उच्च रिफ्र्याक्टिभ त्रुटिहरू भएका बिरामीहरूका लागि उपयुक्त नहुन सक्छ जुन सुरक्षित सतह उपचार सीमा भन्दा बढी हुन्छ।'
+        },
+        {
+          question: 'यो LASIK भन्दा कसरी फरक छ?',
+          answer: 'LASIK ले भित्री कोर्नियाको उपचार गर्न फ्ल्याप बनाउँछ, जबकि PRK ले एपिथेलियम हटाएपछि सिधै सतहको उपचार गर्छ। PRK को प्रारम्भिक रिकभरी अवधि लामो हुन्छ तर यसले फ्ल्याप सम्बन्धी सबै जोखिमहरू हटाउँछ।'
+        },
+        {
+          question: 'सर्जनले कसरी निर्णय गर्नुहुन्छ?',
+          answer: 'सर्जनले तपाईंको कोर्नियल मोटाई, जीवनशैली (विशेष गरी आँखामा चोट लाग्ने जोखिम), र तपाईंको आँखाको सतहको स्वास्थ्यलाई ध्यानमा राखेर PRK तपाईंको लागि सुरक्षित विकल्प हो कि होइन भनेर निर्धारण गर्नुहुन्छ।'
         }
       ],
       seo: {
@@ -574,21 +658,21 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
     en: {
       id: 'presbyond',
       slug: 'presbyond',
-      title: 'Presbyond: Laser Blended Vision',
-      subtitle: 'The ultimate solution for reading freedom, specifically designed for those aged 40-65 experiencing presbyopia.',
+      title: 'Presbyond Laser Blended Vision',
+      subtitle: 'Laser vision correction designed to reduce dependence on reading glasses.',
       videoUrl: 'https://www.youtube.com/embed/FMQSRh0o3po',
       videoCaption: 'See how Presbyond restores natural reading vision for those over 40.',
       benefits: {
-        title: 'Key Benefits',
+        title: 'Benefits and Important Considerations',
         description: 'Reduces or eliminates the need for reading glasses. Provides a continuous range of vision from near to far.'
       },
       idealCandidate: {
-        title: 'Ideal Candidate',
-        description: 'Individuals aged 40-65 who are tired of reading glasses and want to restore their natural range of vision.'
+        title: 'Who Is This Surgery For?',
+        description: 'Individuals aged 40-65 experiencing presbyopia who want to restore their natural range of vision and reduce dependence on reading glasses.'
       },
       advantage: {
-        title: 'Why choose us?',
-        description: 'Expert customization using the MEL 90 laser to create a unique "blended zone" for seamless visual transitions.'
+        title: 'How the Procedure Works (Clinically Explained)',
+        description: 'Presbyond uses a sophisticated laser profile to create a "blended zone", allowing one eye to see primarily far and the other primarily near, with both eyes working together for intermediate vision.'
       },
       targetProfessions: ['Senior Pilots', 'Surgeons', 'Photographers', 'Active Retirees'],
       technology: [
@@ -600,10 +684,11 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       ],
       timeline: [
         { time: '24 Hours', description: 'Initial visual improvement; most can read without glasses.' },
-        { time: '1 Week', description: 'Brain begins to adapt to the blended vision.' },
-        { time: '1 Month', description: 'Significant adaptation and comfort achieved.' },
-        { time: '3-6 Months', description: 'Full neuro-adaptation and optimal visual range.' }
+        { time: '1 Week', description: 'Brain begins to adapt to the blended vision. Basic outdoor activities, indoor sports and gym can be started.' },
+        { time: '1 Month', description: 'Functional visual recovery achieved. Safe to resume swimming.' },
+        { time: '3-6 Months', description: 'Full visual stability, neuro-adaptation and complete healing.' }
       ],
+      timelineNote: 'Recovery varies from person to person and depends on individual healing response.',
       comparison: {
         title: 'How it differs',
         description: 'Unlike standard monovision, Presbyond creates a blended zone that allows for better intermediate vision and depth perception.',
@@ -630,18 +715,26 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
         description: 'Investing in your independence from reading glasses is an investment in your daily convenience and joy.'
       },
       cost: {
-        title: 'Latest Official Cost',
+        title: 'Cost of Presbyond Surgery',
         surgeryCost: 0,
         notStarted: true,
       },
       faqs: [
         {
-          question: 'Can Presbyond eliminate the need for reading glasses?',
-          answer: 'Yes, Presbyond is specifically designed to restore a natural range of vision, significantly reducing or eliminating the need for reading glasses.'
+          question: 'Is Presbyond better than LASIK?',
+          answer: 'Presbyond is actually a specialized form of LASIK (or PRK) designed specifically for presbyopia. While standard LASIK corrects distance vision, Presbyond corrects both distance and near vision by creating a blended focal zone.'
         },
         {
-          question: 'Am I too old for Presbyond?',
-          answer: 'Presbyond is ideal for patients between 40 and 65. A comprehensive evaluation will determine if it is the best solution for your unique eye health.'
+          question: 'Who should not have this procedure?',
+          answer: 'Patients with significant cataracts, certain retinal conditions, or those who cannot adapt to monovision-like setups may not be ideal candidates.'
+        },
+        {
+          question: 'How is this different from LASIK?',
+          answer: 'Standard LASIK aims for perfect distance vision in both eyes. Presbyond offsets the focus slightly in each eye to provide a depth of field that covers near, intermediate, and far distances.'
+        },
+        {
+          question: 'How does the surgeon decide?',
+          answer: 'Suitability is determined through a "tolerance test" where we simulate the blended vision with lenses, alongside a full clinical eye exam.'
         }
       ],
       seo: {
@@ -653,21 +746,21 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
     np: {
       id: 'presbyond',
       slug: 'presbyond',
-      title: 'Presbyond: लेजर ब्लेन्डेड भिजन',
-      subtitle: 'पढ्नका लागि स्वतन्त्रताको अन्तिम समाधान, विशेष गरी ४०-६५ वर्षका प्रेसबायोपिया अनुभव गरिरहेकाहरूका लागि डिजाइन गरिएको।',
+      title: 'Presbyond लेजर ब्लेन्डेड भिजन',
+      subtitle: 'पढ्ने चश्मामाथिको निर्भरता कम गर्न डिजाइन गरिएको लेजर दृष्टि सुधार।',
       videoUrl: 'https://www.youtube.com/embed/FMQSRh0o3po',
       videoCaption: 'Presbyond ले ४० वर्षभन्दा माथिका व्यक्तिहरूको लागि कसरी प्राकृतिक पढ्ने दृष्टि पुनर्स्थापित गर्दछ हेर्नुहोस्।',
       benefits: {
-        title: 'मुख्य फाइदाहरू',
+        title: 'फाइदाहरू र महत्त्वपूर्ण विचारहरू',
         description: 'पढ्ने चश्माको आवश्यकतालाई कम गर्छ वा हटाउँछ। नजिकदेखि टाढासम्म दृष्टिको निरन्तर दायरा प्रदान गर्दछ।'
       },
       idealCandidate: {
-        title: 'आदर्श उम्मेद्वार',
-        description: '४०-६५ वर्षका व्यक्तिहरू जो पढ्ने चश्माबाट थाकेका छन् र आफ्नो दृष्टिको प्राकृतिक दायरा पुनर्स्थापित गर्न चाहन्छन्।'
+        title: 'यो शल्यक्रिया कसका लागि हो?',
+        description: '४०-६५ वर्षका प्रेसबायोपिया अनुभव गरिरहेका व्यक्तिहरू जो आफ्नो दृष्टिको प्राकृतिक दायरा पुनर्स्थापित गर्न र पढ्ने चश्मामाथिको निर्भरता कम गर्न चाहन्छन्।'
       },
       advantage: {
-        title: 'हामीलाई किन रोज्ने?',
-        description: 'सहज दृश्य संक्रमणका लागि अद्वितीय "ब्लेन्डेड जोन" सिर्जना गर्न MEL 90 लेजरको प्रयोग गरी विशेषज्ञ अनुकूलन।'
+        title: 'प्रक्रियाले कसरी काम गर्छ (क्लिनिकल व्याख्या)',
+        description: 'Presbyond ले एक परिष्कृत लेजर प्रोफाइल प्रयोग गरेर "ब्लेन्डेड जोन" सिर्जना गर्दछ, जसले एउटा आँखालाई मुख्य रूपमा टाढा र अर्कोलाई मुख्य रूपमा नजिक देख्न अनुमति दिन्छ, दुबै आँखाले मध्यवर्ती दृष्टिको लागि मिलेर काम गर्दछ।'
       },
       targetProfessions: ['वरिष्ठ पाइलट', 'सर्जन', 'फोटोग्राफर', 'सक्रिय सेवानिवृत्त'],
       technology: [
@@ -679,10 +772,11 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       ],
       timeline: [
         { time: '२४ घण्टा', description: 'प्रारम्भिक दृश्य सुधार; अधिकांशले चश्मा बिना पढ्न सक्छन्।' },
-        { time: '१ हप्ता', description: 'मस्तिष्कले ब्लेन्डेड भिजनमा अनुकूलन गर्न थाल्छ।' },
-        { time: '१ महिना', description: 'महत्त्वपूर्ण अनुकूलन र आराम प्राप्त हुन्छ।' },
-        { time: '३-६ महिना', description: 'पूर्ण न्यूरो-अनुकूलन र इष्टतम दृश्य दायरा।' }
+        { time: '१ हप्ता', description: 'मस्तिष्कले ब्लेन्डेड भिजनमा अनुकूलन गर्न थाल्छ। आधारभूत बाहिरी गतिविधिहरू, भित्री खेलकुद र जिम सुरु गर्न सकिन्छ।' },
+        { time: '१ महिना', description: 'कार्यात्मक दृश्य रिकभरी प्राप्त। पौडी खेल्न सुरक्षित।' },
+        { time: '३-६ महिना', description: 'पूर्ण दृश्य स्थिरता, न्यूरो-अनुकूलन र पूर्ण निको हुने समय।' }
       ],
+      timelineNote: 'निको हुने प्रक्रिया व्यक्ति अनुसार फरक हुन सक्छ र व्यक्तिगत निको हुने प्रतिक्रियामा भर पर्छ।',
       comparison: {
         title: 'यो कसरी फरक छ',
         description: 'मानक मोनोभिजनको विपरीत, Presbyond ले एक ब्लेन्डेड जोन सिर्जना गर्दछ जसले राम्रो मध्यवर्ती दृष्टि र गहिराइ धारणाको लागि अनुमति दिन्छ।',
@@ -709,18 +803,26 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
         description: 'पढ्ने चश्माबाट आफ्नो स्वतन्त्रतामा लगानी गर्नु तपाईंको दैनिक सुविधा र आनन्दमा लगानी हो।'
       },
       cost: {
-        title: 'पछिल्लो आधिकारिक लागत',
+        title: 'Presbyond शल्यक्रियाको लागत',
         surgeryCost: 0,
         notStarted: true,
       },
       faqs: [
         {
-          question: 'के Presbyond ले पढ्ने चश्माको आवश्यकतालाई हटाउन सक्छ?',
-          answer: 'हो, Presbyond विशेष गरी दृष्टिको प्राकृतिक दायरा पुनर्स्थापित गर्न डिजाइन गरिएको हो, जसले पढ्ने चश्माको आवश्यकतालाई उल्लेखनीय रूपमा कम गर्छ वा हटाउँछ।'
+          question: 'के Presbyond LASIK भन्दा राम्रो छ?',
+          answer: 'Presbyond वास्तवमा प्रेसबायोपियाका लागि डिजाइन गरिएको LASIK (वा PRK) को एक विशेष रूप हो। मानक LASIK ले टाढाको दृष्टि सुधार गर्छ भने, Presbyond ले ब्लेन्डेड फोकल जोन सिर्जना गरेर टाढा र नजिक दुबैको दृष्टि सुधार गर्छ।'
         },
         {
-          question: 'के म Presbyond को लागि धेरै वृद्ध छु?',
-          answer: 'Presbyond ४० देखि ६५ वर्ष बीचका बिरामीहरूको लागि उपयुक्त छ। एक व्यापक मूल्याङ्कनले यो तपाईंको आँखाको स्वास्थ्यको लागि उत्तम समाधान हो कि होइन भन्ने निर्धारण गर्नेछ।'
+          question: 'यो प्रक्रिया कसले गराउनु हुँदैन?',
+          answer: 'मोतियाबिन्दु भएका बिरामीहरू, निश्चित रेटिनल अवस्थाहरू भएका, वा मोनोभिजन जस्तो सेटअपमा अनुकूलन गर्न नसक्नेहरूका लागि यो उपयुक्त नहुन सक्छ।'
+        },
+        {
+          question: 'यो LASIK भन्दा कसरी फरक छ?',
+          answer: 'मानक LASIK ले दुबै आँखामा पूर्ण टाढाको दृष्टिको लक्ष्य राख्छ। Presbyond ले प्रत्येक आँखामा फोकसलाई थोरै परिवर्तन गर्छ ताकि नजिक, मध्यवर्ती र टाढाको दूरी कभर गर्ने दृष्टिको गहिराइ प्रदान गर्न सकियोस्।'
+        },
+        {
+          question: 'सर्जनले कसरी निर्णय गर्नुहुन्छ?',
+          answer: 'उपयुक्तता "टोलरेन्स टेस्ट" मार्फत निर्धारण गरिन्छ जहाँ हामी लेन्सको साथ ब्लेन्डेड भिजनको सिमुलेशन गर्छौं, साथै पूर्ण क्लिनिकल आँखा परीक्षण गरिन्छ।'
         }
       ],
       seo: {
@@ -734,21 +836,21 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
     en: {
       id: 'icl-ipcl',
       slug: 'icl-ipcl',
-      title: 'ICL / IPCL: The Reversible Lens',
-      subtitle: 'A premium solution for high prescriptions and thin corneas, offering exceptional visual quality without removing corneal tissue.',
+      title: 'ICL / IPCL Phakic Lens Implantation',
+      subtitle: 'A lens-based vision correction option when laser surgery is not suitable.',
       videoUrl: 'https://www.youtube.com/embed/A35Rxqk83VA',
       videoCaption: 'Explore the benefits of reversible ICL/IPCL lens implantation.',
       benefits: {
-        title: 'Key Benefits',
+        title: 'Benefits and Important Considerations',
         description: 'Reversible procedure, preserves natural accommodation, and provides high-definition vision even for extreme prescriptions.'
       },
       idealCandidate: {
-        title: 'Ideal Candidate',
-        description: 'Patients with high myopia, thin corneas, or those who are not suitable candidates for laser eye surgery.'
+        title: 'Who Is This Surgery For?',
+        description: 'An option for patients with high refractive error (high myopia) or thin corneas who are not suited for laser eye surgery.'
       },
       advantage: {
-        title: 'Why choose us?',
-        description: 'Expert implantation of premium ICL/IPCL lenses with meticulous attention to sizing and placement for optimal results.'
+        title: 'How the Procedure Works (Clinically Explained)',
+        description: 'ICL/IPCL involves placing a biocompatible lens inside the eye, behind the iris and in front of the natural lens, to correct vision without removing corneal tissue.'
       },
       technology: [
         {
@@ -763,6 +865,7 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
         { time: '1 Week', description: 'Safe to resume gym and more active lifestyle.' },
         { time: '1 Month', description: 'Complete freedom and visual stability.' }
       ],
+      timelineNote: 'Recovery varies from person to person and depends on individual healing response.',
       comparison: {
         title: 'How it differs',
         description: 'Unlike laser surgery which reshapes the cornea, ICL/IPCL adds a lens inside the eye, making it a reversible option.',
@@ -804,22 +907,27 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       ],
       targetProfessions: ['High Prescription Patients', 'Pilots', 'Surgeons', 'Trekkers'],
       cost: {
-        title: 'Latest Official Cost',
-        surgeryCost: 116000,
+        title: 'Cost of ICL / IPCL Surgery',
+        surgeryCost: 120000,
         isPerEye: true,
+        isStartingAt: true,
       },
       faqs: [
         {
-          question: 'Is ICL surgery reversible?',
-          answer: 'One of the greatest benefits of ICL is that it is reversible. The lens can be removed or replaced if your vision changes significantly in the future.'
+          question: 'Is ICL better than LASIK?',
+          answer: 'No single procedure is best for everyone. ICL is often preferred for very high prescriptions or thin corneas where LASIK is unsafe. It provides exceptional visual quality and is reversible, unlike laser procedures.'
         },
         {
-          question: 'Can I feel the ICL lens in my eye?',
-          answer: 'No, the ICL lens is placed behind the iris and in front of your natural lens, making it invisible and undetectable to you and others.'
+          question: 'Who should not have this procedure?',
+          answer: 'Patients with shallow anterior chambers, certain types of glaucoma, or unhealthy corneal endothelium may not be candidates for ICL.'
         },
         {
-          question: 'What are ICL / IPCL Lenses?',
-          answer: 'These are premium, biocompatible lenses implanted inside the eye to correct high prescriptions without removing any corneal tissue.'
+          question: 'How is this different from LASIK?',
+          answer: 'LASIK reshapes your cornea with a laser. ICL adds a corrective lens inside your eye, leaving the cornea untouched. This makes ICL reversible if necessary.'
+        },
+        {
+          question: 'How does the surgeon decide?',
+          answer: 'The surgeon measures the internal dimensions of your eye (ACD and White-to-White) and evaluates your corneal health to ensure there is enough space for the lens.'
         }
       ],
       seo: {
@@ -831,21 +939,21 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
     np: {
       id: 'icl-ipcl',
       slug: 'icl-ipcl',
-      title: 'ICL / IPCL: उल्ट्याउन सकिने लेन्स',
-      subtitle: 'उच्च प्रिस्क्रिप्शन र पातलो कोर्नियाका लागि प्रिमियम समाधान, कोर्नियल तन्तु नहटाई असाधारण दृश्य गुणस्तर प्रदान गर्दै।',
+      title: 'ICL / IPCL फ्याकिक लेन्स प्रत्यारोपण',
+      subtitle: 'लेजर शल्यक्रिया उपयुक्त नभएको अवस्थामा लेन्स-आधारित दृष्टि सुधार विकल्प।',
       videoUrl: 'https://www.youtube.com/embed/A35Rxqk83VA',
       videoCaption: 'उल्ट्याउन सकिने ICL/IPCL लेन्स प्रत्यारोपणका फाइदाहरू अन्वेषण गर्नुहोस्।',
       benefits: {
-        title: 'मुख्य फाइदाहरू',
+        title: 'फाइदाहरू र महत्त्वपूर्ण विचारहरू',
         description: 'उल्ट्याउन सकिने प्रक्रिया, प्राकृतिक आवास सुरक्षित गर्दछ, र अत्यधिक प्रिस्क्रिप्शनका लागि पनि उच्च-परिभाषा दृष्टि प्रदान गर्दछ।'
       },
       idealCandidate: {
-        title: 'आदर्श उम्मेद्वार',
-        description: 'उच्च मायोपिया, पातलो कोर्निया भएका बिरामीहरू, वा लेजर आँखाको शल्यक्रियाका लागि उपयुक्त नभएकाहरू।'
+        title: 'यो शल्यक्रिया कसका लागि हो?',
+        description: 'उच्च रिफ्र्याक्टिभ त्रुटि (उच्च मायोपिया) वा पातलो कोर्निया भएका बिरामीहरूका लागि एक विकल्प जो लेजर आँखाको शल्यक्रियाका लागि उपयुक्त छैनन्।'
       },
       advantage: {
-        title: 'हामीलाई किन रोज्ने?',
-        description: 'इष्टतम परिणामहरूको लागि साइजिंग र प्लेसमेन्टमा सावधानीपूर्वक ध्यान दिएर प्रिमियम ICL/IPCL लेन्सहरूको विशेषज्ञ प्रत्यारोपण।'
+        title: 'प्रक्रियाले कसरी काम गर्छ (क्लिनिकल व्याख्या)',
+        description: 'ICL/IPCL मा कोर्नियल तन्तु नहटाई दृष्टि सुधार गर्न आइरिसको पछाडि र प्राकृतिक लेन्सको अगाडि आँखा भित्र बायोकम्प्याटिबल लेन्स राखिन्छ।'
       },
       technology: [
         {
@@ -860,6 +968,7 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
         { time: '१ हप्ता', description: 'जिम र अधिक सक्रिय जीवनशैली पुनः सुरु गर्न सुरक्षित।' },
         { time: '१ महिना', description: 'पूर्ण स्वतन्त्रता र दृश्य स्थिरता।' }
       ],
+      timelineNote: 'निको हुने प्रक्रिया व्यक्ति अनुसार फरक हुन सक्छ र व्यक्तिगत निको हुने प्रतिक्रियामा भर पर्छ।',
       comparison: {
         title: 'यो कसरी फरक छ',
         description: 'कोर्नियालाई पुन: आकार दिने लेजर शल्यक्रियाको विपरीत, ICL/IPCL ले आँखा भित्र लेन्स थप्छ, जसले यसलाई उल्ट्याउन सकिने विकल्प बनाउँछ।',
@@ -901,22 +1010,27 @@ export const surgeriesData: Record<string, { en: SurgeryData; np: SurgeryData }>
       ],
       targetProfessions: ['उच्च प्रिस्क्रिप्शन बिरामीहरू', 'पाइलट', 'सर्जन', 'ट्रेकर'],
       cost: {
-        title: 'पछिल्लो आधिकारिक लागत',
-        surgeryCost: 116000,
+        title: 'ICL / IPCL शल्यक्रियाको लागत',
+        surgeryCost: 120000,
         isPerEye: true,
+        isStartingAt: true,
       },
       faqs: [
         {
-          question: 'के ICL शल्यक्रिया उल्ट्याउन सकिन्छ?',
-          answer: 'ICL को सबैभन्दा ठूलो फाइदा मध्ये एक यो हो कि यो उल्ट्याउन सकिन्छ। यदि भविष्यमा तपाईंको दृष्टिमा उल्लेखनीय परिवर्तन आयो भने लेन्स हटाउन वा प्रतिस्थापन गर्न सकिन्छ।'
+          question: 'के ICL LASIK भन्दा राम्रो छ?',
+          answer: 'कुनै पनि एकल प्रक्रिया सबैका लागि उत्तम हुँदैन। ICL अक्सर धेरै उच्च प्रिस्क्रिप्शन वा पातलो कोर्नियाका लागि प्राथमिकता दिइन्छ जहाँ LASIK असुरक्षित हुन्छ। यसले असाधारण दृश्य गुणस्तर प्रदान गर्दछ र लेजर प्रक्रियाहरू जस्तो नभई यो उल्ट्याउन सकिन्छ।'
         },
         {
-          question: 'के म मेरो आँखामा ICL लेन्स महसुस गर्न सक्छु?',
-          answer: 'होइन, ICL लेन्स आइरिसको पछाडि र तपाईंको प्राकृतिक लेन्सको अगाडि राखिन्छ, जसले गर्दा यो तपाईं र अरूका लागि अदृश्य र थाहा नपाउने हुन्छ।'
+          question: 'यो प्रक्रिया कसले गराउनु हुँदैन?',
+          answer: 'उथलो एन्टेरियर चेम्बर, निश्चित प्रकारका ग्लुकोमा, वा अस्वस्थ कोर्नियल एन्डोथेलियम भएका बिरामीहरू ICL का लागि उम्मेद्वार नहुन सक्छन्।'
         },
         {
-          question: 'ICL / IPCL लेन्सहरू के हुन्?',
-          answer: 'यी प्रिमियम, बायोकम्प्याटिबल लेन्सहरू हुन् जुन कुनै पनि कोर्नियल तन्तु नहटाई उच्च प्रिस्क्रिप्शनहरू सुधार गर्न आँखा भित्र प्रत्यारोपण गरिन्छ।'
+          question: 'यो LASIK भन्दा कसरी फरक छ?',
+          answer: 'LASIK ले लेजरको सहायताले तपाईंको कोर्नियालाई पुन: आकार दिन्छ। ICL ले तपाईंको कोर्नियालाई नछोई आँखा भित्र सुधारात्मक लेन्स थप्छ। यसले आवश्यक परेमा ICL लाई उल्ट्याउन सकिने बनाउँछ।'
+        },
+        {
+          question: 'सर्जनले कसरी निर्णय गर्नुहुन्छ?',
+          answer: 'सर्जनले तपाईंको आँखाको आन्तरिक आयामहरू (ACD र White-to-White) मापन गर्नुहुन्छ र लेन्सको लागि पर्याप्त ठाउँ छ भन्ने सुनिश्चित गर्न तपाईंको कोर्नियल स्वास्थ्यको मूल्याङ्कन गर्नुहुन्छ।'
         }
       ],
       seo: {

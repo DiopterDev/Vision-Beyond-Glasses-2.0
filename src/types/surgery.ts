@@ -35,6 +35,7 @@ export interface SurgeryData {
   };
   technology: Technology[];
   timeline: TimelineStage[];
+  timelineNote?: string;
   comparison: {
     title: string;
     description: string;

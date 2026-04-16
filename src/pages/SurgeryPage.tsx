@@ -254,7 +254,7 @@ const SurgeryPage: React.FC = () => {
       {/* Why Section */}
       <section className="py-24 bg-surface/30 dark:bg-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {[
               { 
                 title: data.benefits.title, 
@@ -285,7 +285,7 @@ const SurgeryPage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className={`p-8 rounded-3xl border border-white/20 dark:border-white/10 ${item.bg} backdrop-blur-sm shadow-sm hover:shadow-md transition-all flex flex-col`}
+                className={`p-8 rounded-3xl border border-white/20 dark:border-white/10 ${item.bg} backdrop-blur-sm shadow-sm hover:shadow-md transition-all flex flex-col flex-1 min-w-[280px] max-w-[400px]`}
               >
                 <div className="mb-6 p-3 rounded-2xl bg-white dark:bg-white/10 w-fit shadow-sm">
                   {item.icon}
@@ -320,7 +320,7 @@ const SurgeryPage: React.FC = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div className="flex flex-wrap justify-center gap-6">
               {data.targetProfessions.map((profession, i) => (
                 <motion.div
                   key={i}
@@ -328,7 +328,7 @@ const SurgeryPage: React.FC = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="flex flex-col items-center p-6 rounded-2xl bg-surface border border-primary/10 shadow-sm hover:shadow-md transition-all group"
+                  className="flex flex-col items-center p-6 rounded-2xl bg-surface border border-primary/10 shadow-sm hover:shadow-md transition-all group min-w-[140px] flex-1 max-w-[200px]"
                 >
                   <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
                     {professionIconMap[profession] || <Users size={24} />}
@@ -349,7 +349,7 @@ const SurgeryPage: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4">
-                {language === 'en' ? 'Clinical Precision & Advanced Details' : 'क्लिनिकल सटीकता र उन्नत विवरणहरू'}
+                {data.advantage.title}
               </h2>
               <p className="text-text-body max-w-2xl mx-auto">
                 {language === 'en' 
@@ -357,7 +357,7 @@ const SurgeryPage: React.FC = () => {
                   : 'तपाईंको सुरक्षा र दृश्य गुणस्तर सुनिश्चित गर्ने प्राविधिक उत्कृष्टताको गहिरो अध्ययन।'}
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="flex flex-wrap justify-center gap-8">
               {data.clinicalDetails.map((detail, i) => (
                 <motion.div
                   key={i}
@@ -365,7 +365,7 @@ const SurgeryPage: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="p-8 rounded-3xl bg-white dark:bg-white/5 border border-primary/10 shadow-sm hover:shadow-md transition-all"
+                  className="p-8 rounded-3xl bg-white dark:bg-white/5 border border-primary/10 shadow-sm hover:shadow-md transition-all flex-1 min-w-[280px] max-w-[400px]"
                 >
                   <h3 className="text-xl font-bold text-primary mb-4">{detail.title}</h3>
                   <p className="text-text-body leading-relaxed text-sm">{detail.description}</p>
@@ -381,7 +381,7 @@ const SurgeryPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4">
-              {language === 'en' ? 'Tools of Precision' : 'सटीकताका उपकरणहरू'}
+              {language === 'en' ? 'Technology Used for This Procedure' : 'यस प्रक्रियाको लागि प्रयोग गरिएको प्रविधि'}
             </h2>
             <div className="w-20 h-1.5 bg-primary mx-auto rounded-full" />
           </div>
@@ -408,7 +408,7 @@ const SurgeryPage: React.FC = () => {
             {/* Timeline Line - Aligned with icons */}
             <div className="absolute top-8 left-0 w-full h-0.5 bg-primary/20 -translate-y-1/2 hidden md:block" />
             
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+            <div className="flex flex-wrap lg:flex-nowrap justify-center gap-4 lg:gap-6 relative z-10">
               {data.timeline.map((stage, i) => (
                 <motion.div
                   key={i}
@@ -421,18 +421,18 @@ const SurgeryPage: React.FC = () => {
                     scale: 1.02,
                     transition: { duration: 0.3, ease: "easeOut" }
                   }}
-                  className="relative group h-full z-10 hover:z-20"
+                  className="relative group h-full z-10 hover:z-20 flex-1 min-w-[200px] lg:min-w-0 max-w-[300px]"
                 >
                   <div className="flex flex-col items-center text-center h-full">
                     {/* Icon Marker */}
-                    <div className="w-16 h-16 rounded-full bg-surface border-4 border-primary/20 shadow-floating dark:shadow-dark-floating flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-primary/40 transition-all duration-300 z-30 bg-clip-padding">
-                      <Calendar className="text-primary" size={24} />
+                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-surface border-4 border-primary/20 shadow-floating dark:shadow-dark-floating flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-primary/40 transition-all duration-300 z-30 bg-clip-padding">
+                      <Calendar className="text-primary w-5 h-5 md:w-6 md:h-6" />
                     </div>
                     
                     {/* Content Card */}
-                    <div className="p-8 rounded-3xl bg-white/90 dark:bg-white/5 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-md w-full h-full flex flex-col hover:shadow-2xl transition-all duration-300 group-hover:bg-white dark:group-hover:bg-white/10">
-                      <h4 className="text-xl font-bold text-primary mb-3 tracking-tight">{stage.time}</h4>
-                      <p className="text-sm text-text-body leading-relaxed flex-grow">
+                    <div className="p-6 md:p-8 rounded-3xl bg-white/90 dark:bg-white/5 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-md w-full h-full flex flex-col hover:shadow-2xl transition-all duration-300 group-hover:bg-white dark:group-hover:bg-white/10">
+                      <h4 className="text-lg md:text-xl font-bold text-primary mb-3 tracking-tight">{stage.time}</h4>
+                      <p className="text-xs md:text-sm text-text-body leading-relaxed flex-grow">
                         {stage.description}
                       </p>
                     </div>
@@ -440,6 +440,17 @@ const SurgeryPage: React.FC = () => {
                 </motion.div>
               ))}
             </div>
+            
+            {data.timelineNote && (
+              <motion.p 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="mt-12 text-center text-text-body/70 italic text-sm"
+              >
+                {data.timelineNote}
+              </motion.p>
+            )}
           </div>
         </div>
       </section>
@@ -546,9 +557,7 @@ const SurgeryPage: React.FC = () => {
                 <CostCard 
                   costData={{
                     ...data.cost,
-                    title: language === 'en'
-                      ? `${data.cost.title} of ${data.title.split(':')[0].trim()}`
-                      : `${data.title.split(':')[0].trim()} को ${data.cost.title}`
+                    title: data.cost.title
                   }} 
                   className="h-full" 
                 />
@@ -564,12 +573,12 @@ const SurgeryPage: React.FC = () => {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4">
-                {t('faq.title')}
+                {language === 'en' ? `Frequently Asked Questions About ${data.title}` : `${data.title} को बारेमा बारम्बार सोधिने प्रश्नहरू`}
               </h2>
               <p className="text-lg text-text-body max-w-2xl mx-auto">
                 {language === 'en' 
-                  ? `Common questions and expert insights about ${data.title}.`
-                  : `${data.title} बारे सामान्य प्रश्नहरू र विशेषज्ञ अन्तर्दृष्टि।`}
+                  ? `Common clinical questions and expert insights to help you understand ${data.title}.`
+                  : `${data.title} लाई बुझ्न मद्दत गर्न सामान्य क्लिनिकल प्रश्नहरू र विशेषज्ञ अन्तर्दृष्टि।`}
               </p>
             </div>
 
