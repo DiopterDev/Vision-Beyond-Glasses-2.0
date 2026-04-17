@@ -116,8 +116,7 @@ const ReviewCard: React.FC<{
   onToggle: () => void;
   onClose: () => void;
   showFull?: boolean;
-  onHover?: (isHovering: boolean) => void;
-}> = ({ review, isExpanded, onToggle, onClose, showFull = false, onHover }) => {
+}> = ({ review, isExpanded, onToggle, onClose, showFull = false }) => {
   const { language } = useLanguage();
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -129,8 +128,6 @@ const ReviewCard: React.FC<{
       layout
       initial={false}
       onClick={onToggle}
-      onMouseEnter={() => onHover?.(true)}
-      onMouseLeave={() => onHover?.(false)}
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {
@@ -212,7 +209,6 @@ const ReviewMarquee: React.FC = () => {
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [viewMode, setViewMode] = useState<'marquee' | 'carousel'>('marquee');
   const marqueeRef = useRef<HTMLDivElement>(null);
-  const [isPaused, setIsPaused] = useState(false);
   const scrollInfo = useRef({ maxScroll: 0 });
   
   // Duplicate reviews to create a seamless loop
@@ -233,7 +229,7 @@ const ReviewMarquee: React.FC = () => {
     window.addEventListener('resize', updateMetrics);
 
     const scroll = (time: number) => {
-      if (marqueeRef.current && !isPaused) {
+      if (marqueeRef.current) {
         if (lastTime !== 0) {
           const deltaTime = time - lastTime;
           const move = (scrollSpeed * deltaTime) / 16.67; // normalize to 60fps
@@ -257,7 +253,7 @@ const ReviewMarquee: React.FC = () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener('resize', updateMetrics);
     };
-  }, [isPaused]);
+  }, []);
 
   const nextReview = () => {
     setCarouselIndex((prev) => (prev + 1) % reviews.length);
@@ -307,8 +303,6 @@ const ReviewMarquee: React.FC = () => {
             <div
               ref={marqueeRef}
               className="flex whitespace-nowrap py-12 px-4 overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing"
-              onTouchStart={() => setIsPaused(true)}
-              onTouchEnd={() => setIsPaused(false)}
             >
               {duplicatedReviews.map((review, index) => (
                 <ReviewCard 
@@ -317,7 +311,6 @@ const ReviewMarquee: React.FC = () => {
                   isExpanded={false}
                   onToggle={() => openCarousel(index)}
                   onClose={() => {}}
-                  onHover={(isHovering) => setIsPaused(isHovering)}
                 />
               ))}
             </div>
