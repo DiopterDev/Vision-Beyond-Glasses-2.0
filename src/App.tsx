@@ -108,13 +108,27 @@ const HomePage: React.FC = () => {
     <>
       <SEO schemas={[faqSchema]} />
       <Hero />
-      <CredentialsMarquee />
-      <SurgeriesGrid />
-      <CostOverview />
-      <TargetProfessions />
-      <ReviewMarquee />
-      <EligibilityChecker />
-      <FAQ />
+      <div id="below-hero">
+        <CredentialsMarquee />
+        <Suspense fallback={<div className="h-64 flex items-center justify-center"><div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" /></div>}>
+          <SurgeriesGrid />
+        </Suspense>
+        <Suspense fallback={<div className="h-64" />}>
+          <CostOverview />
+        </Suspense>
+        <Suspense fallback={<div className="h-64" />}>
+          <TargetProfessions />
+        </Suspense>
+        <Suspense fallback={<div className="h-64" />}>
+          <ReviewMarquee />
+        </Suspense>
+        <Suspense fallback={<div className="h-64" />}>
+          <EligibilityChecker />
+        </Suspense>
+        <Suspense fallback={<div className="h-64" />}>
+          <FAQ />
+        </Suspense>
+      </div>
     </>
   );
 };

@@ -168,15 +168,20 @@ const TargetProfessions: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const metricsRef = useRef({ cardWidth: 0 });
 
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsTabletOrMobile(window.innerWidth < 1024);
-      setIsMobile(window.innerWidth < 768);
+    const updateMetrics = () => {
+      const width = window.innerWidth;
+      setIsTabletOrMobile(width < 1024);
+      setIsMobile(width < 768);
+      if (scrollContainerRef.current) {
+        metricsRef.current.cardWidth = scrollContainerRef.current.offsetWidth * 0.78;
+      }
     };
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    return () => window.removeEventListener('resize', checkScreenSize);
+    updateMetrics();
+    window.addEventListener('resize', updateMetrics);
+    return () => window.removeEventListener('resize', updateMetrics);
   }, []);
 
   useEffect(() => {
@@ -192,7 +197,7 @@ const TargetProfessions: React.FC = () => {
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
-      const cardWidth = container.offsetWidth * 0.78;
+      const cardWidth = metricsRef.current.cardWidth || container.offsetWidth * 0.78;
       const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
       container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }

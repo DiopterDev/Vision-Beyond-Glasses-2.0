@@ -165,20 +165,25 @@ const SurgeriesGrid: React.FC = () => {
   const { t, language } = useLanguage();
   const [isMobile, setIsMobile] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const metricsRef = useRef({ cardWidth: 0 });
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+    const updateMetrics = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      if (scrollContainerRef.current) {
+        metricsRef.current.cardWidth = scrollContainerRef.current.offsetWidth * 0.78;
+      }
     };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    updateMetrics();
+    window.addEventListener('resize', updateMetrics);
+    return () => window.removeEventListener('resize', updateMetrics);
   }, []);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
-      const cardWidth = container.offsetWidth * 0.78; // 78vw from the card min-width
+      const cardWidth = metricsRef.current.cardWidth || container.offsetWidth * 0.78;
       const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
       container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
