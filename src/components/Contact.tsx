@@ -73,15 +73,19 @@ const Contact: React.FC = () => {
 
             {/* Email Card */}
             <div className="card-modern p-6 flex items-start space-x-4">
-              <a href={mailtoLink} className="p-3 rounded-xl bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all">
+              <a 
+                href={mailtoLink} 
+                className="p-3 rounded-xl bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all"
+                aria-label="Email Dr. Kaushal Pokhrel"
+              >
                 <Mail size={24} />
               </a>
               <div className="flex-grow">
-                <a href={mailtoLink} className="inline-block">
+                <a href={mailtoLink} className="inline-block" aria-label="Appointment Request Email Title">
                   <h3 className="text-lg font-bold text-text-heading mb-1 hover:text-primary transition-colors">{t('contact.email.title')}</h3>
                 </a>
                 <div className="flex items-center justify-between bg-background p-3 rounded-lg border border-gray-200 dark:border-gray-800">
-                  <a href={mailtoLink} className="text-text-body font-mono text-xs sm:text-sm break-all mr-2 hover:text-primary transition-colors">{email}</a>
+                  <a href={mailtoLink} className="text-text-body font-mono text-xs sm:text-sm break-all mr-2 hover:text-primary transition-colors" aria-label={`Email: ${email}`}>{email}</a>
                   <button 
                     onClick={copyToClipboard}
                     className="p-2 rounded-md hover:bg-primary/10 text-primary transition-colors flex-shrink-0"
@@ -103,6 +107,7 @@ const Contact: React.FC = () => {
                 onClick={handleShare}
                 className="p-3 rounded-xl bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all group/share"
                 title={t('contact.share.title')}
+                aria-label="Share Website"
               >
                 <Share2 size={24} className="group-hover/share:scale-110 transition-transform" />
               </button>

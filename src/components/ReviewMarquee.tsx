@@ -213,6 +213,7 @@ const ReviewMarquee: React.FC = () => {
   const [viewMode, setViewMode] = useState<'marquee' | 'carousel'>('marquee');
   const marqueeRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
+  const scrollInfo = useRef({ maxScroll: 0 });
   
   // Duplicate reviews to create a seamless loop
   const duplicatedReviews = [...reviews, ...reviews, ...reviews];
@@ -222,6 +223,15 @@ const ReviewMarquee: React.FC = () => {
     let lastTime = 0;
     const scrollSpeed = 0.5; // pixels per frame at 60fps
 
+    const updateMetrics = () => {
+      if (marqueeRef.current) {
+        scrollInfo.current.maxScroll = marqueeRef.current.scrollWidth / 3;
+      }
+    };
+
+    updateMetrics();
+    window.addEventListener('resize', updateMetrics);
+
     const scroll = (time: number) => {
       if (marqueeRef.current && !isPaused) {
         if (lastTime !== 0) {
@@ -230,8 +240,8 @@ const ReviewMarquee: React.FC = () => {
           marqueeRef.current.scrollLeft += move;
 
           // Infinite loop logic
-          const maxScroll = marqueeRef.current.scrollWidth / 3;
-          if (marqueeRef.current.scrollLeft >= maxScroll * 2) {
+          const maxScroll = scrollInfo.current.maxScroll;
+          if (maxScroll > 0 && marqueeRef.current.scrollLeft >= maxScroll * 2) {
             marqueeRef.current.scrollLeft -= maxScroll;
           }
         }
@@ -243,7 +253,10 @@ const ReviewMarquee: React.FC = () => {
     };
 
     animationId = requestAnimationFrame(scroll);
-    return () => cancelAnimationFrame(animationId);
+    return () => {
+      cancelAnimationFrame(animationId);
+      window.removeEventListener('resize', updateMetrics);
+    };
   }, [isPaused]);
 
   const nextReview = () => {

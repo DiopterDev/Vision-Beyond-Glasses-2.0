@@ -1,32 +1,24 @@
-# Dr. Kaushal Pokhrel - Refractive Surgery Specialist
+# Dr. Kaushal Pokhrel - LASER Eye Surgeon
 
-> Expert Refractive and Cataract Surgeon based in Kathmandu, Nepal, specializing in SMILE PRO, LASIK, ICL, and advanced lens replacement.
+> Leading Refractive & Cataract Surgeon in Kathmandu, Nepal. Specializing in LASIK, SMILE Pro, and advanced eye care surgery.
 
-## Core Expertise
-- **SMILE PRO**: Next-generation flapless laser vision correction using the VISUMAX 800.
-- **Femto-LASIK**: Precision flap-based laser surgery for myopia, hyperopia, and astigmatism.
-- **ICL/IPCL**: Phakic intraocular lens implantation for high prescriptions and thin corneas.
-- **Advanced Cataract/CLE**: Premium IOL (Trifocal/EDOF) surgery for lifetime clarity.
-- **Presbyond**: Laser blended vision for age-related reading vision loss (Presbyopia).
-
-## Clinical Trust Signals
-- **Affiliation**: Consultant at Tilganga Institute of Ophthalmology, Kathmandu.
-- **Research**: Published in international journals; member of ISMSICS (Nepal Chapter).
-- **Technology**: Expert user of ZEISS VISUMAX 800, MEL 90, and premium IOL platforms.
-
-## Humanitarian Work
-- Active in Visual Freedom Foundation (VFF).
-- Nepal Ophthalmic Society and Lions Club member.
-- Extensive rural surgical outreach across Nepal.
+## Core Information
+- **Name**: Dr. Kaushal Pokhrel
+- **Specialty**: Ophthalmology (Refractive & Cataract Surgery)
+- **Location**: Tilganga Institute of Ophthalmology, Kathmandu, Nepal
+- **Key Services**: SMILE Pro, SILK, Femto LASIK, PRK, Presbyond, ICL/IPCL, CLE/Cataract Surgery.
 
 ## Surgery Details
-- **SMILE PRO**: 10-second laser time, flapless, fast recovery.
-- **LASIK**: Proven precision, dual-laser technology.
-- **ICL**: Reversible, high-definition vision, no tissue removal.
-- **PRK**: Surface-based, ideal for specific corneal profiles.
-- **Presbyond**: Eliminates reading glasses, natural transition.
+- **SMILE Pro**: Next-gen minimal incision laser vision correction.
+- **SILK**: Advanced refractive procedure for vision precision.
+- **Femto LASIK**: All-laser LASIK for personalized vision correction.
+- **Presbyond**: Laser solution for reading vision (presbyopia).
+- **ICL**: Implantable Collamer Lens for high myopia.
 
-## Contact & Consultation
-- **Location**: Kathmandu, Nepal.
-- **Booking**: Available via the website's eligibility checker and contact form.
-- **Languages**: English, Nepali.
+## Patient Reviews
+The site features testimonials from verified patients across various surgery types, highlighting professionalism, painless procedures, and life-changing results.
+
+## Contact
+- **Email**: mail@kaushalpokhrel.com.np
+- **Phone**: +977-1-4916890
+- **Website**: https://kaushalpokhrel.com.np/
