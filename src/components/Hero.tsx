@@ -22,10 +22,9 @@ const Hero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left Column: Text Content */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col space-y-6"
+            className="flex flex-col space-y-6 opacity-0 animate-fade-in-up"
           >
             <div className="flex flex-col space-y-1">
               <span className="text-sm font-bold text-text-heading uppercase tracking-widest">
@@ -72,14 +71,13 @@ const Hero: React.FC = () => {
 
           {/* Right Column: Image & Quote */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ 
               duration: 0.6, 
               delay: 0.1,
               ease: [0.22, 1, 0.36, 1]
             }}
-            className="relative group/hero-img"
+            className="relative group/hero-img opacity-0 animate-fade-in"
           >
             <div className="relative">
               <motion.div 

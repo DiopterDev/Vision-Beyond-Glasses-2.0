@@ -175,9 +175,6 @@ const TargetProfessions: React.FC = () => {
       const width = window.innerWidth;
       setIsTabletOrMobile(width < 1024);
       setIsMobile(width < 768);
-      if (scrollContainerRef.current) {
-        metricsRef.current.cardWidth = scrollContainerRef.current.offsetWidth * 0.78;
-      }
     };
     updateMetrics();
     window.addEventListener('resize', updateMetrics);
@@ -197,7 +194,11 @@ const TargetProfessions: React.FC = () => {
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
-      const cardWidth = metricsRef.current.cardWidth || container.offsetWidth * 0.78;
+      // Calculate card width lazily to avoid reflow on mount
+      if (metricsRef.current.cardWidth === 0) {
+        metricsRef.current.cardWidth = container.offsetWidth * 0.78;
+      }
+      const cardWidth = metricsRef.current.cardWidth;
       const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
       container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }

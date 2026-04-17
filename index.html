@@ -19,6 +19,20 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="icon" type="image/webp" href="https://i.ibb.co/cSPhLMyD/logo-Dr-Kaushal.webp" />
     <link rel="preload" as="image" href="https://i.ibb.co/SXKFTjB2/dr-pokhrel.webp" fetchpriority="high" />
+    
+    <style>
+      :root {
+        --primary: #0066cc;
+        --background: #ffffff;
+        --text-heading: #1a1a1a;
+      }
+      body { background-color: var(--background); margin: 0; font-family: 'Inter', -apple-system, system-ui, sans-serif; }
+      .header-gradient { background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%); }
+      .animate-fade-in-up { animation: fadeInUp 0.5s ease-out 0.1s forwards; }
+      .animate-fade-in { animation: fadeIn 0.5s ease-out 0.2s forwards; }
+      @keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
 
     <script type="application/ld+json">
       {

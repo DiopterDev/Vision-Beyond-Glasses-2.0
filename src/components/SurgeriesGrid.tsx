@@ -12,20 +12,13 @@ interface SurgeryCardProps {
   detailsKey: string;
   slug: string;
   icon: React.ReactNode;
+  isMobileDevice: boolean;
 }
 
-const SurgeryCard: React.FC<SurgeryCardProps> = ({ titleKey, descKey, detailsKey, slug, icon }) => {
+const SurgeryCard: React.FC<SurgeryCardProps> = ({ titleKey, descKey, detailsKey, slug, icon, isMobileDevice }) => {
   const { t } = useLanguage();
   const [isFlipped, setIsFlipped] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
-  const [isMobileDevice, setIsMobileDevice] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobileDevice(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   return (
     <div ref={cardRef} className="relative h-[360px] w-full perspective-1000 group">
@@ -169,11 +162,7 @@ const SurgeriesGrid: React.FC = () => {
 
   useEffect(() => {
     const updateMetrics = () => {
-      const mobile = window.innerWidth < 768;
-      setIsMobile(mobile);
-      if (scrollContainerRef.current) {
-        metricsRef.current.cardWidth = scrollContainerRef.current.offsetWidth * 0.78;
-      }
+      setIsMobile(window.innerWidth < 768);
     };
     updateMetrics();
     window.addEventListener('resize', updateMetrics);
@@ -183,7 +172,11 @@ const SurgeriesGrid: React.FC = () => {
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
-      const cardWidth = metricsRef.current.cardWidth || container.offsetWidth * 0.78;
+      // Calculate card width lazily to avoid reflow on mount
+      if (metricsRef.current.cardWidth === 0) {
+        metricsRef.current.cardWidth = container.offsetWidth * 0.78;
+      }
+      const cardWidth = metricsRef.current.cardWidth;
       const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
       container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
@@ -225,7 +218,7 @@ const SurgeriesGrid: React.FC = () => {
                   className="flex items-center shrink-0"
                 >
                   <div className="min-w-[78vw] snap-center">
-                    <SurgeryCard {...surgery} />
+                    <SurgeryCard {...surgery} isMobileDevice={isMobile} />
                   </div>
                   
                   {index < surgeries.length - 1 && (
@@ -306,7 +299,7 @@ const SurgeriesGrid: React.FC = () => {
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.5, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
               >
-                <SurgeryCard {...surgery} />
+                <SurgeryCard {...surgery} isMobileDevice={isMobile} />
               </motion.div>
             ))}
           </AnimatePresence>
