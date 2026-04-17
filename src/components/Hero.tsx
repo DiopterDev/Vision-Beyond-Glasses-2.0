@@ -93,6 +93,8 @@ const Hero: React.FC = () => {
                   className="w-full h-full object-cover transition-all duration-1000 ease-out group-hover/hero-img:scale-[1.03] group-hover/hero-img:translate-y-1 group-hover/hero-img:opacity-95"
                   referrerPolicy="no-referrer"
                   fetchPriority="high"
+                  width={600}
+                  height={600}
                 />
                 <div className="absolute bottom-4 right-4 text-[10px] text-white/50 bg-black/10 px-2 py-1 rounded-full backdrop-blur-sm">
                   © Dr. Kaushal Pokhrel

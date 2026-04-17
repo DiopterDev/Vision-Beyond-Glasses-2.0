@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Star, MapPin, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, LayoutGrid, Play, CheckCircle2, X } from 'lucide-react';
+import { Star, MapPin, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, CheckCircle2, X, Hand, MousePointer2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { cn } from '../lib/utils';
 
@@ -12,199 +12,102 @@ interface Review {
 }
 
 const reviews: Review[] = [
-
   {
-
     name: "S. BudaChhetri",
-
     text: {
-
       en: "A truly life-changing experience with a welcoming clinic atmosphere.",
-
       np: "साँचिकै जीवन परिवर्तन गर्ने अनुभव! क्लिनिकको वातावरण पनि स्वागतमय छ।"
-
     },
-
     fullText: {
-
       en: "A truly life-changing experience. Even during my post-checkup period, I'm very happy with the results. The doctor was patient, supportive, and professional throughout. The clinic has a clean and homely atmosphere that makes patients feel comfortable. After my treatment, my vision and confidence improved so much that it felt like I received a new life. Heartfelt thanks to Dr. Kaushal Pokhrel and his amazing team.",
-
       np: "साँचिकै जीवन परिवर्तन गर्ने खालको अनुभव भयो। मेरो नतिजाबाट पनि म धेरै खुशी छु। डाक्टर धैर्यशील, सहयोगी, र योग्य थिए। क्लिनिक सरसफाईले र घरजस्तो वातावरणले बिरामीलाई सहज महसुस गराएको जस्तो लाग्छ। मेरो उपचारपछि, मेरो दृष्टि र आत्मविश्वास यति सुधार भयो कि मैले नयाँ जीवन पाएको जस्तो लागि रहेको छ। डा. कौशल पोखरेल र उहाँको शानदार टोलीलाई हृदयदेखि धन्यवाद।"
-
     },
-
     tag: { en: "Life-changing", np: "जीवन परिवर्तन गर्ने खालको" }
-
   },
-
   {
-
     name: "K. Rai",
-
     text: {
-
       en: "Highly satisfied with the detailed SMILE Pro counselling and education.",
-
       np: "SMILE PRO को बारेमा उहाँले गर्नु भएको परामर्शबाट म धेरै सन्तुष्ट छु।"
-
     },
-
     fullText: {
-
       en: "Did SMILE Pro recently and very satisfied with his counselling & treatment plan. The way he explains every detail to his patients, making them comfortable, is truly commendable. Especially, the patients' education about the comparison in both PRK, LASIK & SMILE Pro was very knowledgeable. I would like to express my sincere appreciation to Dr. Kaushal for his thoughtful counselling.",
-
       np: "भर्खरै SMILE PRO गरेँ र उहाँको परामर्श र उपचार योजनाबाट धेरै सन्तुष्ट छु। उहाँको आफ्ना बिरामीहरूलाई हरेक विवरण बुझाउने र सहज बनाउने तरिका साँच्चै नै प्रशंसनीय छ। विशेष गरी PRK, LASIK र SMILE PRO बीचको तुलनाको शिक्षा धेरै ज्ञानवर्धक थियो। डा. कौशललाई उहाँको विस्तृत परामर्शको लागि म मनैबाट प्रशंसा गर्न चाहन्छु।"
-
     },
-
     tag: { en: "Counselling", np: "परामर्श" }
-
   },
-
   {
-
     name: "Adhikari A.",
-
     text: {
-
       en: "SMILE Pro surgery the very next day — everything moved super fast with zero wait.",
-
       np: "भोलिपल्ट नै SMILE PRO लेजर शल्यक्रिया — सबै कुरा धेरै छिटो भयो, कुनै पर्खाइ भएन।"
-
     },
-
     fullText: {
-
       en: "Amazing experience from start to finish. I was able to schedule my check-up and get my SMILE Pro LASER eye surgery the very next day. Everything moved super fast and I never had to wait long for anything. The clinic was very clean and the staff were friendly and professional. My vision improved drastically right after the surgery.",
-
       np: "मलाई सुरुदेखि नै अन्त्यसम्म अचम्मको अनुभव भयो; मैले जाँचको समय मिलाउन र भोलिपल्ट नै SMILE PRO लेजर शल्यक्रिया गराउन पाएँ। सबै कुरा एति छिटो भयो कि कुनै पनि कुरामा लामो समय पर्खनु परेन। अस्पताल पनि धेरै सफा रहेछ र कर्मचारीहरू पनि मिलनसार र व्यावसायिक। शल्यक्रिया पछि तुरुन्तै दृष्टि अच्चम्म रूपमा सुधार भयो।"
-
     },
-
     tag: { en: "Speed", np: "गति" }
-
   },
-
   {
-
     name: "R. Cresta",
-
     text: {
-
       en: "Dr. Kaushal explained the surgery step-by-step, making the experience very comfortable.",
-
       np: "शल्यक्रियाको समयमा डा. कौशलले के भइरहेको छ भनेर चरणबद्ध रूपमा बुझाइरहनुभयो।"
-
     },
-
     fullText: {
-
       en: "Overall, it was a very good experience and honestly a great decision for me. From counselling to surgery, everything went smoothly. During the operation, Dr. Kaushal Pokhrel was extremely calm and reassuring — he kept explaining what was happening step by step, which made me feel very comfortable. It has been one week since my SMILE surgery, and everything is going well.",
-
       np: "समग्रमा, यो धेरै राम्रो अनुभव र मेरो लागि एक उत्कृष्ट निर्णय थियो। परामर्शदेखि शल्यक्रियासम्म सबै कुरा सहज रूपमा भयो। शल्यक्रियाको समयमा डा. कौशल अत्यन्त शान्त र विश्वास दिलाउने खालको हुनुहुन्थ्यो — उहाँले के भइरहेको छ भनेर चरणबद्ध रूपमा बुझाइरहनुभयो, जसले मलाई धेरै डरको महसुस हुन पाएन। SMILE शल्यक्रिया भएको एक हप्ता भयो, र सबै कुरा राम्रो भइरहेको छ।"
-
     },
-
     tag: { en: "Compassion", np: "सहानुभूतिशील" }
-
   },
-
   {
-
     name: "B. Timilsina",
-
     text: {
-
       en: "The whole team was incredibly kind and supportive throughout the process.",
-
       np: "डा. कौशल र पूरा टोली अविश्वसनीय रूपमा दयालु, सहयोगी र व्यावसायिक हुनुहुन्थ्यो।"
-
     },
-
     fullText: {
-
       en: "I had my eye laser surgery done by Dr. Kaushal Pokhrel, and I am extremely happy. The doctor and the whole team were incredibly kind, supportive, and professional throughout. From beginning to end, everything was well explained, and I felt comfortable and cared for at every step. I am truly grateful that I chose this place for my treatment.",
-
       np: "डा. कौशल पोखरेलले मेरो आँखामा लेजर शल्यक्रिया गर्नुभयो, र म समग्र अनुभवबाट अत्यन्त खुसी छु। डाक्टर र पूरा टोली प्रक्रियाभर अविश्वसनीय रूपमा दयालु, सहयोगी, र व्यावसायिक हुनुहुन्थ्यो। सुरुदेखि अन्त्यसम्म सबै कुरा राम्ररी बुझाइदिनु भयो, र हरेक चरणमा सहज र हेरचाह गरेको महसुस गराउनु भयो।"
-
     },
-
-    tag: { en: "Supportive", np: "आश्वस्त पार्ने" }
-
+    tag: { en: "Supportive", np: "सहयोगी" }
   },
-
   {
-
     name: "A. Neupane",
-
     text: {
-
       en: "One of the best decisions I've ever made. The surgery was quick and painless.",
-
       np: "यो मैले गरेको सबैभन्दा राम्रो निर्णयहरूमध्ये एक हो; शल्यक्रिया छिटो र दुखाइरहित थियो।"
-
     },
-
     fullText: {
-
       en: "I had my LASIK/SMILE eye surgery done at Tilganga Hospital with Dr. Kaushal Pokhrel and it was one of the best decisions I've ever made. From the first consultation to post-surgery follow-ups, everything was handled professionally and with great care. The surgery itself was quick and painless, and my vision improved within a very short time.",
-
       np: "तिलगंगा अस्पतालमा डा. कौशल पोखरेलसँग LASIK/SMILE आँखा शल्यक्रिया गराएँ र यो मैले गरेको सबैभन्दा राम्रो निर्णयहरूमध्ये एक हो। पहिलो परामर्शदेखि शल्यक्रिया पछिको फलोअपसम्म, सबै कुरा व्यावसायिक रूपमा सम्हालेको महसुस भयो। शल्यक्रिया पनि छिटो र दुखाइरहित थियो।"
-
     },
-
     tag: { en: "Professional", np: "व्यावसायिक" }
-
   },
-
   {
-
     name: "R. Pokhrel",
-
     text: {
-
       en: "He spent nearly an hour ensuring I was fully informed and comfortable.",
-
       np: "उहाँले मलाई पूर्ण रूपमा जानकारी दिन र सहज बनाउन लगभग एक घण्टा बिताउनुभयो।"
-
     },
-
     fullText: {
-
       en: "I've never met a doctor who takes so much time to genuinely console and educate their patients. He spent nearly an hour ensuring I was fully informed and comfortable with my decision. Dr. Kaushal explained every type of refractive surgery with absolute clarity — breaking down the pros, cons, and procedure in simple terms. Truly premium-level treatment in Nepal.",
-
       np: "मैले यति धेरै समय दिएर साँच्चै बिरामीहरूलाई सान्त्वना दिने र शिक्षित गर्ने डाक्टर कहिल्यै भेटेको छैन। उहाँले म पूर्ण रूपमा जानकार र निर्णयमा सहज छु भनी सुनिश्चित गर्न लगभग एक घण्टा बिताउनुभयो। डा. कौशलले हरेक प्रकारको लेजर शल्यक्रिया पूर्ण स्पष्टताका साथ बुझाउनुभयो — फाइदा, बेफाइदा, र प्रक्रिया सरल शब्दहरूमा।"
-
     },
-
     tag: { en: "Detailed", np: "विस्तृत" }
-
   },
-
   {
-
     name: "S. Malla",
-
     text: {
-
       en: "Counselling by Dr. Kaushal was so detailed; vision was clear within 3 days.",
-
       np: "डा. कौशल पोखरेलको परामर्श अत्यन्त विस्तृत थियो; अपरेसनको ३ दिनमै दृष्टि स्पष्ट भयो।"
-
     },
-
     fullText: {
-
       en: "My overall experience at RSU Tilganga is pretty good. From the reception up to the OT, I got a very nice treatment. The counselling session both before and after surgery by Dr. Kaushal Pokhrel was so detailed; everything from risks, complications, and precautions were well explained. My vision was much better within 3 days post-op and the vision is so clear.",
-
       np: "तिलगंगाको लेजर शल्यक्रिया विभागमा मेरो समग्र अनुभव धेरै राम्रो रह्यो। स्वागत-कक्षदेखि शल्यक्रिया कक्षसम्म सबैले धेरै राम्रो व्यवहार गर्नु भयो। शल्यक्रिया अघि र पछि दुवैमा डा. कौशल पोखरेलको परामर्श यति विस्तृत थियो; जोखिम, जटिलता, र सावधानीहरू सबै राम्ररी बुझाइदिनु भयो। अपरेसनको जम्मा ३ दिन भयो, तर मेरो दृष्टि अहिले नै एकदम सफा भैसक्यो।"
-
     },
-
     tag: { en: "Result", np: "नतिजा" }
-
   }
-
 ];
 
 const ReviewCard: React.FC<{ 
@@ -284,7 +187,7 @@ const ReviewCard: React.FC<{
             className="mt-3 flex items-center space-x-1 text-xs font-bold text-primary hover:text-medical-blue transition-colors group/btn"
             aria-hidden="true"
           >
-            <span>{isExpanded ? (language === 'en' ? "Read Less" : "थोरै पढ्नुहोस्") : (language === 'en' ? "Read More" : "थप पढ्नुहोस्")}</span>
+            <span>{isExpanded ? (language === 'en' ? "Read Less" : "थोरै पढ्नुहोस्") : (language === 'en' ? "Click to Read More" : "थप पढ्न क्लिक गर्नुहोस्")}</span>
             {isExpanded ? (
               <ChevronUp size={14} className="transition-transform group-hover/btn:-translate-y-0.5" />
             ) : (
@@ -305,9 +208,40 @@ const ReviewMarquee: React.FC = () => {
   const { t, language } = useLanguage();
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [viewMode, setViewMode] = useState<'marquee' | 'carousel'>('marquee');
+  const marqueeRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
   
-  // Duplicate reviews to create a seamless loop for marquee
-  const duplicatedReviews = [...reviews, ...reviews, ...reviews, ...reviews, ...reviews, ...reviews];
+  // Duplicate reviews to create a seamless loop
+  const duplicatedReviews = [...reviews, ...reviews, ...reviews];
+
+  useEffect(() => {
+    let animationId: number;
+    let lastTime = 0;
+    const scrollSpeed = 0.5; // pixels per frame at 60fps
+
+    const scroll = (time: number) => {
+      if (marqueeRef.current && !isPaused) {
+        if (lastTime !== 0) {
+          const deltaTime = time - lastTime;
+          const move = (scrollSpeed * deltaTime) / 16.67; // normalize to 60fps
+          marqueeRef.current.scrollLeft += move;
+
+          // Infinite loop logic
+          const maxScroll = marqueeRef.current.scrollWidth / 3;
+          if (marqueeRef.current.scrollLeft >= maxScroll * 2) {
+            marqueeRef.current.scrollLeft -= maxScroll;
+          }
+        }
+        lastTime = time;
+      } else {
+        lastTime = 0;
+      }
+      animationId = requestAnimationFrame(scroll);
+    };
+
+    animationId = requestAnimationFrame(scroll);
+    return () => cancelAnimationFrame(animationId);
+  }, [isPaused]);
 
   const nextReview = () => {
     setCarouselIndex((prev) => (prev + 1) % reviews.length);
@@ -355,8 +289,12 @@ const ReviewMarquee: React.FC = () => {
             <div className="absolute inset-y-0 right-0 w-8 md:w-40 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
             
             <div
-              className="flex whitespace-nowrap animate-marquee py-12 px-4 hover:pause-animation"
-              style={{ width: 'max-content', animationDuration: '180s' }}
+              ref={marqueeRef}
+              className="flex whitespace-nowrap py-12 px-4 overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+              onTouchStart={() => setIsPaused(true)}
+              onTouchEnd={() => setIsPaused(false)}
             >
               {duplicatedReviews.map((review, index) => (
                 <ReviewCard 
@@ -387,7 +325,6 @@ const ReviewMarquee: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                onClick={closeCarousel}
                 className="absolute inset-0 bg-background/40 backdrop-blur-md"
               />
               

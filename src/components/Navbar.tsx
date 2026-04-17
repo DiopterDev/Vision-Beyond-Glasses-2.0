@@ -206,6 +206,8 @@ const Navbar: React.FC = () => {
               alt="Dr. Kaushal Pokhrel - LASIK and SMILE PRO Surgeon Logo" 
               className="h-10 w-10 lg:h-12 lg:w-12 object-contain transition-transform duration-300 group-hover:scale-110"
               referrerPolicy="no-referrer"
+              width={48}
+              height={48}
             />
             <div className="flex flex-col">
               <span className="text-base lg:text-xl font-bold tracking-tight text-primary leading-tight">

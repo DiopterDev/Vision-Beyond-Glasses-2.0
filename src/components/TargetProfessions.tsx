@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Shield, Plane, Stethoscope, Trophy, Mountain, Info, X, ChevronDown, Hand, ArrowRight, Wallet } from 'lucide-react';
+import { Shield, Plane, Stethoscope, Trophy, Mountain, Info, X, ChevronDown, Hand, ArrowRight, Wallet, MousePointer2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { cn } from '../lib/utils';
 
@@ -85,9 +85,26 @@ const ProfessionCard: React.FC<{ profession: Profession }> = ({ profession }) =>
         <div className="absolute inset-0 backface-hidden" style={{ transform: 'translateZ(0)' }}>
           <button 
             type="button"
-            className="h-full w-full p-8 rounded-3xl border border-primary/10 bg-background shadow-sm flex flex-col items-center text-center justify-center space-y-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary overflow-hidden"
+            className="h-full w-full p-8 rounded-3xl border border-primary/10 bg-background shadow-sm flex flex-col items-center text-center justify-center space-y-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary overflow-hidden relative"
             onClick={() => setIsFlipped(true)}
+            aria-label={`${t(profession.titleKey)}. ${t(profession.descKey)}. Click to flip for criteria.`}
           >
+            {/* Constant Flip Indicator */}
+            <div className="absolute top-3 right-3 flex items-center space-x-1.5 px-2 py-1 rounded-full border border-primary/10 bg-primary/5 text-primary/40 group-hover:text-primary/60 transition-colors duration-300">
+              <div className="lg:hidden flex items-center space-x-1">
+                <Hand size={10} />
+                <span className="text-[9px] font-bold uppercase tracking-wider">
+                  {t('surgeries.tapToFlip')}
+                </span>
+              </div>
+              <div className="hidden lg:flex items-center space-x-1">
+                <MousePointer2 size={10} />
+                <span className="text-[9px] font-bold uppercase tracking-wider">
+                  {t('surgeries.clickToFlip')}
+                </span>
+              </div>
+            </div>
+
             <div className="p-4 rounded-2xl bg-primary/10 text-primary mb-2">
               <Icon size={32} />
             </div>

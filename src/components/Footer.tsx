@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
               aria-label="Send an email to Dr. Kaushal Pokhrel"
             >
               <Mail size={18} className="text-primary group-hover:scale-110 transition-transform" />
-              <p className="group-hover:text-primary transition-colors">mail@kaushalpokhrel.com.np</p>
+              <span className="group-hover:text-primary transition-colors">mail@kaushalpokhrel.com.np</span>
             </a>
             <div className="flex flex-wrap gap-4">
               <a 

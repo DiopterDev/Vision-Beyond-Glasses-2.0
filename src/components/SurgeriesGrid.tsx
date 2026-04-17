@@ -18,6 +18,14 @@ const SurgeryCard: React.FC<SurgeryCardProps> = ({ titleKey, descKey, detailsKey
   const { t } = useLanguage();
   const [isFlipped, setIsFlipped] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobileDevice(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <div ref={cardRef} className="relative h-[360px] w-full perspective-1000 group">
@@ -25,10 +33,10 @@ const SurgeryCard: React.FC<SurgeryCardProps> = ({ titleKey, descKey, detailsKey
         className="w-full h-full relative preserve-3d z-0 hover:z-10 will-change-transform"
         initial={false}
         animate={{ rotateY: isFlipped ? 180 : 0 }}
-        whileHover={{ 
+        whileHover={!isMobileDevice ? { 
           y: -12,
           transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] }
-        }}
+        } : {}}
         transition={{ 
           rotateY: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
         }}
@@ -90,15 +98,16 @@ const SurgeryCard: React.FC<SurgeryCardProps> = ({ titleKey, descKey, detailsKey
               {t(detailsKey)}
             </p>
             <div className="flex justify-center pt-2">
-              <Link 
-                to={`/surgery/${slug}`}
-                onClick={(e) => e.stopPropagation()}
-                className="flex items-center text-xs font-bold text-primary hover:text-primary/80 transition-colors uppercase tracking-wider py-3 px-6 rounded-xl bg-primary/5 hover:bg-primary/10 border border-primary/10"
-                aria-label={`${t('surgeries.learnMore')} ${t(titleKey)}`}
-              >
-                {t('surgeries.learnMore')}
-                <ArrowRight size={14} className="ml-2" />
-              </Link>
+                <Link 
+                  to={`/surgery/${slug}`}
+                  onClick={(e) => e.stopPropagation()}
+                  className="flex items-center text-xs font-bold text-primary hover:text-primary/80 transition-colors uppercase tracking-wider py-3 px-6 rounded-xl bg-primary/5 hover:bg-primary/10 border border-primary/10"
+                  aria-label={`${t('surgeries.learnMore')} ${t(titleKey)}`}
+                >
+                  {t('surgeries.learnMore')}
+                  <span className="sr-only"> about {t(titleKey)}</span>
+                  <ArrowRight size={14} className="ml-2" />
+                </Link>
             </div>
           </button>
         </div>

@@ -122,11 +122,11 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="twitter:image" content={image} />
 
       {/* Schema.org JSON-LD */}
-      {allSchemas.map((schema, index) => (
-        <script key={index} type="application/ld+json">
-          {JSON.stringify(schema)}
+      {allSchemas.length > 0 && (
+        <script type="application/ld+json">
+          {JSON.stringify(allSchemas.length === 1 ? allSchemas[0] : allSchemas)}
         </script>
-      ))}
+      )}
     </Helmet>
   );
 };

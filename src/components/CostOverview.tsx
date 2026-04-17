@@ -136,8 +136,10 @@ const CostOverview: React.FC = () => {
                         <Link 
                           to={`/surgery/${s.slug}`}
                           className="w-full py-3 rounded-xl bg-surface border border-gray-100 dark:border-gray-800 text-text-heading font-bold flex items-center justify-center text-xs mt-auto"
+                          aria-label={`${t('costs.viewDetails')} ${s.name}`}
                         >
                           {t('costs.viewDetails')}
+                          <span className="sr-only"> for {s.name}</span>
                           <ArrowRight size={14} className="ml-2" />
                         </Link>
                       </div>
@@ -280,6 +282,7 @@ const CostOverview: React.FC = () => {
                     aria-label={`${t('costs.viewDetails')} ${s.name}`}
                   >
                     {t('costs.viewDetails')}
+                    <span className="sr-only"> for {s.name}</span>
                     <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </motion.div>
