@@ -116,7 +116,8 @@ const ReviewCard: React.FC<{
   onToggle: () => void;
   onClose: () => void;
   showFull?: boolean;
-}> = ({ review, isExpanded, onToggle, onClose, showFull = false }) => {
+  onHover?: (isHovering: boolean) => void;
+}> = ({ review, isExpanded, onToggle, onClose, showFull = false, onHover }) => {
   const { language } = useLanguage();
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -128,6 +129,8 @@ const ReviewCard: React.FC<{
       layout
       initial={false}
       onClick={onToggle}
+      onMouseEnter={() => onHover?.(true)}
+      onMouseLeave={() => onHover?.(false)}
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {
@@ -291,8 +294,6 @@ const ReviewMarquee: React.FC = () => {
             <div
               ref={marqueeRef}
               className="flex whitespace-nowrap py-12 px-4 overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing"
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
               onTouchStart={() => setIsPaused(true)}
               onTouchEnd={() => setIsPaused(false)}
             >
@@ -303,6 +304,7 @@ const ReviewMarquee: React.FC = () => {
                   isExpanded={false}
                   onToggle={() => openCarousel(index)}
                   onClose={() => {}}
+                  onHover={(isHovering) => setIsPaused(isHovering)}
                 />
               ))}
             </div>
