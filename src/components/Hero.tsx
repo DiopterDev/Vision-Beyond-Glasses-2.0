@@ -29,10 +29,10 @@ const Hero: React.FC = () => {
           >
             <div className="flex flex-col space-y-1">
               <span className="text-sm font-bold text-text-heading uppercase tracking-widest">
-                Dr. Kaushal Pokhrel, MBBS, MD
+                {t('hero.name')}
               </span>
               <span className="text-xs font-bold text-primary uppercase tracking-wider">
-                Ophthalmology · Fellowship in Refractive Surgery
+                {t('hero.specialty')}
               </span>
             </div>
             

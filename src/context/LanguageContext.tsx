@@ -74,8 +74,8 @@ const translations: Translations = {
     np: 'डा. कौशल पोखरेल',
   },
   'logo.subtitle': {
-    en: 'Refractive & Cataract Surgeon',
-    np: 'लेजर तथा मोतिविन्दु विशेषज्ञ',
+    en: 'The Eye Doc',
+    np: 'आँखा रोग विशेषज्ञ',
   },
   'footer.quickLinks': {
     en: 'Quick Links',
@@ -98,17 +98,21 @@ const translations: Translations = {
   'footer.social.linkedin': { en: 'Visit our LinkedIn profile', np: 'हाम्रो लिंक्डइन प्रोफाइल हेर्नुहोस्' },
   'footer.social.youtube': { en: 'Visit our YouTube channel', np: 'हाम्रो यूट्यूब च्यानल हेर्नुहोस्' },
   'footer.social.tiktok': { en: 'Visit our TikTok profile', np: 'हाम्रो टिकटक प्रोफाइल हेर्नुहोस्' },
-  'hero.credentials': {
-    en: 'Dr. Kaushal Pokhrel, MBBS, MD | Ophthalmology · Fellowship in Refractive Surgery',
-    np: 'डा. कौशल पोखरेल, MBBS, MD | आँखारोग विशेषज्ञ · लेजर शल्यक्रियामा फेलोसिप',
+  'hero.name': {
+    en: 'Dr. Kaushal Pokhrel, MBBS, MD',
+    np: 'डा. कौशल पोखरेल, एम.बि.बि.एस., एम्.डि.',
+  },
+  'hero.specialty': {
+    en: 'Ophthalmology · Fellowship in Refractive Surgery',
+    np: 'आँखा रोग विशेषज्ञ · लेजर शल्यक्रियामा फेलोसिप',
   },
   'hero.title': {
     en: 'LASIK Eye Surgery Specialist in Nepal',
-    np: 'नेपालमा लेजर (LASIK) आँखा शल्यक्रिया विशेषज्ञ',
+    np: 'नेपालको लेजर (लेसिक) आँखा शल्यक्रिया',
   },
   'hero.titleSecondary': {
     en: '— and modern alternatives like SMILE Pro, PRK, and lens-based vision correction',
-    np: '— र SMILE Pro, PRK, तथा लेन्समा आधारित आधुनिक दृष्टि सुधार विकल्पहरू',
+    np: '— र स्माईल प्रो, पि.आर.के, तथा लेन्समा आधारित आधुनिक दृष्टि सुधार विकल्पहरूका विशेषज्ञ',
   },
   'hero.subtitle': {
     en: 'Helping patients reduce dependence on glasses and contact lenses—by choosing the most suitable procedure for their eyes, not just LASIK.',
