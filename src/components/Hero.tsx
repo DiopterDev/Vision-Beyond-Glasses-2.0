@@ -86,11 +86,13 @@ const Hero: React.FC = () => {
                 className="aspect-square rounded-2xl overflow-hidden shadow-xl border border-gray-100 dark:border-gray-800 relative"
               >
                 <img
-                  src="https://i.ibb.co/SXKFTjB2/dr-pokhrel.webp"
+                  src="/dr-pokhrel.webp"
                   alt="Dr. Kaushal Pokhrel - LASIK Eye Surgery Specialist in Nepal offering SMILE Pro, PRK, and ICL at Tilganga Institute of Ophthalmology"
                   className="w-full h-full object-cover transition-all duration-1000 ease-out group-hover/hero-img:scale-[1.03] group-hover/hero-img:translate-y-1 group-hover/hero-img:opacity-95"
                   referrerPolicy="no-referrer"
                   fetchPriority="high"
+                  loading="eager"
+                  decoding="async"
                   width={600}
                   height={600}
                 />

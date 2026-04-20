@@ -12,6 +12,8 @@ const CostOverview: React.FC = () => {
   const [isMobile, setIsMobile] = React.useState(false);
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
 
+  const metricsRef = React.useRef({ cardWidth: 0 });
+
   React.useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
@@ -22,7 +24,11 @@ const CostOverview: React.FC = () => {
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
-      const cardWidth = container.offsetWidth * 0.78;
+      // Calculate card width lazily to avoid reflow on mount
+      if (metricsRef.current.cardWidth === 0) {
+        metricsRef.current.cardWidth = container.offsetWidth * 0.78;
+      }
+      const cardWidth = metricsRef.current.cardWidth;
       const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
       container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }

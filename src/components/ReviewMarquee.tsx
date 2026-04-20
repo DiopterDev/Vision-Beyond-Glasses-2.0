@@ -209,51 +209,9 @@ const ReviewMarquee: React.FC = () => {
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [viewMode, setViewMode] = useState<'marquee' | 'carousel'>('marquee');
   const marqueeRef = useRef<HTMLDivElement>(null);
-  const scrollInfo = useRef({ maxScroll: 0 });
   
   // Duplicate reviews to create a seamless loop
-  const duplicatedReviews = [...reviews, ...reviews, ...reviews];
-
-  useEffect(() => {
-    let animationId: number;
-    let lastTime = 0;
-    const scrollSpeed = 0.5; // pixels per frame at 60fps
-
-    const updateMetrics = () => {
-      if (marqueeRef.current) {
-        scrollInfo.current.maxScroll = marqueeRef.current.scrollWidth / 3;
-      }
-    };
-
-    updateMetrics();
-    window.addEventListener('resize', updateMetrics);
-
-    const scroll = (time: number) => {
-      if (marqueeRef.current) {
-        if (lastTime !== 0) {
-          const deltaTime = time - lastTime;
-          const move = (scrollSpeed * deltaTime) / 16.67; // normalize to 60fps
-          marqueeRef.current.scrollLeft += move;
-
-          // Infinite loop logic
-          const maxScroll = scrollInfo.current.maxScroll;
-          if (maxScroll > 0 && marqueeRef.current.scrollLeft >= maxScroll * 2) {
-            marqueeRef.current.scrollLeft -= maxScroll;
-          }
-        }
-        lastTime = time;
-      } else {
-        lastTime = 0;
-      }
-      animationId = requestAnimationFrame(scroll);
-    };
-
-    animationId = requestAnimationFrame(scroll);
-    return () => {
-      cancelAnimationFrame(animationId);
-      window.removeEventListener('resize', updateMetrics);
-    };
-  }, []);
+  const duplicatedReviews = [...reviews, ...reviews, ...reviews, ...reviews];
 
   const nextReview = () => {
     setCarouselIndex((prev) => (prev + 1) % reviews.length);
@@ -302,17 +260,19 @@ const ReviewMarquee: React.FC = () => {
             
             <div
               ref={marqueeRef}
-              className="flex whitespace-nowrap py-12 px-4 overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing"
+              className="flex whitespace-nowrap py-12 px-4 overflow-x-hidden"
             >
-              {duplicatedReviews.map((review, index) => (
-                <ReviewCard 
-                  key={index} 
-                  review={review} 
-                  isExpanded={false}
-                  onToggle={() => openCarousel(index)}
-                  onClose={() => {}}
-                />
-              ))}
+              <div className="flex animate-marquee-slow">
+                {duplicatedReviews.map((review, index) => (
+                  <ReviewCard 
+                    key={index} 
+                    review={review} 
+                    isExpanded={false}
+                    onToggle={() => openCarousel(index)}
+                    onClose={() => {}}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
