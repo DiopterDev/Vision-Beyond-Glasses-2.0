@@ -89,34 +89,42 @@ const ProfessionCard: React.FC<{ profession: Profession }> = ({ profession }) =>
             onClick={() => setIsFlipped(true)}
             aria-label={`${t(profession.titleKey)}. ${t(profession.descKey)}. Click to flip for criteria.`}
           >
-            {/* Constant Flip Indicator */}
-            <div className="absolute top-3 right-3 flex items-center space-x-1.5 px-2 py-1 rounded-full border border-primary/10 bg-primary/5 text-primary/40 group-hover:text-primary/60 transition-colors duration-300">
-              <div className="lg:hidden flex items-center space-x-1">
-                <Hand size={10} />
-                <span className="text-[9px] font-bold uppercase tracking-wider">
-                  {t('surgeries.tapToFlip')}
-                </span>
-              </div>
-              <div className="hidden lg:flex items-center space-x-1">
-                <MousePointer2 size={10} />
-                <span className="text-[9px] font-bold uppercase tracking-wider">
-                  {t('surgeries.clickToFlip')}
-                </span>
-              </div>
-            </div>
+            {/* Constant Flip Indicator removed in favor of chevron-aligned indicator */}
 
-            <div className="p-4 rounded-2xl bg-primary/10 text-primary mb-2">
-              <Icon size={32} />
+            <div className="flex-1 flex flex-col items-center justify-center space-y-4">
+              <div className="p-4 rounded-2xl bg-primary/10 text-primary mb-2">
+                <Icon size={32} />
+              </div>
+              <h3 className="text-lg font-bold text-text-heading uppercase tracking-widest">
+                {t(profession.titleKey)}
+              </h3>
+              <p className="text-sm text-primary font-semibold">
+                {t(profession.descKey)}
+              </p>
             </div>
-            <h3 className="text-lg font-bold text-text-heading uppercase tracking-widest">
-              {t(profession.titleKey)}
-            </h3>
-            <p className="text-sm text-primary font-semibold">
-              {t(profession.descKey)}
-            </p>
-            <div className="pt-4 flex items-center text-[10px] font-bold text-primary uppercase tracking-widest opacity-60">
-              <Info size={14} className="mr-2" />
-              {t('surgeries.flipHint')}
+            <div className="mt-auto pt-6 flex flex-col items-center space-y-1 relative z-10 transition-all duration-300">
+              <motion.div
+                animate={{ 
+                  y: [0, -2, 0],
+                  opacity: [0.7, 1, 0.7]
+                }}
+                transition={{ 
+                  duration: 2, 
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="flex items-center space-x-1 text-primary/80 group-hover:text-primary"
+              >
+                <div className="lg:hidden flex items-center space-x-1">
+                  <Hand size={10} />
+                  <span className="text-[9px] font-bold uppercase tracking-wider">{t('surgeries.tapToFlip')}</span>
+                </div>
+                <div className="hidden lg:flex items-center space-x-1">
+                  <MousePointer2 size={10} />
+                  <span className="text-[9px] font-bold uppercase tracking-wider">{t('surgeries.clickToFlip')}</span>
+                </div>
+              </motion.div>
+              <ChevronDown size={16} className="text-primary/70 group-hover:text-primary transition-colors" />
             </div>
           </button>
         </div>
@@ -438,27 +446,61 @@ const TargetProfessions: React.FC = () => {
                       <div className="absolute inset-0 bg-background/30 opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none" />
                     )}
 
-                    <div className={cn(
-                      "w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-colors duration-150 relative z-10",
-                      isActive 
-                        ? "bg-white/20" 
-                        : "bg-primary/10 text-primary"
-                    )}>
-                      <Icon size={28} className={isActive ? "text-white" : "text-current"} />
+                    <div className="flex-1 flex flex-col items-center justify-center">
+                      <div className={cn(
+                        "w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-colors duration-150 relative z-10",
+                        isActive 
+                          ? "bg-white/20" 
+                          : "bg-primary/10 text-primary"
+                      )}>
+                        <Icon size={28} className={isActive ? "text-white" : "text-current"} />
+                      </div>
+                      <h3 className="font-bold text-xs md:text-sm mb-2 uppercase tracking-widest relative z-10">{t(prof.titleKey)}</h3>
+                      <p className={cn(
+                        "text-[10px] md:text-xs font-medium opacity-70 relative z-10",
+                        isActive ? "text-white/90" : "text-tagline"
+                      )}>
+                        {t(prof.descKey)}
+                      </p>
                     </div>
-                    <h3 className="font-bold text-xs md:text-sm mb-2 uppercase tracking-widest relative z-10">{t(prof.titleKey)}</h3>
-                    <p className={cn(
-                      "text-[10px] md:text-xs font-medium opacity-70 relative z-10",
-                      isActive ? "text-white/90" : "text-tagline"
-                    )}>
-                      {t(prof.descKey)}
-                    </p>
                     
-                    <div className={cn(
-                      "mt-6 transition-transform duration-150 relative z-10",
-                      isActive ? "rotate-180" : "rotate-0"
-                    )}>
-                      <ChevronDown size={18} className={isActive ? "text-white/60" : "text-primary/40"} />
+                    <div className="mt-8 flex flex-col items-center space-y-1 relative z-10">
+                      <motion.div
+                        animate={{ 
+                          y: isActive ? 0 : [0, -2, 0],
+                          opacity: isActive ? 1 : [0.7, 1, 0.7]
+                        }}
+                        transition={{ 
+                          duration: 2, 
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                        className={cn(
+                          "flex items-center space-x-1",
+                          isActive ? "text-white" : "text-primary/80 group-hover:text-primary"
+                        )}
+                      >
+                        {isActive ? (
+                          <span className="text-[8px] font-bold uppercase tracking-widest">{t('professions.close')}</span>
+                        ) : (
+                          <>
+                            <div className="lg:hidden flex items-center space-x-1">
+                              <Hand size={10} />
+                              <span className="text-[8px] font-bold uppercase tracking-widest">{t('surgeries.tapToFlip')}</span>
+                            </div>
+                            <div className="hidden lg:flex items-center space-x-1">
+                              <MousePointer2 size={10} />
+                              <span className="text-[8px] font-bold uppercase tracking-widest">{t('surgeries.clickToFlip')}</span>
+                            </div>
+                          </>
+                        )}
+                      </motion.div>
+                      <div className={cn(
+                        "transition-transform duration-150",
+                        isActive ? "rotate-180" : "rotate-0"
+                      )}>
+                        <ChevronDown size={14} className={isActive ? "text-white" : "text-primary/70"} />
+                      </div>
                     </div>
                   </motion.button>
                 </div>

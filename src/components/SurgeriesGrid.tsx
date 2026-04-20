@@ -42,35 +42,41 @@ const SurgeryCard: React.FC<SurgeryCardProps> = ({ titleKey, descKey, detailsKey
             onClick={() => setIsFlipped(true)}
             aria-label={`${t(titleKey)}. ${t(descKey)}. Click to see more details.`}
           >
-            {/* Constant Flip Indicator */}
-            <div className="absolute top-3 right-3 flex items-center space-x-1.5 px-2 py-1 rounded-full border border-primary/10 bg-primary/5 text-primary/40 group-hover:text-primary/60 transition-colors duration-300">
-              <div className="lg:hidden flex items-center space-x-1">
-                <Hand size={10} />
-                <span className="text-[9px] font-bold uppercase tracking-wider">
-                  {t('surgeries.tapToFlip')}
-                </span>
+            <div className="flex-1 flex flex-col items-center justify-center space-y-3">
+              <div className="p-4 rounded-full bg-primary/10 text-primary mb-1 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
+                {icon}
               </div>
-              <div className="hidden lg:flex items-center space-x-1">
-                <MousePointer2 size={10} />
-                <span className="text-[9px] font-bold uppercase tracking-wider">
-                  {t('surgeries.clickToFlip')}
-                </span>
-              </div>
+              <h3 className="text-xl font-bold text-text-heading">
+                {t(titleKey)}
+              </h3>
+              <p className="text-sm text-text-body leading-relaxed line-clamp-2">
+                {t(descKey)}
+              </p>
             </div>
 
-            <div className="p-4 rounded-full bg-primary/10 text-primary mb-1 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
-              {icon}
-            </div>
-            <h3 className="text-xl font-bold text-text-heading">
-              {t(titleKey)}
-            </h3>
-            <p className="text-sm text-text-body leading-relaxed line-clamp-2">
-              {t(descKey)}
-            </p>
-
-            <div className="pt-2 flex items-center text-xs font-bold text-primary uppercase tracking-widest opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-              <Info size={14} className="mr-2" />
-              {t('surgeries.flipHint')}
+            <div className="mt-auto pt-6 flex flex-col items-center space-y-1 relative z-10 transition-all duration-300">
+              <motion.div
+                animate={{ 
+                  y: [0, -2, 0],
+                  opacity: [0.7, 1, 0.7]
+                }}
+                transition={{ 
+                  duration: 2, 
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="flex items-center space-x-1 text-primary/80 group-hover:text-primary"
+              >
+                <div className="lg:hidden flex items-center space-x-1">
+                  <Hand size={10} />
+                  <span className="text-[8px] font-bold uppercase tracking-widest">{t('surgeries.tapToFlip')}</span>
+                </div>
+                <div className="hidden lg:flex items-center space-x-1">
+                  <MousePointer2 size={10} />
+                  <span className="text-[8px] font-bold uppercase tracking-widest">{t('surgeries.clickToFlip')}</span>
+                </div>
+              </motion.div>
+              <ChevronDown size={14} className="text-primary/70 group-hover:text-primary transition-colors" />
             </div>
           </button>
         </div>
@@ -101,6 +107,11 @@ const SurgeryCard: React.FC<SurgeryCardProps> = ({ titleKey, descKey, detailsKey
                   <span className="sr-only"> about {t(titleKey)}</span>
                   <ArrowRight size={14} className="ml-2" />
                 </Link>
+            </div>
+
+            <div className="pt-2 flex flex-col items-center space-y-1">
+              <span className="text-[8px] font-bold uppercase tracking-widest text-primary">{t('professions.close')}</span>
+              <ChevronDown size={14} className="text-primary/80 rotate-180" />
             </div>
           </button>
         </div>
