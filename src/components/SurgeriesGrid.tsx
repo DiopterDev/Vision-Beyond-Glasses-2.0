@@ -68,15 +68,15 @@ const SurgeryCard: React.FC<SurgeryCardProps> = ({ titleKey, descKey, detailsKey
                 className="flex items-center space-x-1 text-primary/80 group-hover:text-primary"
               >
                 <div className="lg:hidden flex items-center space-x-1">
-                  <Hand size={10} />
-                  <span className="text-[8px] font-bold uppercase tracking-widest">{t('surgeries.tapToFlip')}</span>
+                  <Hand size={12} />
+                  <span className="text-[10px] font-bold uppercase tracking-widest">{t('surgeries.tapToFlip')}</span>
                 </div>
                 <div className="hidden lg:flex items-center space-x-1">
-                  <MousePointer2 size={10} />
-                  <span className="text-[8px] font-bold uppercase tracking-widest">{t('surgeries.clickToFlip')}</span>
+                  <MousePointer2 size={12} />
+                  <span className="text-[10px] font-bold uppercase tracking-widest">{t('surgeries.clickToFlip')}</span>
                 </div>
               </motion.div>
-              <ChevronDown size={14} className="text-primary/70 group-hover:text-primary transition-colors" />
+              <ChevronDown size={14} className="text-primary group-hover:text-primary transition-colors" />
             </div>
           </button>
         </div>
@@ -110,8 +110,8 @@ const SurgeryCard: React.FC<SurgeryCardProps> = ({ titleKey, descKey, detailsKey
             </div>
 
             <div className="pt-2 flex flex-col items-center space-y-1">
-              <span className="text-[8px] font-bold uppercase tracking-widest text-primary">{t('professions.close')}</span>
-              <ChevronDown size={14} className="text-primary/80 rotate-180" />
+              <span className="text-[10px] font-bold uppercase tracking-widest text-primary">{t('professions.close')}</span>
+              <ChevronDown size={14} className="text-primary rotate-180" />
             </div>
           </button>
         </div>

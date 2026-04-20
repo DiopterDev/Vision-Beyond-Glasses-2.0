@@ -116,15 +116,15 @@ const ProfessionCard: React.FC<{ profession: Profession }> = ({ profession }) =>
                 className="flex items-center space-x-1 text-primary/80 group-hover:text-primary"
               >
                 <div className="lg:hidden flex items-center space-x-1">
-                  <Hand size={10} />
-                  <span className="text-[9px] font-bold uppercase tracking-wider">{t('surgeries.tapToFlip')}</span>
+                  <Hand size={12} />
+                  <span className="text-[11px] font-bold uppercase tracking-wider">{t('surgeries.tapToFlip')}</span>
                 </div>
                 <div className="hidden lg:flex items-center space-x-1">
-                  <MousePointer2 size={10} />
-                  <span className="text-[9px] font-bold uppercase tracking-wider">{t('surgeries.clickToFlip')}</span>
+                  <MousePointer2 size={12} />
+                  <span className="text-[11px] font-bold uppercase tracking-wider">{t('surgeries.clickToFlip')}</span>
                 </div>
               </motion.div>
-              <ChevronDown size={16} className="text-primary/70 group-hover:text-primary transition-colors" />
+              <ChevronDown size={18} className="text-primary group-hover:text-primary transition-colors" />
             </div>
           </button>
         </div>
@@ -477,20 +477,20 @@ const TargetProfessions: React.FC = () => {
                         }}
                         className={cn(
                           "flex items-center space-x-1",
-                          isActive ? "text-white" : "text-primary/80 group-hover:text-primary"
+                          isActive ? "text-white" : "text-primary"
                         )}
                       >
                         {isActive ? (
-                          <span className="text-[8px] font-bold uppercase tracking-widest">{t('professions.close')}</span>
+                          <span className="text-[10px] font-bold uppercase tracking-widest">{t('professions.close')}</span>
                         ) : (
                           <>
                             <div className="lg:hidden flex items-center space-x-1">
-                              <Hand size={10} />
-                              <span className="text-[8px] font-bold uppercase tracking-widest">{t('surgeries.tapToFlip')}</span>
+                              <Hand size={12} />
+                              <span className="text-[10px] font-bold uppercase tracking-widest">{t('surgeries.tapToFlip')}</span>
                             </div>
                             <div className="hidden lg:flex items-center space-x-1">
-                              <MousePointer2 size={10} />
-                              <span className="text-[8px] font-bold uppercase tracking-widest">{t('surgeries.clickToFlip')}</span>
+                              <MousePointer2 size={12} />
+                              <span className="text-[10px] font-bold uppercase tracking-widest">{t('surgeries.clickToFlip')}</span>
                             </div>
                           </>
                         )}
@@ -499,7 +499,7 @@ const TargetProfessions: React.FC = () => {
                         "transition-transform duration-150",
                         isActive ? "rotate-180" : "rotate-0"
                       )}>
-                        <ChevronDown size={14} className={isActive ? "text-white" : "text-primary/70"} />
+                        <ChevronDown size={14} className={isActive ? "text-white" : "text-primary"} />
                       </div>
                     </div>
                   </motion.button>
