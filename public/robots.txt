@@ -14,6 +14,12 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+User-agent: Googlebot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
 User-agent: YouBot
 Allow: /
 
