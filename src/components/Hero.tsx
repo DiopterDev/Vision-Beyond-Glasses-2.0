@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Quote } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import drPokhrel from '../assets/dr-pokhrel.webp';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
@@ -86,7 +87,7 @@ const Hero: React.FC = () => {
                 className="aspect-square rounded-2xl overflow-hidden shadow-xl border border-gray-100 dark:border-gray-800 relative"
               >
                 <img
-                  src="https://www.kaushalpokhrel.com.np/dr-pokhrel.webp"
+                  src={drPokhrel}
                   alt="Dr. Kaushal Pokhrel - LASIK Eye Surgery Specialist in Nepal offering SMILE Pro, PRK, and ICL at Tilganga Institute of Ophthalmology"
                   className="w-full h-full object-cover transition-all duration-1000 ease-out group-hover/hero-img:scale-[1.03] group-hover/hero-img:translate-y-1 group-hover/hero-img:opacity-95"
                   fetchPriority="high"

@@ -2,6 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import drPokhrel from '../assets/dr-pokhrel.webp';
+import socialBanner from '../assets/Social-Share-Banner.webp';
 
 interface SEOProps {
   title?: string;
@@ -16,7 +18,7 @@ const SEO: React.FC<SEOProps> = ({
   title, 
   description, 
   keywords, 
-  image = "https://www.kaushalpokhrel.com.np/dr-pokhrel.webp",
+  image = `https://www.kaushalpokhrel.com.np${socialBanner}`,
   article = false,
   schemas = []
 }) => {
@@ -42,7 +44,7 @@ const SEO: React.FC<SEOProps> = ({
     "@context": "https://schema.org",
     "@type": "Physician",
     "name": "Dr. Kaushal Pokhrel",
-    "image": "https://www.kaushalpokhrel.com.np/dr-pokhrel.webp",
+    "image": `https://www.kaushalpokhrel.com.np${drPokhrel}`,
     "description": "Expert Refractive and Cataract Surgeon in Kathmandu, Nepal. Specializing in SMILE PRO, LASIK, and ICL for demanding professions including British Gurkha, Singaporean Police, Pilots, Surgeons, and Athletes.",
     "url": baseUrl,
     "telephone": "+977-1-4584574",
