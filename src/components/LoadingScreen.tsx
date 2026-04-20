@@ -26,7 +26,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ duration = 2000 }) => {
         >
           <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl bg-white p-1">
             <img 
-              src="/images/logo-Dr-Kaushal.png" 
+              src="https://i.ibb.co/cSPhLMyD/logo-Dr-Kaushal.webp" 
               alt="Dr. Kaushal Pokhrel Logo" 
               className="w-full h-full object-contain"
               referrerPolicy="no-referrer"
