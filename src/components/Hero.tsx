@@ -92,6 +92,8 @@ const Hero: React.FC = () => {
                   referrerPolicy="no-referrer"
                   width={600}
                   height={600}
+                  fetchPriority="high"
+                  loading="eager"
                 />
                 <div className="absolute bottom-4 right-4 text-[10px] text-white/50 bg-black/10 px-2 py-1 rounded-full backdrop-blur-sm">
                   © Dr. Kaushal Pokhrel

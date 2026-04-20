@@ -57,15 +57,14 @@ const SurgeryCard: React.FC<SurgeryCardProps> = ({ titleKey, descKey, detailsKey
             <div className="mt-auto pt-6 flex flex-col items-center space-y-1 relative z-10 transition-all duration-300">
               <motion.div
                 animate={{ 
-                  y: [0, -2, 0],
-                  opacity: [0.7, 1, 0.7]
+                  y: [0, -2, 0]
                 }}
                 transition={{ 
                   duration: 2, 
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className="flex items-center space-x-1 text-primary/80 group-hover:text-primary"
+                className="flex items-center space-x-1 text-primary group-hover:text-primary"
               >
                 <div className="lg:hidden flex items-center space-x-1">
                   <Hand size={12} />

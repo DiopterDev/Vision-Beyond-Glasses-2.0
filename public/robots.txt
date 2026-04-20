@@ -1,7 +1,14 @@
 User-agent: *
 Allow: /
 
-# Specifically Allow AI and Search Crawlers
+# Standard Search Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+# Specifically Allow AI Crawlers for better discovery
 User-agent: GPTBot
 Allow: /
 
@@ -12,12 +19,6 @@ User-agent: Claude-Web
 Allow: /
 
 User-agent: Google-Extended
-Allow: /
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: bingbot
 Allow: /
 
 User-agent: YouBot
