@@ -31,9 +31,15 @@ const Contact: React.FC = () => {
       }
     } else {
       navigator.clipboard.writeText(window.location.href);
-      alert(t('contact.email.copied'));
+      setCopiedLink(true);
+      setTimeout(() => setCopiedLink(false), 2000);
     }
   };
+
+  const [copiedLink, setCopiedLink] = useState(false);
+
+  const shareUrl = 'https://kaushalpokhrel.com.np';
+  const shareText = typeof window !== 'undefined' ? `${t('logo.title')} - ${t('logo.subtitle')}` : '';
 
   return (
     <section id="contact" className="py-24 bg-surface relative overflow-hidden" aria-labelledby="contact-title">
@@ -101,71 +107,133 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
-            {/* Social Media Card */}
-            <div className="card-modern p-6 flex items-start space-x-4">
-              <button 
-                onClick={handleShare}
-                className="p-3 rounded-xl bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all group/share"
-                title={t('contact.share.title')}
-                aria-label="Share Website"
-              >
-                <Share2 size={24} className="group-hover/share:scale-110 transition-transform" />
-              </button>
-              <div className="flex-grow">
-                <h3 className="text-lg font-bold text-text-heading mb-4">{t('contact.social.title')}</h3>
-                <div className="grid grid-cols-5 gap-2 w-full">
-                  {[
-                    { 
-                      icon: Facebook, 
-                      href: "https://www.facebook.com/Da.eyedoc", 
-                      label: t('contact.social.facebook'),
-                      color: "hover:bg-[#1877F2]"
-                    },
-                    { 
-                      icon: Instagram, 
-                      href: "https://www.instagram.com/da.eyedoc", 
-                      label: t('contact.social.instagram'),
-                      color: "hover:bg-[#E4405F]"
-                    },
-                    { 
-                      icon: Linkedin, 
-                      href: "https://www.linkedin.com/in/kaushalpokhrel", 
-                      label: t('contact.social.linkedin'),
-                      color: "hover:bg-[#0A66C2]"
-                    },
-                    { 
-                      icon: Youtube, 
-                      href: "https://www.youtube.com/@da.eyedoc", 
-                      label: t('contact.social.youtube'),
-                      color: "hover:bg-[#FF0000]"
-                    },
-                    { 
-                      icon: Video, 
-                      href: "https://www.tiktok.com/@da.eyedoc", 
-                      label: t('contact.social.tiktok'),
-                      color: "hover:bg-[#000000] dark:hover:bg-white dark:hover:text-black"
-                    }
-                  ].map((social, idx) => (
-                    <a 
-                      key={idx}
-                      href={social.href} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className={cn(
-                        "group flex items-center justify-center h-10 bg-primary/5 text-primary rounded-xl transition-all duration-500 overflow-hidden",
-                        social.color,
-                        "hover:text-white hover:flex-[3] flex-1"
-                      )}
-                      aria-label={social.label}
-                    >
-                      <div className="flex items-center gap-1.5 px-2">
-                        <social.icon size={16} className="shrink-0" />
-                        <span className="max-w-0 overflow-hidden group-hover:max-w-[80px] transition-all duration-500 whitespace-nowrap font-bold text-[10px] uppercase tracking-wider">
-                          {social.label}
-                        </span>
-                      </div>
-                    </a>
-                  ))}
+            {/* Social & Share Card */}
+            <div className="card-modern p-6 space-y-8">
+              <div className="flex items-start space-x-4">
+                <div className="p-3 rounded-xl bg-primary/10 text-primary">
+                  <Share2 size={24} />
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-lg font-bold text-text-heading mb-4">{t('contact.social.title')}</h3>
+                  <div className="grid grid-cols-5 gap-2 w-full">
+                    {[
+                      { 
+                        icon: Facebook, 
+                        href: "https://www.facebook.com/Da.eyedoc", 
+                        label: t('contact.social.facebook'),
+                        color: "hover:bg-[#1877F2]"
+                      },
+                      { 
+                        icon: Instagram, 
+                        href: "https://www.instagram.com/da.eyedoc", 
+                        label: t('contact.social.instagram'),
+                        color: "hover:bg-[#E4405F]"
+                      },
+                      { 
+                        icon: Linkedin, 
+                        href: "https://www.linkedin.com/in/kaushalpokhrel", 
+                        label: t('contact.social.linkedin'),
+                        color: "hover:bg-[#0A66C2]"
+                      },
+                      { 
+                        icon: Youtube, 
+                        href: "https://www.youtube.com/@da.eyedoc", 
+                        label: t('contact.social.youtube'),
+                        color: "hover:bg-[#FF0000]"
+                      },
+                      { 
+                        icon: Video, 
+                        href: "https://www.tiktok.com/@da.eyedoc", 
+                        label: t('contact.social.tiktok'),
+                        color: "hover:bg-[#000000] dark:hover:bg-white dark:hover:text-black"
+                      }
+                    ].map((social, idx) => (
+                      <a 
+                        key={idx}
+                        href={social.href} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className={cn(
+                          "group flex items-center justify-center h-10 bg-primary/5 text-primary rounded-xl transition-all duration-500 overflow-hidden",
+                          social.color,
+                          "hover:text-white hover:flex-[3] flex-1"
+                        )}
+                        aria-label={social.label}
+                      >
+                        <div className="flex items-center gap-1.5 px-2">
+                          <social.icon size={16} className="shrink-0" />
+                          <span className="max-w-0 overflow-hidden group-hover:max-w-[80px] transition-all duration-500 whitespace-nowrap font-bold text-[10px] uppercase tracking-wider">
+                            {social.label}
+                          </span>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Integrated Share Section */}
+              <div className="pt-6 border-t border-gray-100 dark:border-gray-800">
+                <div className="flex items-start space-x-4">
+                  <button 
+                    onClick={handleShare}
+                    className="p-3 rounded-xl bg-emerald-500/10 text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all group/share"
+                    title={t('contact.share.title')}
+                  >
+                    <Share size={20} className="group-hover/share:rotate-12 transition-transform" />
+                  </button>
+                  <div className="flex-grow">
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="text-sm font-bold text-text-heading uppercase tracking-widest">{t('contact.share.title')}</h3>
+                      <button 
+                        onClick={() => {
+                          navigator.clipboard.writeText(shareUrl);
+                          setCopiedLink(true);
+                          setTimeout(() => setCopiedLink(false), 2000);
+                        }}
+                        className="text-[10px] font-bold text-primary uppercase tracking-tighter hover:underline"
+                      >
+                        {copiedLink ? t('contact.email.copied') : t('contact.email.copy')}
+                      </button>
+                    </div>
+                    
+                    <div className="flex flex-wrap gap-2">
+                      <a 
+                        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 min-w-[80px] flex items-center justify-center space-x-2 py-2 px-3 bg-[#1877F2]/10 text-[#1877F2] rounded-lg text-xs font-bold hover:bg-[#1877F2] hover:text-white transition-all"
+                      >
+                        <Facebook size={14} />
+                        <span>Facebook</span>
+                      </a>
+                      <a 
+                        href={`https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 min-w-[80px] flex items-center justify-center space-x-2 py-2 px-3 bg-[#25D366]/10 text-[#25D366] rounded-lg text-xs font-bold hover:bg-[#25D366] hover:text-white transition-all"
+                      >
+                        <Share2 size={14} />
+                        <span>WhatsApp</span>
+                      </a>
+                      <a 
+                        href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={cn(
+                          "flex-1 min-w-[100px] flex items-center justify-center space-x-2 py-2 px-3 rounded-lg text-xs font-bold transition-all shadow-sm border",
+                          theme === 'light' 
+                            ? "bg-white text-black border-black/20 hover:bg-black hover:text-white hover:border-transparent" 
+                            : "bg-white/10 text-white border-transparent hover:bg-white/20"
+                        )}
+                      >
+                        <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current" aria-hidden="true">
+                          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                        <span>Twitter</span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
