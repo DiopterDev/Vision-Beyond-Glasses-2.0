@@ -24,13 +24,13 @@ const Contact: React.FC = () => {
         await navigator.share({
           title: t('logo.title'),
           text: t('logo.subtitle'),
-          url: window.location.href,
+          url: shareUrl,
         });
       } catch (err) {
         console.log('Error sharing:', err);
       }
     } else {
-      navigator.clipboard.writeText(window.location.href);
+      navigator.clipboard.writeText(shareUrl);
       setCopiedLink(true);
       setTimeout(() => setCopiedLink(false), 2000);
     }
