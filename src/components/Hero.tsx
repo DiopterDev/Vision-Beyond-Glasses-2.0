@@ -21,7 +21,11 @@ const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left Column: Text Content */}
-          <div className="flex flex-col space-y-6 animate-fade-in-up will-change-opacity">
+          <motion.div
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col space-y-6 opacity-0 animate-fade-in-up"
+          >
             <div className="flex flex-col space-y-1">
               <span className="text-sm font-bold text-text-heading uppercase tracking-widest">
                 {t('hero.name')}
@@ -63,10 +67,18 @@ const Hero: React.FC = () => {
                 {t('hero.disclaimer')}
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: Image & Quote */}
-          <div className="relative lg:mr-12 animate-fade-in will-change-transform">
+          <motion.div
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ 
+              duration: 0.6, 
+              delay: 0.1,
+              ease: [0.22, 1, 0.36, 1]
+            }}
+            className="relative lg:mr-12 group/hero-img opacity-0 animate-fade-in"
+          >
             <div className="relative">
               <motion.div 
                 whileHover={{ y: -2 }}
@@ -124,7 +136,7 @@ const Hero: React.FC = () => {
                 {t('hero.deco.green')}
               </span>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

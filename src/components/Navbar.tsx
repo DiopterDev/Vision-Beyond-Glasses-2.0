@@ -204,14 +204,12 @@ const Navbar: React.FC = () => {
             <img 
               src="https://i.ibb.co/cSPhLMyD/logo-Dr-Kaushal.webp" 
               alt="Dr. Kaushal Pokhrel - LASIK and SMILE PRO Surgeon Logo" 
-              className="h-10 w-10 lg:h-12 lg:w-12 object-contain transition-transform duration-300 group-hover:scale-110 will-change-transform"
+              className="h-10 w-10 lg:h-12 lg:w-12 object-contain transition-transform duration-300 group-hover:scale-110"
               referrerPolicy="no-referrer"
               width={48}
               height={48}
-              fetchPriority="high"
-              loading="eager"
             />
-            <div className="flex flex-col animate-fade-in will-change-opacity">
+            <div className="flex flex-col">
               <span className="text-base lg:text-xl font-bold tracking-tight text-primary leading-tight whitespace-nowrap">
                 {t('logo.title')}
               </span>
