@@ -12,33 +12,32 @@
     <link rel="preconnect" href="https://open.er-api.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" media="print" onload="this.media='all'" />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" />
-    </noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap&font-display=swap" rel="stylesheet" media="all" />
     <link rel="dns-prefetch" href="https://i.ibb.co" />
     <link rel="dns-prefetch" href="https://open.er-api.com" />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="icon" type="image/webp" href="https://i.ibb.co/cSPhLMyD/logo-Dr-Kaushal.webp" />
+    
+    <!-- Preload critical LCP assets -->
+    <link rel="preload" as="image" href="https://i.ibb.co/cSPhLMyD/logo-Dr-Kaushal.webp" fetchpriority="high" />
     <link rel="preload" as="image" href="https://i.ibb.co/SXKFTjB2/dr-pokhrel.webp" fetchpriority="high" />
     
     <style>
-      body { margin: 0; font-family: 'Inter', -apple-system, system-ui, sans-serif; }
-      .animate-fade-in-up { animation: fadeInUp 0.5s ease-out 0.1s forwards; }
-      .animate-fade-in { animation: fadeIn 0.5s ease-out 0.2s forwards; }
-      .animate-marquee-fast { animation: marquee 100s linear infinite; }
-      .animate-marquee-slow { animation: marquee 100s linear infinite; }
-      @keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+      /* Critical Layout CSS to prevent CLS and speed up FCP */
+      :root { --primary: #025A8B; --background: #F8FAFC; --text-heading: #0F172A; }
+      .dark { --primary: #38BDF8; --background: #0F172A; --text-heading: #F1F5F9; }
+      body { margin: 0; font-family: 'Inter', -apple-system, system-ui, sans-serif; background-color: var(--background); color: var(--text-heading); }
+      #root { min-height: 100vh; display: flex; flex-direction: column; }
+      .glass-nav { height: 56px; }
+      @media (min-width: 1024px) { .glass-nav { height: 76px; } }
+      
+      .animate-fade-in-up { animation: fadeInUp 0.5s ease-out 0.1s forwards; opacity: 0; }
+      .animate-fade-in { animation: fadeIn 0.5s ease-out 0.2s forwards; opacity: 0; }
+      @keyframes fadeInUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
       @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
       @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
       
-      /* GPU Acceleration Hints */
-      .perspective-1000 { perspective: 1000px; }
-      .preserve-3d { transform-style: preserve-3d; }
-      .backface-hidden { backface-visibility: hidden; }
       .will-change-transform { will-change: transform; }
+      .will-change-opacity { will-change: opacity; }
     </style>
 
     <script type="application/ld+json">
