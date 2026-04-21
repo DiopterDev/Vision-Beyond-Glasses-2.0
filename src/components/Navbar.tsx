@@ -186,18 +186,18 @@ const Navbar: React.FC = () => {
         height: isMobile ? (isMenuOpen ? "auto" : "56px") : "76px",
       }}
       transition={{
-        duration: 0.4,
-        ease: [0.22, 1, 0.36, 1]
+        duration: 0.3,
+        ease: [0.32, 0.72, 0, 1]
       }}
       className={cn(
-        "glass-nav sticky z-50 transition-all duration-300",
+        "glass-nav sticky top-0 z-50 transition-colors duration-300 will-change-[height,border-radius]",
         isMobile 
-          ? "top-0 w-full border-b border-white/20 dark:border-white/10 shadow-lg overflow-hidden" 
-          : "top-4 mx-auto max-w-7xl w-[calc(100%-2rem)] border border-white/20 dark:border-white/10 shadow-2xl"
+          ? "w-full border-b border-white/20 dark:border-white/10 shadow-lg overflow-hidden" 
+          : "lg:top-4 mx-auto max-w-7xl w-[calc(100%-2rem)] border border-white/20 dark:border-white/10 shadow-2xl"
       )}
       onMouseLeave={() => !isMobile && setHoveredNavItem(null)}
     >
-      <div className="px-6 lg:px-8">
+      <div className="px-3 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-14 lg:h-[76px]">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 lg:space-x-3 group" aria-label="Dr. Kaushal Pokhrel - Home" onMouseEnter={() => !isMobile && setHoveredNavItem(null)}>
@@ -210,10 +210,10 @@ const Navbar: React.FC = () => {
               height={48}
             />
             <div className="flex flex-col">
-              <span className="text-base lg:text-xl font-bold tracking-tight text-primary leading-tight">
+              <span className="text-base lg:text-xl font-bold tracking-tight text-primary leading-tight whitespace-nowrap">
                 {t('logo.title')}
               </span>
-              <span className="text-xs font-bold text-text-body uppercase tracking-widest leading-tight">
+              <span className="text-[10px] sm:text-xs font-bold text-text-body uppercase tracking-widest leading-tight">
                 {t('logo.subtitle')}
               </span>
             </div>
@@ -288,7 +288,7 @@ const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={toggleTheme}
-                className="p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="p-3 rounded-full hover:bg-blue-500/30 dark:hover:bg-white/10 transition-colors text-text-body dark:text-nav-text"
                 aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
               >
                 {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
@@ -297,52 +297,59 @@ const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setLanguage(language === 'en' ? 'np' : 'en')}
-                className="flex items-center space-x-1 p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-bold transition-colors"
+                className="flex items-center space-x-2 p-3 rounded-md hover:bg-blue-500/30 dark:hover:bg-white/10 text-sm font-bold transition-colors text-text-body dark:text-nav-text"
                 aria-label={language === 'en' ? 'नेपालीमा परिवर्तन गर्नुहोस्' : 'Switch to English'}
               >
                 <Globe size={18} className="text-primary" />
-                <span>{language === 'en' ? 'ने' : 'EN'}</span>
+                <span>En / ने</span>
               </button>
             </div>
           </nav>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center space-x-2">
-            <button
+          <div className="lg:hidden flex items-center space-x-1 sm:space-x-2">
+            <motion.button
               type="button"
+              whileTap={{ scale: 0.9 }}
               onClick={toggleTheme}
-              className="p-2 rounded-full"
+              className="p-1.5 rounded-full hover:bg-blue-500/30 dark:hover:bg-white/10 transition-colors text-text-body dark:text-nav-text"
               aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
             >
               {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-            </button>
-            <button
+            </motion.button>
+            <motion.button
               type="button"
+              whileTap={{ scale: 0.9 }}
               onClick={() => setLanguage(language === 'en' ? 'np' : 'en')}
-              className="p-2 font-bold text-sm"
+              className="p-1.5 font-bold text-[13px] hover:bg-blue-500/30 dark:hover:bg-white/10 rounded-md transition-colors text-text-body dark:text-nav-text"
               aria-label={language === 'en' ? 'नेपालीमा परिवर्तन गर्नुहोस्' : 'Switch to English'}
             >
-              {language === 'en' ? 'ने' : 'EN'}
-            </button>
-            <button
+              En / ने
+            </motion.button>
+            <motion.button
               type="button"
+              whileTap={{ scale: 0.9, rotate: 180 }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-primary"
+              className="p-1.5 text-primary focus:outline-none"
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            </motion.button>
           </div>
       </div>
     </div>
 
     {/* Mobile Navigation Menu */}
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
+            transition={{ 
+              duration: 0.3,
+              ease: [0.32, 0.72, 0, 1]
+            }}
             className="lg:hidden border-t border-text-heading/5 bg-surface overflow-hidden"
           >
             <div className="px-6 py-6 space-y-2">
@@ -380,6 +387,10 @@ const Navbar: React.FC = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
+                        transition={{ 
+                          duration: 0.25,
+                          ease: "easeOut"
+                        }}
                         className="pl-6 space-y-1 overflow-hidden"
                       >
                         {getSubNavItemsForId('surgeries').map((sub) => (

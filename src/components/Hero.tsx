@@ -77,13 +77,13 @@ const Hero: React.FC = () => {
               delay: 0.1,
               ease: [0.22, 1, 0.36, 1]
             }}
-            className="relative group/hero-img opacity-0 animate-fade-in"
+            className="relative lg:mr-12 group/hero-img opacity-0 animate-fade-in"
           >
             <div className="relative">
               <motion.div 
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="aspect-square rounded-2xl overflow-hidden shadow-xl border border-gray-100 dark:border-gray-800 relative"
+                className="aspect-square rounded-2xl overflow-hidden shadow-2xl relative"
               >
                 <img
                   src="https://i.ibb.co/SXKFTjB2/dr-pokhrel.webp"
@@ -102,17 +102,20 @@ const Hero: React.FC = () => {
             </div>
             
             {/* Quote block */}
-            <div className="mt-4 md:mt-0 md:absolute md:-right-4 md:-bottom-6 md:w-80 bg-surface/20 backdrop-blur-sm p-4 md:p-6 rounded-2xl border border-primary/20 shadow-2xl z-20 transition-transform duration-500">
+            <div className="mt-4 md:mt-0 md:absolute md:-right-8 md:-bottom-8 md:w-80 bg-surface/40 backdrop-blur-xl p-4 md:p-6 rounded-2xl border border-white/30 dark:border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.15)] z-20 transition-all duration-500 hover:scale-[1.02]">
               <div className="text-primary mb-2 md:mb-3 flex justify-end">
                 <Quote size={24} fill="currentColor" className="opacity-50 rotate-180" />
               </div>
-              <p className="text-sm md:text-base italic text-text-heading leading-relaxed font-medium text-right">
+              <p className="text-sm md:text-base italic text-text-heading leading-relaxed font-semibold text-right">
                 "{t('hero.quote.text')}"
               </p>
               <p className="mt-2 md:mt-3 text-sm font-bold text-primary text-right not-italic">
                 {t('hero.quote.author')}
               </p>
             </div>
+
+            {/* Diffuse glow specifically for the quote area to soften image edges */}
+            <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-primary/5 rounded-full blur-[100px] -z-10" />
 
             {/* Decorative elements */}
             <div 

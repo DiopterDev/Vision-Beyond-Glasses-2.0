@@ -83,7 +83,7 @@
   }
 
   .header-gradient {
-    background: linear-gradient(to bottom, var(--background), transparent);
+    background: linear-gradient(135deg, var(--background) 0%, color-mix(in srgb, var(--surface) 50%, transparent) 100%);
   }
 
   .nav-link {
