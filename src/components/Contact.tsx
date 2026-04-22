@@ -202,7 +202,12 @@ const Contact: React.FC = () => {
                         href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 min-w-[80px] flex items-center justify-center space-x-2 py-2 px-3 bg-[#1877F2]/10 text-[#1877F2] rounded-lg text-xs font-bold hover:bg-[#1877F2] hover:text-white transition-all"
+                        className={cn(
+                          "flex-1 min-w-[80px] flex items-center justify-center space-x-2 py-2 px-3 rounded-lg text-xs font-bold transition-all",
+                          theme === 'light' 
+                            ? "bg-[#1877F2]/15 text-[#0859C6] hover:bg-[#1877F2] hover:text-white" 
+                            : "bg-[#1877F2]/10 text-[#1877F2] hover:bg-[#1877F2] hover:text-white"
+                        )}
                       >
                         <Facebook size={14} />
                         <span>Facebook</span>
@@ -211,7 +216,12 @@ const Contact: React.FC = () => {
                         href={`https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 min-w-[80px] flex items-center justify-center space-x-2 py-2 px-3 bg-[#25D366]/10 text-[#25D366] rounded-lg text-xs font-bold hover:bg-[#25D366] hover:text-white transition-all"
+                        className={cn(
+                          "flex-1 min-w-[80px] flex items-center justify-center space-x-2 py-2 px-3 rounded-lg text-xs font-bold transition-all",
+                          theme === 'light'
+                            ? "bg-[#25D366]/20 text-[#075E54] hover:bg-[#25D366] hover:text-white"
+                            : "bg-[#25D366]/10 text-[#25D366] hover:bg-[#25D366] hover:text-white"
+                        )}
                       >
                         <Share2 size={14} />
                         <span>WhatsApp</span>
@@ -221,10 +231,10 @@ const Contact: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={cn(
-                          "flex-1 min-w-[100px] flex items-center justify-center space-x-2 py-2 px-3 rounded-lg text-xs font-bold transition-all shadow-sm border",
+                          "flex-1 min-w-[100px] flex items-center justify-center space-x-2 py-2 px-3 rounded-lg text-xs font-bold transition-all shadow-sm",
                           theme === 'light' 
-                            ? "bg-white text-black border-black/20 hover:bg-black hover:text-white hover:border-transparent" 
-                            : "bg-white/10 text-white border-transparent hover:bg-white/20"
+                            ? "bg-white text-black hover:bg-black hover:text-white" 
+                            : "bg-white/10 text-white hover:bg-white/20"
                         )}
                       >
                         <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current" aria-hidden="true">
