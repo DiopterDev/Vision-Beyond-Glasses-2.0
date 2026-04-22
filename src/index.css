@@ -43,6 +43,14 @@
 }
 
 @layer base {
+  html, body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   html {
     scroll-behavior: auto;
   }
@@ -52,6 +60,9 @@
     font-size: 16px;
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
+    /* GPU acceleration to prevent flickering in some browsers */
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -70,10 +81,24 @@
 @layer utilities {
   .glass-nav {
     @apply z-50;
+    -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     background-color: color-mix(in srgb, var(--surface) 95%, transparent);
     border-color: color-mix(in srgb, var(--text-heading) 10%, transparent);
   }
+
+  /* Polyfill WebKit prefix for Tailwind's backdrop-blur utilities */
+  [class*="backdrop-blur-"] {
+    -webkit-backdrop-filter: blur(var(--tw-backdrop-blur));
+  }
+
+  /* Specific blur levels if variables aren't mapping correctly in some browsers */
+  .backdrop-blur-sm { -webkit-backdrop-filter: blur(4px); }
+  .backdrop-blur-md { -webkit-backdrop-filter: blur(12px); }
+  .backdrop-blur-lg { -webkit-backdrop-filter: blur(16px); }
+  .backdrop-blur-xl { -webkit-backdrop-filter: blur(24px); }
+  .backdrop-blur-2xl { -webkit-backdrop-filter: blur(40px); }
+  .backdrop-blur-3xl { -webkit-backdrop-filter: blur(64px); }
 
   .card-modern {
     @apply border rounded-xl transition-all;
@@ -102,6 +127,9 @@
 
   .animate-marquee {
     animation: marquee 120s linear infinite;
+    /* GPU triggers for smoother motion on non-Chrome browsers */
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
   }
 
   .pause-animation {

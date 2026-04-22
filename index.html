@@ -90,9 +90,10 @@
     <script>
       (function() {
         try {
-          const saved = localStorage.getItem('theme');
-          const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          if (saved === 'dark' || (!saved && systemDark)) {
+          // Sync with ThemeContext.tsx using sessionStorage
+          const saved = sessionStorage.getItem('theme');
+          // Default to light mode for new sessions as per requirement
+          if (saved === 'dark') {
             document.documentElement.classList.add('dark');
           } else {
             document.documentElement.classList.remove('dark');
